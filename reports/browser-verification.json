@@ -1,0 +1,62 @@
+{
+  "passed": true,
+  "date": "2026-10-15T07:56:45.558Z",
+  "browser": "C:/Program Files/Google/Chrome/Application/chrome.exe",
+  "cases": [
+    {
+      "name": "default startups + GitHub Pages subpath",
+      "passed": true
+    },
+    {
+      "name": "all methods and feature counts update charts, equations and residuals",
+      "passed": true
+    },
+    {
+      "name": "prediction form responds to input",
+      "passed": true
+    },
+    {
+      "name": "problem switch to mtcars",
+      "passed": true
+    },
+    {
+      "name": "target and feature changes invalidate and retrain",
+      "passed": true
+    },
+    {
+      "name": "cross-origin CSV URL and missing-value summary",
+      "passed": true
+    },
+    {
+      "name": "public GitHub CSV URL",
+      "passed": true
+    },
+    {
+      "name": "real file input upload",
+      "passed": true
+    },
+    {
+      "name": "empty feature selection rejected; retry works",
+      "passed": true
+    },
+    {
+      "name": "URL HTTP/format failure hides stale results",
+      "passed": true
+    },
+    {
+      "name": "malformed uploaded CSV rejected",
+      "passed": true
+    },
+    {
+      "name": "mobile 390px / 320px layout has no document overflow",
+      "passed": true
+    },
+    {
+      "name": "no uncaught browser exceptions",
+      "passed": true
+    }
+  ],
+  "limitations": [
+    "External GitHub URL availability is recorded separately; a network/CORS outage is a skipped external check, not a failed local UI check."
+  ]
+}

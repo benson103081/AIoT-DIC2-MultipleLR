@@ -1,0 +1,4087 @@
+{
+  "workflow": "scripts/analyze.mjs",
+  "dataFile": "data/50_Startups.csv",
+  "sha256": "1b2533facca6c28d9a16242b2d892d9c14f3f691029e4a9b0946ef6bd2ac0dc3",
+  "seed": 20261015,
+  "target": "Profit",
+  "features": [
+    "R&D Spend",
+    "Administration",
+    "Marketing Spend",
+    "State"
+  ],
+  "rows": 50,
+  "dropped": 0,
+  "trainRows": 40,
+  "testRows": 10,
+  "trainIDs": [
+    23,
+    37,
+    41,
+    30,
+    22,
+    4,
+    18,
+    15,
+    11,
+    27,
+    35,
+    33,
+    8,
+    45,
+    36,
+    29,
+    51,
+    38,
+    46,
+    39,
+    10,
+    43,
+    3,
+    19,
+    31,
+    47,
+    2,
+    50,
+    16,
+    48,
+    17,
+    49,
+    25,
+    7,
+    34,
+    12,
+    40,
+    21,
+    32,
+    24
+  ],
+  "testIDs": [
+    26,
+    20,
+    28,
+    5,
+    14,
+    42,
+    9,
+    6,
+    44,
+    13
+  ],
+  "recommended": 10,
+  "results": [
+    {
+      "method": "OLS baseline",
+      "k": 4,
+      "alpha": 0,
+      "l1": 1,
+      "cvRMSE": 10106.804173605586,
+      "cvSD": 3138.833121821683,
+      "cvR2": 0.9002156204098266,
+      "id": 0,
+      "model": {
+        "prep": {
+          "fields": [
+            {
+              "name": "R&D Spend",
+              "type": "number",
+              "fill": 65828.5,
+              "min": 0,
+              "max": 165349.2
+            },
+            {
+              "name": "Administration",
+              "type": "number",
+              "fill": 125604.625,
+              "min": 51283.14,
+              "max": 182645.56
+            },
+            {
+              "name": "Marketing Spend",
+              "type": "number",
+              "fill": 208157.65500000003,
+              "min": 0,
+              "max": 471784.1
+            },
+            {
+              "name": "State",
+              "type": "category",
+              "fill": "New York",
+              "levels": [
+                "California",
+                "Florida",
+                "New York"
+              ],
+              "reference": "California"
+            }
+          ],
+          "columns": [
+            {
+              "name": "R&D Spend",
+              "source": "R&D Spend",
+              "type": "number",
+              "fill": 65828.5
+            },
+            {
+              "name": "Administration",
+              "source": "Administration",
+              "type": "number",
+              "fill": 125604.625
+            },
+            {
+              "name": "Marketing Spend",
+              "source": "Marketing Spend",
+              "type": "number",
+              "fill": 208157.65500000003
+            },
+            {
+              "name": "State = Florida",
+              "source": "State",
+              "type": "category",
+              "level": "Florida",
+              "fill": "New York"
+            },
+            {
+              "name": "State = New York",
+              "source": "State",
+              "type": "category",
+              "level": "New York",
+              "fill": "New York"
+            }
+          ],
+          "means": [
+            69456.24724999999,
+            123004.96300000002,
+            202202.12374999997,
+            0.275,
+            0.375
+          ],
+          "scales": [
+            45729.172643081845,
+            29265.151219570285,
+            126180.65937955241,
+            0.4465142774872937,
+            0.4841229182759271
+          ]
+        },
+        "coef": [
+          0.8103437552100476,
+          -0.023237075986425194,
+          0.023030849247007944,
+          2098.2430017954734,
+          646.1105321666549
+        ],
+        "standardCoef": [
+          37056.349482243524,
+          -680.0365426433787,
+          2906.0477440585305,
+          936.8954579394762,
+          312.7969163613333
+        ],
+        "intercept": 49139.98529800856,
+        "rank": 6,
+        "regular": false,
+        "alpha": 0,
+        "l1": 1,
+        "features": [
+          "R&D Spend",
+          "Administration",
+          "Marketing Spend",
+          "State"
+        ],
+        "target": "Profit",
+        "method": "OLS baseline"
+      },
+      "test": {
+        "n": 10,
+        "rmse": 7183.511976313583,
+        "mae": 6607.567527021129,
+        "r2": 0.9578684390682787,
+        "adjusted": 0.905203987903627,
+        "adjustedReason": null,
+        "r2Reason": null
+      },
+      "train": {
+        "n": 40,
+        "rmse": 9271.541870912792,
+        "mae": 6654.803828631528,
+        "r2": 0.946443569388529,
+        "adjusted": 0.9385676237103715,
+        "adjustedReason": null,
+        "r2Reason": null
+      },
+      "residuals": [
+        {
+          "row": 26,
+          "actual": 108552.04,
+          "predicted": 113148.77742543834,
+          "residual": -4596.737425438347,
+          "absolute": 4596.737425438347,
+          "percent": 4.234593311593542
+        },
+        {
+          "row": 20,
+          "actual": 124266.9,
+          "predicted": 129725.72380019381,
+          "residual": -5458.823800193815,
+          "absolute": 5458.823800193815,
+          "percent": 4.392822062990077
+        },
+        {
+          "row": 28,
+          "actual": 105733.54,
+          "predicted": 112018.49592541653,
+          "residual": -6284.955925416536,
+          "absolute": 6284.955925416536,
+          "percent": 5.944145940272629
+        },
+        {
+          "row": 5,
+          "actual": 182901.99,
+          "predicted": 172845.20258213094,
+          "residual": 10056.787417869054,
+          "absolute": 10056.787417869054,
+          "percent": 5.498457079591674
+        },
+        {
+          "row": 14,
+          "actual": 141585.52,
+          "predicted": 130095.5930868175,
+          "residual": 11489.926913182484,
+          "absolute": 11489.926913182484,
+          "percent": 8.115185022580334
+        },
+        {
+          "row": 42,
+          "actual": 78239.91,
+          "predicted": 73665.84450332267,
+          "residual": 4574.065496677329,
+          "absolute": 4574.065496677329,
+          "percent": 5.846204956878566
+        },
+        {
+          "row": 9,
+          "actual": 155752.6,
+          "predicted": 160901.96619002344,
+          "residual": -5149.366190023429,
+          "absolute": 5149.366190023429,
+          "percent": 3.3061189283668004
+        },
+        {
+          "row": 6,
+          "actual": 166187.94,
+          "predicted": 172703.51601432625,
+          "residual": -6515.576014326245,
+          "absolute": 6515.576014326245,
+          "percent": 3.920607003327826
+        },
+        {
+          "row": 44,
+          "actual": 71498.49,
+          "predicted": 69470.69080225014,
+          "residual": 2027.7991977498605,
+          "absolute": 2027.7991977498605,
+          "percent": 2.8361426902160596
+        },
+        {
+          "row": 13,
+          "actual": 144259.4,
+          "predicted": 134337.7631106658,
+          "residual": 9921.636889334186,
+          "absolute": 9921.636889334186,
+          "percent": 6.877636319944617
+        }
+      ],
+      "unknownCategories": []
+    },
+    {
+      "method": "Lasso",
+      "k": 1,
+      "alpha": 0.001,
+      "l1": 1,
+      "cvRMSE": 10031.551950941997,
+      "cvSD": 3330.617378269975,
+      "cvR2": 0.9063242207195404,
+      "id": 1,
+      "model": {
+        "prep": {
+          "fields": [
+            {
+              "name": "R&D Spend",
+              "type": "number",
+              "fill": 65828.5,
+              "min": 0,
+              "max": 165349.2
+            }
+          ],
+          "columns": [
+            {
+              "name": "R&D Spend",
+              "source": "R&D Spend",
+              "type": "number",
+              "fill": 65828.5
+            }
+          ],
+          "means": [
+            69456.24724999999
+          ],
+          "scales": [
+            45729.172643081845
+          ]
+        },
+        "coef": [
+          0.8494091764373277
+        ],
+        "standardCoef": [
+          38842.77887392053
+        ],
+        "intercept": 49044.566974950125,
+        "rank": 2,
+        "regular": true,
+        "alpha": 0.001,
+        "l1": 1,
+        "iterations": 2,
+        "features": [
+          "R&D Spend"
+        ],
+        "target": "Profit",
+        "method": "Lasso"
+      },
+      "test": {
+        "n": 10,
+        "rmse": 7327.832856527636,
+        "mae": 6435.881513338083,
+        "r2": 0.9561585389568,
+        "adjusted": null,
+        "adjustedReason": "正則化模型的有效自由度不等同非零係數數量",
+        "r2Reason": null
+      },
+      "train": {
+        "n": 40,
+        "rmse": 9653.497056584154,
+        "mae": 7026.134361371858,
+        "r2": 0.9419399996835672,
+        "adjusted": null,
+        "adjustedReason": "正則化模型的有效自由度不等同非零係數數量",
+        "r2Reason": null
+      },
+      "residuals": [
+        {
+          "row": 26,
+          "actual": 108552.04,
+          "predicted": 114486.45605847935,
+          "residual": -5934.416058479357,
+          "absolute": 5934.416058479357,
+          "percent": 5.466885798258013
+        },
+        {
+          "row": 20,
+          "actual": 124266.9,
+          "predicted": 126977.14540936674,
+          "residual": -2710.2454093667475,
+          "absolute": 2710.2454093667475,
+          "percent": 2.18098738229307
+        },
+        {
+          "row": 28,
+          "actual": 105733.54,
+          "predicted": 113029.60040360465,
+          "residual": -7296.060403604657,
+          "absolute": 7296.060403604657,
+          "percent": 6.900421950882055
+        },
+        {
+          "row": 5,
+          "actual": 182901.99,
+          "predicted": 171675.81685332235,
+          "residual": 11226.17314667764,
+          "absolute": 11226.17314667764,
+          "percent": 6.137808094202605
+        },
+        {
+          "row": 14,
+          "actual": 141585.52,
+          "predicted": 128773.29755976934,
+          "residual": 12812.222440230646,
+          "absolute": 12812.222440230646,
+          "percent": 9.049105049888327
+        },
+        {
+          "row": 42,
+          "actual": 78239.91,
+          "predicted": 73468.75873925728,
+          "residual": 4771.1512607427285,
+          "absolute": 4771.1512607427285,
+          "percent": 6.098104229341174
+        },
+        {
+          "row": 9,
+          "actual": 155752.6,
+          "predicted": 159720.994269574,
+          "residual": -3968.394269573997,
+          "absolute": 3968.394269573997,
+          "percent": 2.547883161869527
+        },
+        {
+          "row": 6,
+          "actual": 166187.94,
+          "predicted": 169751.84561004944,
+          "residual": -3563.9056100494345,
+          "absolute": 3563.9056100494345,
+          "percent": 2.1445031511007566
+        },
+        {
+          "row": 44,
+          "actual": 71498.49,
+          "predicted": 69125.38985646264,
+          "residual": 2373.100143537362,
+          "absolute": 2373.100143537362,
+          "percent": 3.3190912752665986
+        },
+        {
+          "row": 13,
+          "actual": 144259.4,
+          "predicted": 134556.25360888173,
+          "residual": 9703.146391118265,
+          "absolute": 9703.146391118265,
+          "percent": 6.726179639675658
+        }
+      ],
+      "unknownCategories": []
+    },
+    {
+      "method": "Lasso",
+      "k": 2,
+      "alpha": 0.001,
+      "l1": 1,
+      "cvRMSE": 9817.542359513378,
+      "cvSD": 3291.395675819355,
+      "cvR2": 0.9099573851051659,
+      "id": 2,
+      "model": {
+        "prep": {
+          "fields": [
+            {
+              "name": "R&D Spend",
+              "type": "number",
+              "fill": 65828.5,
+              "min": 0,
+              "max": 165349.2
+            },
+            {
+              "name": "Marketing Spend",
+              "type": "number",
+              "fill": 208157.65500000003,
+              "min": 0,
+              "max": 471784.1
+            }
+          ],
+          "columns": [
+            {
+              "name": "R&D Spend",
+              "source": "R&D Spend",
+              "type": "number",
+              "fill": 65828.5
+            },
+            {
+              "name": "Marketing Spend",
+              "source": "Marketing Spend",
+              "type": "number",
+              "fill": 208157.65500000003
+            }
+          ],
+          "means": [
+            69456.24724999999,
+            202202.12374999997
+          ],
+          "scales": [
+            45729.172643081845,
+            126180.65937955241
+          ]
+        },
+        "coef": [
+          0.7969268537615836,
+          0.027319376425994007
+        ],
+        "standardCoef": [
+          36442.805679571495,
+          3447.1769312701235
+        ],
+        "intercept": 47165.75622210922,
+        "rank": 3,
+        "regular": true,
+        "alpha": 0.001,
+        "l1": 1,
+        "iterations": 23,
+        "features": [
+          "R&D Spend",
+          "Marketing Spend"
+        ],
+        "target": "Profit",
+        "method": "Lasso"
+      },
+      "test": {
+        "n": 10,
+        "rmse": 6892.9406170082375,
+        "mae": 5931.689726127525,
+        "r2": 0.9612079274462842,
+        "adjusted": null,
+        "adjustedReason": "正則化模型的有效自由度不等同非零係數數量",
+        "r2Reason": null
+      },
+      "train": {
+        "n": 40,
+        "rmse": 9326.464453065762,
+        "mae": 6629.176991890895,
+        "r2": 0.9458071769144757,
+        "adjusted": null,
+        "adjustedReason": "正則化模型的有效自由度不等同非零係數數量",
+        "r2Reason": null
+      },
+      "residuals": [
+        {
+          "row": 26,
+          "actual": 108552.04,
+          "predicted": 112404.6128629878,
+          "residual": -3852.5728629877995,
+          "absolute": 3852.5728629877995,
+          "percent": 3.5490561605178486
+        },
+        {
+          "row": 20,
+          "actual": 124266.9,
+          "predicted": 128340.14438439964,
+          "residual": -4073.2443843996443,
+          "absolute": 4073.2443843996443,
+          "percent": 3.2778192619270654
+        },
+        {
+          "row": 28,
+          "actual": 105733.54,
+          "predicted": 110859.5199108854,
+          "residual": -5125.979910885406,
+          "absolute": 5125.979910885406,
+          "percent": 4.8480169214852795
+        },
+        {
+          "row": 5,
+          "actual": 182901.99,
+          "predicted": 172688.78135846445,
+          "residual": 10213.208641535544,
+          "absolute": 10213.208641535544,
+          "percent": 5.583978961374638
+        },
+        {
+          "row": 14,
+          "actual": 141585.52,
+          "predicted": 128793.75689929261,
+          "residual": 12791.76310070738,
+          "absolute": 12791.76310070738,
+          "percent": 9.034654886112211
+        },
+        {
+          "row": 42,
+          "actual": 78239.91,
+          "predicted": 74801.52391454339,
+          "residual": 3438.3860854566155,
+          "absolute": 3438.3860854566155,
+          "percent": 4.394670297366926
+        },
+        {
+          "row": 9,
+          "actual": 155752.6,
+          "predicted": 159851.94395054824,
+          "residual": -4099.343950548238,
+          "absolute": 4099.343950548238,
+          "percent": 2.631958600080023
+        },
+        {
+          "row": 6,
+          "actual": 166187.94,
+          "predicted": 170418.40448602833,
+          "residual": -4230.46448602833,
+          "absolute": 4230.46448602833,
+          "percent": 2.545590544072169
+        },
+        {
+          "row": 44,
+          "actual": 71498.49,
+          "predicted": 70049.146222562,
+          "residual": 1449.343777438,
+          "absolute": 1449.343777438,
+          "percent": 2.027097044200514
+        },
+        {
+          "row": 13,
+          "actual": 144259.4,
+          "predicted": 134216.8099387117,
+          "residual": 10042.590061288298,
+          "absolute": 10042.590061288298,
+          "percent": 6.961480542195724
+        }
+      ],
+      "unknownCategories": []
+    },
+    {
+      "method": "Lasso",
+      "k": 3,
+      "alpha": 0.01,
+      "l1": 1,
+      "cvRMSE": 9906.274081358659,
+      "cvSD": 3229.3385044188444,
+      "cvR2": 0.9100697362458753,
+      "id": 3,
+      "model": {
+        "prep": {
+          "fields": [
+            {
+              "name": "R&D Spend",
+              "type": "number",
+              "fill": 65828.5,
+              "min": 0,
+              "max": 165349.2
+            },
+            {
+              "name": "Marketing Spend",
+              "type": "number",
+              "fill": 208157.65500000003,
+              "min": 0,
+              "max": 471784.1
+            },
+            {
+              "name": "State",
+              "type": "category",
+              "fill": "New York",
+              "levels": [
+                "California",
+                "Florida",
+                "New York"
+              ],
+              "reference": "California"
+            }
+          ],
+          "columns": [
+            {
+              "name": "R&D Spend",
+              "source": "R&D Spend",
+              "type": "number",
+              "fill": 65828.5
+            },
+            {
+              "name": "Marketing Spend",
+              "source": "Marketing Spend",
+              "type": "number",
+              "fill": 208157.65500000003
+            },
+            {
+              "name": "State = Florida",
+              "source": "State",
+              "type": "category",
+              "level": "Florida",
+              "fill": "New York"
+            },
+            {
+              "name": "State = New York",
+              "source": "State",
+              "type": "category",
+              "level": "New York",
+              "fill": "New York"
+            }
+          ],
+          "means": [
+            69456.24724999999,
+            202202.12374999997,
+            0.275,
+            0.375
+          ],
+          "scales": [
+            45729.172643081845,
+            126180.65937955241,
+            0.4465142774872937,
+            0.4841229182759271
+          ]
+        },
+        "coef": [
+          0.7942283746269634,
+          0.024650591933307466,
+          860.7338073171892,
+          0
+        ],
+        "standardCoef": [
+          36319.40646135069,
+          3110.4279442410116,
+          384.3299340831222,
+          0
+        ],
+        "intercept": 47656.114551322426,
+        "rank": 5,
+        "regular": true,
+        "alpha": 0.01,
+        "l1": 1,
+        "iterations": 25,
+        "features": [
+          "R&D Spend",
+          "Marketing Spend",
+          "State"
+        ],
+        "target": "Profit",
+        "method": "Lasso"
+      },
+      "test": {
+        "n": 10,
+        "rmse": 7107.366028086404,
+        "mae": 6141.170760361441,
+        "r2": 0.9587569026288083,
+        "adjusted": null,
+        "adjustedReason": "正則化模型的有效自由度不等同非零係數數量",
+        "r2Reason": null
+      },
+      "train": {
+        "n": 40,
+        "rmse": 9314.002287445144,
+        "mae": 6675.283594688974,
+        "r2": 0.9459519067264974,
+        "adjusted": null,
+        "adjustedReason": "正則化模型的有效自由度不等同非零係數數量",
+        "r2Reason": null
+      },
+      "residuals": [
+        {
+          "row": 26,
+          "actual": 108552.04,
+          "predicted": 112311.90566577816,
+          "residual": -3759.8656657781685,
+          "absolute": 3759.8656657781685,
+          "percent": 3.4636527013017613
+        },
+        {
+          "row": 20,
+          "actual": 124266.9,
+          "predicted": 128656.57655204533,
+          "residual": -4389.676552045334,
+          "absolute": 4389.676552045334,
+          "percent": 3.5324584036821824
+        },
+        {
+          "row": 28,
+          "actual": 105733.54,
+          "predicted": 111649.58791542673,
+          "residual": -5916.047915426738,
+          "absolute": 5916.047915426738,
+          "percent": 5.5952424513798915
+        },
+        {
+          "row": 5,
+          "actual": 182901.99,
+          "predicted": 171766.87654821845,
+          "residual": 11135.113451781537,
+          "absolute": 11135.113451781537,
+          "percent": 6.088022033976523
+        },
+        {
+          "row": 14,
+          "actual": 141585.52,
+          "predicted": 129224.7920418173,
+          "residual": 12360.727958182688,
+          "absolute": 12360.727958182688,
+          "percent": 8.730220405436013
+        },
+        {
+          "row": 42,
+          "actual": 78239.91,
+          "predicted": 74753.13487972222,
+          "residual": 3486.775120277787,
+          "absolute": 3486.775120277787,
+          "percent": 4.456517294406124
+        },
+        {
+          "row": 9,
+          "actual": 155752.6,
+          "predicted": 159987.07224086678,
+          "residual": -4234.472240866773,
+          "absolute": 4234.472240866773,
+          "percent": 2.718716888749705
+        },
+        {
+          "row": 6,
+          "actual": 166187.94,
+          "predicted": 170408.7983296848,
+          "residual": -4220.858329684794,
+          "absolute": 4220.858329684794,
+          "percent": 2.5398102471724444
+        },
+        {
+          "row": 44,
+          "actual": 71498.49,
+          "predicted": 70080.7269281788,
+          "residual": 1417.7630718212022,
+          "absolute": 1417.7630718212022,
+          "percent": 1.9829272923403025
+        },
+        {
+          "row": 13,
+          "actual": 144259.4,
+          "predicted": 133768.9927022506,
+          "residual": 10490.407297749392,
+          "absolute": 10490.407297749392,
+          "percent": 7.271905538044241
+        }
+      ],
+      "unknownCategories": []
+    },
+    {
+      "method": "Lasso",
+      "k": 4,
+      "alpha": 0.01,
+      "l1": 1,
+      "cvRMSE": 9926.75030495718,
+      "cvSD": 3216.114103267036,
+      "cvR2": 0.9090597764932564,
+      "id": 4,
+      "model": {
+        "prep": {
+          "fields": [
+            {
+              "name": "R&D Spend",
+              "type": "number",
+              "fill": 65828.5,
+              "min": 0,
+              "max": 165349.2
+            },
+            {
+              "name": "Administration",
+              "type": "number",
+              "fill": 125604.625,
+              "min": 51283.14,
+              "max": 182645.56
+            },
+            {
+              "name": "Marketing Spend",
+              "type": "number",
+              "fill": 208157.65500000003,
+              "min": 0,
+              "max": 471784.1
+            },
+            {
+              "name": "State",
+              "type": "category",
+              "fill": "New York",
+              "levels": [
+                "California",
+                "Florida",
+                "New York"
+              ],
+              "reference": "California"
+            }
+          ],
+          "columns": [
+            {
+              "name": "R&D Spend",
+              "source": "R&D Spend",
+              "type": "number",
+              "fill": 65828.5
+            },
+            {
+              "name": "Administration",
+              "source": "Administration",
+              "type": "number",
+              "fill": 125604.625
+            },
+            {
+              "name": "Marketing Spend",
+              "source": "Marketing Spend",
+              "type": "number",
+              "fill": 208157.65500000003
+            },
+            {
+              "name": "State = Florida",
+              "source": "State",
+              "type": "category",
+              "level": "Florida",
+              "fill": "New York"
+            },
+            {
+              "name": "State = New York",
+              "source": "State",
+              "type": "category",
+              "level": "New York",
+              "fill": "New York"
+            }
+          ],
+          "means": [
+            69456.24724999999,
+            123004.96300000002,
+            202202.12374999997,
+            0.275,
+            0.375
+          ],
+          "scales": [
+            45729.172643081845,
+            29265.151219570285,
+            126180.65937955241,
+            0.4465142774872937,
+            0.4841229182759271
+          ]
+        },
+        "coef": [
+          0.7955988082215325,
+          -0.0035557118012540063,
+          0.02428827345617787,
+          866.0943492186914,
+          0
+        ],
+        "standardCoef": [
+          36382.075255792624,
+          -104.05844355690914,
+          3064.7103598914036,
+          386.72349257721186,
+          0
+        ],
+        "intercept": 48070.086991816795,
+        "rank": 6,
+        "regular": true,
+        "alpha": 0.01,
+        "l1": 1,
+        "iterations": 31,
+        "features": [
+          "R&D Spend",
+          "Administration",
+          "Marketing Spend",
+          "State"
+        ],
+        "target": "Profit",
+        "method": "Lasso"
+      },
+      "test": {
+        "n": 10,
+        "rmse": 7091.550928532,
+        "mae": 6142.978026416071,
+        "r2": 0.9589402442463352,
+        "adjusted": null,
+        "adjustedReason": "正則化模型的有效自由度不等同非零係數數量",
+        "r2Reason": null
+      },
+      "train": {
+        "n": 40,
+        "rmse": 9308.2183107096,
+        "mae": 6663.011151245912,
+        "r2": 0.9460190133984636,
+        "adjusted": null,
+        "adjustedReason": "正則化模型的有效自由度不等同非零係數數量",
+        "r2Reason": null
+      },
+      "residuals": [
+        {
+          "row": 26,
+          "actual": 108552.04,
+          "predicted": 112427.51312247256,
+          "residual": -3875.4731224725692,
+          "absolute": 3875.4731224725692,
+          "percent": 3.570152272101537
+        },
+        {
+          "row": 20,
+          "actual": 124266.9,
+          "predicted": 128688.8146521801,
+          "residual": -4421.914652180101,
+          "absolute": 4421.914652180101,
+          "percent": 3.558401032117242
+        },
+        {
+          "row": 28,
+          "actual": 105733.54,
+          "predicted": 111611.0792896187,
+          "residual": -5877.539289618711,
+          "absolute": 5877.539289618711,
+          "percent": 5.558822006355515
+        },
+        {
+          "row": 5,
+          "actual": 182901.99,
+          "predicted": 171817.89858922907,
+          "residual": 11084.091410770925,
+          "absolute": 11084.091410770925,
+          "percent": 6.060126196970807
+        },
+        {
+          "row": 14,
+          "actual": 141585.52,
+          "predicted": 129229.52303739157,
+          "residual": 12355.99696260842,
+          "absolute": 12355.99696260842,
+          "percent": 8.726878965171313
+        },
+        {
+          "row": 42,
+          "actual": 78239.91,
+          "predicted": 74722.39056705189,
+          "residual": 3517.5194329481164,
+          "absolute": 3517.5194329481164,
+          "percent": 4.495812217764715
+        },
+        {
+          "row": 9,
+          "actual": 155752.6,
+          "predicted": 159950.1607006696,
+          "residual": -4197.560700669594,
+          "absolute": 4197.560700669594,
+          "percent": 2.6950180611235983
+        },
+        {
+          "row": 6,
+          "actual": 166187.94,
+          "predicted": 170565.2476054177,
+          "residual": -4377.307605417707,
+          "absolute": 4377.307605417707,
+          "percent": 2.6339502164944744
+        },
+        {
+          "row": 44,
+          "actual": 71498.49,
+          "predicted": 70131.45155401407,
+          "residual": 1367.0384459859342,
+          "absolute": 1367.0384459859342,
+          "percent": 1.9119822614238904
+        },
+        {
+          "row": 13,
+          "actual": 144259.4,
+          "predicted": 133904.06135851136,
+          "residual": 10355.338641488634,
+          "absolute": 10355.338641488634,
+          "percent": 7.178276522353923
+        }
+      ],
+      "unknownCategories": []
+    },
+    {
+      "method": "Forward Selection",
+      "k": 1,
+      "alpha": 0,
+      "l1": 1,
+      "cvRMSE": 10030.324491955445,
+      "cvSD": 3331.7204070208827,
+      "cvR2": 0.9061382179093617,
+      "id": 5,
+      "model": {
+        "prep": {
+          "fields": [
+            {
+              "name": "R&D Spend",
+              "type": "number",
+              "fill": 65828.5,
+              "min": 0,
+              "max": 165349.2
+            }
+          ],
+          "columns": [
+            {
+              "name": "R&D Spend",
+              "source": "R&D Spend",
+              "type": "number",
+              "fill": 65828.5
+            }
+          ],
+          "means": [
+            69456.24724999999
+          ],
+          "scales": [
+            45729.172643081845
+          ]
+        },
+        "coef": [
+          0.8502852746767817
+        ],
+        "standardCoef": [
+          38882.84212156482
+        ],
+        "intercept": 48983.71647901531,
+        "rank": 2,
+        "regular": false,
+        "alpha": 0,
+        "l1": 1,
+        "features": [
+          "R&D Spend"
+        ],
+        "target": "Profit",
+        "method": "Forward Selection"
+      },
+      "test": {
+        "n": 10,
+        "rmse": 7321.899645160497,
+        "mae": 6446.852377321103,
+        "r2": 0.9562295054629012,
+        "adjusted": 0.9507581936457639,
+        "adjustedReason": null,
+        "r2Reason": null
+      },
+      "train": {
+        "n": 40,
+        "rmse": 9653.41392242491,
+        "mae": 7023.291791203164,
+        "r2": 0.9419409996835673,
+        "adjusted": 0.9404131312541875,
+        "adjustedReason": null,
+        "r2Reason": null
+      },
+      "residuals": [
+        {
+          "row": 26,
+          "actual": 108552.04,
+          "predicted": 114493.10368406602,
+          "residual": -5941.06368406603,
+          "absolute": 5941.06368406603,
+          "percent": 5.473009704899171
+        },
+        {
+          "row": 20,
+          "actual": 124266.9,
+          "predicted": 126996.67619097931,
+          "residual": -2729.776190979319,
+          "absolute": 2729.776190979319,
+          "percent": 2.196704183478721
+        },
+        {
+          "row": 28,
+          "actual": 105733.54,
+          "predicted": 113034.7453980569,
+          "residual": -7301.2053980569035,
+          "absolute": 7301.2053980569035,
+          "percent": 6.905287951256437
+        },
+        {
+          "row": 5,
+          "actual": 182901.99,
+          "predicted": 171741.45077161427,
+          "residual": 11160.539228385722,
+          "absolute": 11160.539228385722,
+          "percent": 6.101923346151522
+        },
+        {
+          "row": 14,
+          "actual": 141585.52,
+          "predicted": 128794.6809299581,
+          "residual": 12790.839070041897,
+          "absolute": 12790.839070041897,
+          "percent": 9.034002255344966
+        },
+        {
+          "row": 42,
+          "actual": 78239.91,
+          "predicted": 73433.09986121213,
+          "residual": 4806.8101387878705,
+          "absolute": 4806.8101387878705,
+          "percent": 6.143680557388001
+        },
+        {
+          "row": 9,
+          "actual": 155752.6,
+          "predicted": 159774.29773593633,
+          "residual": -4021.6977359363227,
+          "absolute": 4021.6977359363227,
+          "percent": 2.5821063249899665
+        },
+        {
+          "row": 6,
+          "actual": 166187.94,
+          "predicted": 169815.49510450213,
+          "residual": -3627.5551045021275,
+          "absolute": 3627.5551045021275,
+          "percent": 2.182802858319399
+        },
+        {
+          "row": 44,
+          "actual": 71498.49,
+          "predicted": 69085.25113767988,
+          "residual": 2413.238862320126,
+          "absolute": 2413.238862320126,
+          "percent": 3.3752305290924682
+        },
+        {
+          "row": 13,
+          "actual": 144259.4,
+          "predicted": 134583.6016398653,
+          "residual": 9675.798360134708,
+          "absolute": 9675.798360134708,
+          "percent": 6.707222101391458
+        }
+      ],
+      "unknownCategories": []
+    },
+    {
+      "method": "Forward Selection",
+      "k": 2,
+      "alpha": 0,
+      "l1": 1,
+      "cvRMSE": 9848.358342956282,
+      "cvSD": 3496.4358659639383,
+      "cvR2": 0.9037795319346651,
+      "id": 6,
+      "model": {
+        "prep": {
+          "fields": [
+            {
+              "name": "R&D Spend",
+              "type": "number",
+              "fill": 65828.5,
+              "min": 0,
+              "max": 165349.2
+            },
+            {
+              "name": "Marketing Spend",
+              "type": "number",
+              "fill": 208157.65500000003,
+              "min": 0,
+              "max": 471784.1
+            }
+          ],
+          "columns": [
+            {
+              "name": "R&D Spend",
+              "source": "R&D Spend",
+              "type": "number",
+              "fill": 65828.5
+            },
+            {
+              "name": "Marketing Spend",
+              "source": "Marketing Spend",
+              "type": "number",
+              "fill": 208157.65500000003
+            }
+          ],
+          "means": [
+            69456.24724999999,
+            202202.12374999997
+          ],
+          "scales": [
+            45729.172643081845,
+            126180.65937955241
+          ]
+        },
+        "coef": [
+          0.7974433495837181,
+          0.027506563725020094
+        ],
+        "standardCoef": [
+          36466.424606191315,
+          3470.796348088713
+        ],
+        "intercept": 47092.03269118135,
+        "rank": 3,
+        "regular": false,
+        "alpha": 0,
+        "l1": 1,
+        "features": [
+          "R&D Spend",
+          "Marketing Spend"
+        ],
+        "target": "Profit",
+        "method": "Forward Selection"
+      },
+      "test": {
+        "n": 10,
+        "rmse": 6884.665620842403,
+        "mae": 5939.205920463176,
+        "r2": 0.9613010115409202,
+        "adjusted": 0.9502441576954688,
+        "adjustedReason": null,
+        "r2Reason": null
+      },
+      "train": {
+        "n": 40,
+        "rmse": 9326.362992955239,
+        "mae": 6625.640894111898,
+        "r2": 0.9458083560064969,
+        "adjusted": 0.942879077952794,
+        "adjustedReason": null,
+        "r2Reason": null
+      },
+      "residuals": [
+        {
+          "row": 26,
+          "actual": 108552.04,
+          "predicted": 112396.99606034042,
+          "residual": -3844.9560603404243,
+          "absolute": 3844.9560603404243,
+          "percent": 3.5420394313551586
+        },
+        {
+          "row": 20,
+          "actual": 124266.9,
+          "predicted": 128369.01410903435,
+          "residual": -4102.114109034359,
+          "absolute": 4102.114109034359,
+          "percent": 3.301051292849793
+        },
+        {
+          "row": 28,
+          "actual": 105733.54,
+          "predicted": 110849.79589713621,
+          "residual": -5116.255897136216,
+          "absolute": 5116.255897136216,
+          "percent": 4.838820205146083
+        },
+        {
+          "row": 5,
+          "actual": 182901.99,
+          "predicted": 172761.3556759887,
+          "residual": 10140.634324011276,
+          "absolute": 10140.634324011276,
+          "percent": 5.544299613148702
+        },
+        {
+          "row": 14,
+          "actual": 141585.52,
+          "predicted": 128815.28037305342,
+          "residual": 12770.239626946568,
+          "absolute": 12770.239626946568,
+          "percent": 9.019453138249284
+        },
+        {
+          "row": 42,
+          "actual": 78239.91,
+          "predicted": 74774.99702967949,
+          "residual": 3464.912970320511,
+          "absolute": 3464.912970320511,
+          "percent": 4.428574841561693
+        },
+        {
+          "row": 9,
+          "actual": 155752.6,
+          "predicted": 159906.14446034405,
+          "residual": -4153.544460344041,
+          "absolute": 4153.544460344041,
+          "percent": 2.666757704426148
+        },
+        {
+          "row": 6,
+          "actual": 166187.94,
+          "predicted": 170486.62088003356,
+          "residual": -4298.680880033557,
+          "absolute": 4298.680880033557,
+          "percent": 2.5866382843626057
+        },
+        {
+          "row": 44,
+          "actual": 71498.49,
+          "predicted": 70015.33706124427,
+          "residual": 1483.1529387557384,
+          "absolute": 1483.1529387557384,
+          "percent": 2.0743835831438373
+        },
+        {
+          "row": 13,
+          "actual": 144259.4,
+          "predicted": 134241.83206229092,
+          "residual": 10017.567937709071,
+          "absolute": 10017.567937709071,
+          "percent": 6.944135312991093
+        }
+      ],
+      "unknownCategories": []
+    },
+    {
+      "method": "Forward Selection",
+      "k": 3,
+      "alpha": 0,
+      "l1": 1,
+      "cvRMSE": 9980.780405214364,
+      "cvSD": 3329.484629584333,
+      "cvR2": 0.8976607958553794,
+      "id": 7,
+      "model": {
+        "prep": {
+          "fields": [
+            {
+              "name": "R&D Spend",
+              "type": "number",
+              "fill": 65828.5,
+              "min": 0,
+              "max": 165349.2
+            },
+            {
+              "name": "Marketing Spend",
+              "type": "number",
+              "fill": 208157.65500000003,
+              "min": 0,
+              "max": 471784.1
+            },
+            {
+              "name": "State",
+              "type": "category",
+              "fill": "New York",
+              "levels": [
+                "California",
+                "Florida",
+                "New York"
+              ],
+              "reference": "California"
+            }
+          ],
+          "columns": [
+            {
+              "name": "R&D Spend",
+              "source": "R&D Spend",
+              "type": "number",
+              "fill": 65828.5
+            },
+            {
+              "name": "Marketing Spend",
+              "source": "Marketing Spend",
+              "type": "number",
+              "fill": 208157.65500000003
+            },
+            {
+              "name": "State = Florida",
+              "source": "State",
+              "type": "category",
+              "level": "Florida",
+              "fill": "New York"
+            },
+            {
+              "name": "State = New York",
+              "source": "State",
+              "type": "category",
+              "level": "New York",
+              "fill": "New York"
+            }
+          ],
+          "means": [
+            69456.24724999999,
+            202202.12374999997,
+            0.275,
+            0.375
+          ],
+          "scales": [
+            45729.172643081845,
+            126180.65937955241,
+            0.4465142774872937,
+            0.4841229182759271
+          ]
+        },
+        "coef": [
+          0.8013898002459849,
+          0.025392000055818632,
+          2079.574331149529,
+          677.1561759098739
+        ],
+        "standardCoef": [
+          36646.89252985352,
+          3203.979310008827,
+          928.559629954354,
+          327.82682401005525
+        ],
+        "intercept": 46419.67979590782,
+        "rank": 5,
+        "regular": false,
+        "alpha": 0,
+        "l1": 1,
+        "features": [
+          "R&D Spend",
+          "Marketing Spend",
+          "State"
+        ],
+        "target": "Profit",
+        "method": "Forward Selection"
+      },
+      "test": {
+        "n": 10,
+        "rmse": 7257.846296158396,
+        "mae": 6600.653811397218,
+        "r2": 0.9569919806358617,
+        "adjusted": 0.922585565144551,
+        "adjustedReason": null,
+        "r2Reason": null
+      },
+      "train": {
+        "n": 40,
+        "rmse": 9291.85157675563,
+        "mae": 6696.109831389478,
+        "r2": 0.9462086771321631,
+        "adjusted": 0.9400610973758389,
+        "adjustedReason": null,
+        "r2Reason": null
+      },
+      "residuals": [
+        {
+          "row": 26,
+          "actual": 108552.04,
+          "predicted": 112408.59533923405,
+          "residual": -3856.5553392340516,
+          "absolute": 3856.5553392340516,
+          "percent": 3.5527248859017777
+        },
+        {
+          "row": 20,
+          "actual": 124266.9,
+          "predicted": 129514.69287009627,
+          "residual": -5247.79287009628,
+          "absolute": 5247.79287009628,
+          "percent": 4.22300135442043
+        },
+        {
+          "row": 28,
+          "actual": 105733.54,
+          "predicted": 112270.84159403559,
+          "residual": -6537.301594035598,
+          "absolute": 6537.301594035598,
+          "percent": 6.182807833763627
+        },
+        {
+          "row": 5,
+          "actual": 182901.99,
+          "predicted": 172525.61755517882,
+          "residual": 10376.372444821172,
+          "absolute": 10376.372444821172,
+          "percent": 5.673187287257604
+        },
+        {
+          "row": 14,
+          "actual": 141585.52,
+          "predicted": 130064.6290643221,
+          "residual": 11520.89093567789,
+          "absolute": 11520.89093567789,
+          "percent": 8.137054506476291
+        },
+        {
+          "row": 42,
+          "actual": 78239.91,
+          "predicted": 73850.73423310017,
+          "residual": 4389.1757668998325,
+          "absolute": 4389.1757668998325,
+          "percent": 5.609893680731269
+        },
+        {
+          "row": 9,
+          "actual": 155752.6,
+          "predicted": 161142.72317682108,
+          "residual": -5390.123176821071,
+          "absolute": 5390.123176821071,
+          "percent": 3.4606954727054773
+        },
+        {
+          "row": 6,
+          "actual": 166187.94,
+          "predicted": 171680.37548422464,
+          "residual": -5492.435484224639,
+          "absolute": 5492.435484224639,
+          "percent": 3.3049543090940525
+        },
+        {
+          "row": 44,
+          "actual": 71498.49,
+          "predicted": 69123.32415961835,
+          "residual": 2375.1658403816546,
+          "absolute": 2375.1658403816546,
+          "percent": 3.321980422777676
+        },
+        {
+          "row": 13,
+          "actual": 144259.4,
+          "predicted": 133438.67533822,
+          "residual": 10820.724661779997,
+          "absolute": 10820.724661779997,
+          "percent": 7.500880124123626
+        }
+      ],
+      "unknownCategories": []
+    },
+    {
+      "method": "Forward Selection",
+      "k": 4,
+      "alpha": 0,
+      "l1": 1,
+      "cvRMSE": 10106.804173605586,
+      "cvSD": 3138.833121821683,
+      "cvR2": 0.9002156204098266,
+      "id": 8,
+      "model": {
+        "prep": {
+          "fields": [
+            {
+              "name": "R&D Spend",
+              "type": "number",
+              "fill": 65828.5,
+              "min": 0,
+              "max": 165349.2
+            },
+            {
+              "name": "Administration",
+              "type": "number",
+              "fill": 125604.625,
+              "min": 51283.14,
+              "max": 182645.56
+            },
+            {
+              "name": "Marketing Spend",
+              "type": "number",
+              "fill": 208157.65500000003,
+              "min": 0,
+              "max": 471784.1
+            },
+            {
+              "name": "State",
+              "type": "category",
+              "fill": "New York",
+              "levels": [
+                "California",
+                "Florida",
+                "New York"
+              ],
+              "reference": "California"
+            }
+          ],
+          "columns": [
+            {
+              "name": "R&D Spend",
+              "source": "R&D Spend",
+              "type": "number",
+              "fill": 65828.5
+            },
+            {
+              "name": "Administration",
+              "source": "Administration",
+              "type": "number",
+              "fill": 125604.625
+            },
+            {
+              "name": "Marketing Spend",
+              "source": "Marketing Spend",
+              "type": "number",
+              "fill": 208157.65500000003
+            },
+            {
+              "name": "State = Florida",
+              "source": "State",
+              "type": "category",
+              "level": "Florida",
+              "fill": "New York"
+            },
+            {
+              "name": "State = New York",
+              "source": "State",
+              "type": "category",
+              "level": "New York",
+              "fill": "New York"
+            }
+          ],
+          "means": [
+            69456.24724999999,
+            123004.96300000002,
+            202202.12374999997,
+            0.275,
+            0.375
+          ],
+          "scales": [
+            45729.172643081845,
+            29265.151219570285,
+            126180.65937955241,
+            0.4465142774872937,
+            0.4841229182759271
+          ]
+        },
+        "coef": [
+          0.8103437552100476,
+          -0.023237075986425194,
+          0.023030849247007944,
+          2098.2430017954734,
+          646.1105321666549
+        ],
+        "standardCoef": [
+          37056.349482243524,
+          -680.0365426433787,
+          2906.0477440585305,
+          936.8954579394762,
+          312.7969163613333
+        ],
+        "intercept": 49139.98529800856,
+        "rank": 6,
+        "regular": false,
+        "alpha": 0,
+        "l1": 1,
+        "features": [
+          "R&D Spend",
+          "Administration",
+          "Marketing Spend",
+          "State"
+        ],
+        "target": "Profit",
+        "method": "Forward Selection"
+      },
+      "test": {
+        "n": 10,
+        "rmse": 7183.511976313583,
+        "mae": 6607.567527021129,
+        "r2": 0.9578684390682787,
+        "adjusted": 0.905203987903627,
+        "adjustedReason": null,
+        "r2Reason": null
+      },
+      "train": {
+        "n": 40,
+        "rmse": 9271.541870912792,
+        "mae": 6654.803828631528,
+        "r2": 0.946443569388529,
+        "adjusted": 0.9385676237103715,
+        "adjustedReason": null,
+        "r2Reason": null
+      },
+      "residuals": [
+        {
+          "row": 26,
+          "actual": 108552.04,
+          "predicted": 113148.77742543834,
+          "residual": -4596.737425438347,
+          "absolute": 4596.737425438347,
+          "percent": 4.234593311593542
+        },
+        {
+          "row": 20,
+          "actual": 124266.9,
+          "predicted": 129725.72380019381,
+          "residual": -5458.823800193815,
+          "absolute": 5458.823800193815,
+          "percent": 4.392822062990077
+        },
+        {
+          "row": 28,
+          "actual": 105733.54,
+          "predicted": 112018.49592541653,
+          "residual": -6284.955925416536,
+          "absolute": 6284.955925416536,
+          "percent": 5.944145940272629
+        },
+        {
+          "row": 5,
+          "actual": 182901.99,
+          "predicted": 172845.20258213094,
+          "residual": 10056.787417869054,
+          "absolute": 10056.787417869054,
+          "percent": 5.498457079591674
+        },
+        {
+          "row": 14,
+          "actual": 141585.52,
+          "predicted": 130095.5930868175,
+          "residual": 11489.926913182484,
+          "absolute": 11489.926913182484,
+          "percent": 8.115185022580334
+        },
+        {
+          "row": 42,
+          "actual": 78239.91,
+          "predicted": 73665.84450332267,
+          "residual": 4574.065496677329,
+          "absolute": 4574.065496677329,
+          "percent": 5.846204956878566
+        },
+        {
+          "row": 9,
+          "actual": 155752.6,
+          "predicted": 160901.96619002344,
+          "residual": -5149.366190023429,
+          "absolute": 5149.366190023429,
+          "percent": 3.3061189283668004
+        },
+        {
+          "row": 6,
+          "actual": 166187.94,
+          "predicted": 172703.51601432625,
+          "residual": -6515.576014326245,
+          "absolute": 6515.576014326245,
+          "percent": 3.920607003327826
+        },
+        {
+          "row": 44,
+          "actual": 71498.49,
+          "predicted": 69470.69080225014,
+          "residual": 2027.7991977498605,
+          "absolute": 2027.7991977498605,
+          "percent": 2.8361426902160596
+        },
+        {
+          "row": 13,
+          "actual": 144259.4,
+          "predicted": 134337.7631106658,
+          "residual": 9921.636889334186,
+          "absolute": 9921.636889334186,
+          "percent": 6.877636319944617
+        }
+      ],
+      "unknownCategories": []
+    },
+    {
+      "method": "RFE",
+      "k": 1,
+      "alpha": 0,
+      "l1": 1,
+      "cvRMSE": 10030.324491955445,
+      "cvSD": 3331.7204070208827,
+      "cvR2": 0.9061382179093617,
+      "id": 9,
+      "model": {
+        "prep": {
+          "fields": [
+            {
+              "name": "R&D Spend",
+              "type": "number",
+              "fill": 65828.5,
+              "min": 0,
+              "max": 165349.2
+            }
+          ],
+          "columns": [
+            {
+              "name": "R&D Spend",
+              "source": "R&D Spend",
+              "type": "number",
+              "fill": 65828.5
+            }
+          ],
+          "means": [
+            69456.24724999999
+          ],
+          "scales": [
+            45729.172643081845
+          ]
+        },
+        "coef": [
+          0.8502852746767817
+        ],
+        "standardCoef": [
+          38882.84212156482
+        ],
+        "intercept": 48983.71647901531,
+        "rank": 2,
+        "regular": false,
+        "alpha": 0,
+        "l1": 1,
+        "features": [
+          "R&D Spend"
+        ],
+        "target": "Profit",
+        "method": "RFE"
+      },
+      "test": {
+        "n": 10,
+        "rmse": 7321.899645160497,
+        "mae": 6446.852377321103,
+        "r2": 0.9562295054629012,
+        "adjusted": 0.9507581936457639,
+        "adjustedReason": null,
+        "r2Reason": null
+      },
+      "train": {
+        "n": 40,
+        "rmse": 9653.41392242491,
+        "mae": 7023.291791203164,
+        "r2": 0.9419409996835673,
+        "adjusted": 0.9404131312541875,
+        "adjustedReason": null,
+        "r2Reason": null
+      },
+      "residuals": [
+        {
+          "row": 26,
+          "actual": 108552.04,
+          "predicted": 114493.10368406602,
+          "residual": -5941.06368406603,
+          "absolute": 5941.06368406603,
+          "percent": 5.473009704899171
+        },
+        {
+          "row": 20,
+          "actual": 124266.9,
+          "predicted": 126996.67619097931,
+          "residual": -2729.776190979319,
+          "absolute": 2729.776190979319,
+          "percent": 2.196704183478721
+        },
+        {
+          "row": 28,
+          "actual": 105733.54,
+          "predicted": 113034.7453980569,
+          "residual": -7301.2053980569035,
+          "absolute": 7301.2053980569035,
+          "percent": 6.905287951256437
+        },
+        {
+          "row": 5,
+          "actual": 182901.99,
+          "predicted": 171741.45077161427,
+          "residual": 11160.539228385722,
+          "absolute": 11160.539228385722,
+          "percent": 6.101923346151522
+        },
+        {
+          "row": 14,
+          "actual": 141585.52,
+          "predicted": 128794.6809299581,
+          "residual": 12790.839070041897,
+          "absolute": 12790.839070041897,
+          "percent": 9.034002255344966
+        },
+        {
+          "row": 42,
+          "actual": 78239.91,
+          "predicted": 73433.09986121213,
+          "residual": 4806.8101387878705,
+          "absolute": 4806.8101387878705,
+          "percent": 6.143680557388001
+        },
+        {
+          "row": 9,
+          "actual": 155752.6,
+          "predicted": 159774.29773593633,
+          "residual": -4021.6977359363227,
+          "absolute": 4021.6977359363227,
+          "percent": 2.5821063249899665
+        },
+        {
+          "row": 6,
+          "actual": 166187.94,
+          "predicted": 169815.49510450213,
+          "residual": -3627.5551045021275,
+          "absolute": 3627.5551045021275,
+          "percent": 2.182802858319399
+        },
+        {
+          "row": 44,
+          "actual": 71498.49,
+          "predicted": 69085.25113767988,
+          "residual": 2413.238862320126,
+          "absolute": 2413.238862320126,
+          "percent": 3.3752305290924682
+        },
+        {
+          "row": 13,
+          "actual": 144259.4,
+          "predicted": 134583.6016398653,
+          "residual": 9675.798360134708,
+          "absolute": 9675.798360134708,
+          "percent": 6.707222101391458
+        }
+      ],
+      "unknownCategories": []
+    },
+    {
+      "method": "RFE",
+      "k": 2,
+      "alpha": 0,
+      "l1": 1,
+      "cvRMSE": 9815.86382279855,
+      "cvSD": 3295.0466211551466,
+      "cvR2": 0.9097445036086278,
+      "id": 10,
+      "model": {
+        "prep": {
+          "fields": [
+            {
+              "name": "R&D Spend",
+              "type": "number",
+              "fill": 65828.5,
+              "min": 0,
+              "max": 165349.2
+            },
+            {
+              "name": "Marketing Spend",
+              "type": "number",
+              "fill": 208157.65500000003,
+              "min": 0,
+              "max": 471784.1
+            }
+          ],
+          "columns": [
+            {
+              "name": "R&D Spend",
+              "source": "R&D Spend",
+              "type": "number",
+              "fill": 65828.5
+            },
+            {
+              "name": "Marketing Spend",
+              "source": "Marketing Spend",
+              "type": "number",
+              "fill": 208157.65500000003
+            }
+          ],
+          "means": [
+            69456.24724999999,
+            202202.12374999997
+          ],
+          "scales": [
+            45729.172643081845,
+            126180.65937955241
+          ]
+        },
+        "coef": [
+          0.7974433495837181,
+          0.027506563725020094
+        ],
+        "standardCoef": [
+          36466.424606191315,
+          3470.796348088713
+        ],
+        "intercept": 47092.03269118135,
+        "rank": 3,
+        "regular": false,
+        "alpha": 0,
+        "l1": 1,
+        "features": [
+          "R&D Spend",
+          "Marketing Spend"
+        ],
+        "target": "Profit",
+        "method": "RFE"
+      },
+      "test": {
+        "n": 10,
+        "rmse": 6884.665620842403,
+        "mae": 5939.205920463176,
+        "r2": 0.9613010115409202,
+        "adjusted": 0.9502441576954688,
+        "adjustedReason": null,
+        "r2Reason": null
+      },
+      "train": {
+        "n": 40,
+        "rmse": 9326.362992955239,
+        "mae": 6625.640894111898,
+        "r2": 0.9458083560064969,
+        "adjusted": 0.942879077952794,
+        "adjustedReason": null,
+        "r2Reason": null
+      },
+      "residuals": [
+        {
+          "row": 26,
+          "actual": 108552.04,
+          "predicted": 112396.99606034042,
+          "residual": -3844.9560603404243,
+          "absolute": 3844.9560603404243,
+          "percent": 3.5420394313551586
+        },
+        {
+          "row": 20,
+          "actual": 124266.9,
+          "predicted": 128369.01410903435,
+          "residual": -4102.114109034359,
+          "absolute": 4102.114109034359,
+          "percent": 3.301051292849793
+        },
+        {
+          "row": 28,
+          "actual": 105733.54,
+          "predicted": 110849.79589713621,
+          "residual": -5116.255897136216,
+          "absolute": 5116.255897136216,
+          "percent": 4.838820205146083
+        },
+        {
+          "row": 5,
+          "actual": 182901.99,
+          "predicted": 172761.3556759887,
+          "residual": 10140.634324011276,
+          "absolute": 10140.634324011276,
+          "percent": 5.544299613148702
+        },
+        {
+          "row": 14,
+          "actual": 141585.52,
+          "predicted": 128815.28037305342,
+          "residual": 12770.239626946568,
+          "absolute": 12770.239626946568,
+          "percent": 9.019453138249284
+        },
+        {
+          "row": 42,
+          "actual": 78239.91,
+          "predicted": 74774.99702967949,
+          "residual": 3464.912970320511,
+          "absolute": 3464.912970320511,
+          "percent": 4.428574841561693
+        },
+        {
+          "row": 9,
+          "actual": 155752.6,
+          "predicted": 159906.14446034405,
+          "residual": -4153.544460344041,
+          "absolute": 4153.544460344041,
+          "percent": 2.666757704426148
+        },
+        {
+          "row": 6,
+          "actual": 166187.94,
+          "predicted": 170486.62088003356,
+          "residual": -4298.680880033557,
+          "absolute": 4298.680880033557,
+          "percent": 2.5866382843626057
+        },
+        {
+          "row": 44,
+          "actual": 71498.49,
+          "predicted": 70015.33706124427,
+          "residual": 1483.1529387557384,
+          "absolute": 1483.1529387557384,
+          "percent": 2.0743835831438373
+        },
+        {
+          "row": 13,
+          "actual": 144259.4,
+          "predicted": 134241.83206229092,
+          "residual": 10017.567937709071,
+          "absolute": 10017.567937709071,
+          "percent": 6.944135312991093
+        }
+      ],
+      "unknownCategories": []
+    },
+    {
+      "method": "RFE",
+      "k": 3,
+      "alpha": 0,
+      "l1": 1,
+      "cvRMSE": 10012.475072533982,
+      "cvSD": 3153.637513922329,
+      "cvR2": 0.9053063583104037,
+      "id": 11,
+      "model": {
+        "prep": {
+          "fields": [
+            {
+              "name": "R&D Spend",
+              "type": "number",
+              "fill": 65828.5,
+              "min": 0,
+              "max": 165349.2
+            },
+            {
+              "name": "Marketing Spend",
+              "type": "number",
+              "fill": 208157.65500000003,
+              "min": 0,
+              "max": 471784.1
+            },
+            {
+              "name": "State",
+              "type": "category",
+              "fill": "New York",
+              "levels": [
+                "California",
+                "Florida",
+                "New York"
+              ],
+              "reference": "California"
+            }
+          ],
+          "columns": [
+            {
+              "name": "R&D Spend",
+              "source": "R&D Spend",
+              "type": "number",
+              "fill": 65828.5
+            },
+            {
+              "name": "Marketing Spend",
+              "source": "Marketing Spend",
+              "type": "number",
+              "fill": 208157.65500000003
+            },
+            {
+              "name": "State = Florida",
+              "source": "State",
+              "type": "category",
+              "level": "Florida",
+              "fill": "New York"
+            },
+            {
+              "name": "State = New York",
+              "source": "State",
+              "type": "category",
+              "level": "New York",
+              "fill": "New York"
+            }
+          ],
+          "means": [
+            69456.24724999999,
+            202202.12374999997,
+            0.275,
+            0.375
+          ],
+          "scales": [
+            45729.172643081845,
+            126180.65937955241,
+            0.4465142774872937,
+            0.4841229182759271
+          ]
+        },
+        "coef": [
+          0.8013898002459849,
+          0.025392000055818632,
+          2079.574331149529,
+          677.1561759098739
+        ],
+        "standardCoef": [
+          36646.89252985352,
+          3203.979310008827,
+          928.559629954354,
+          327.82682401005525
+        ],
+        "intercept": 46419.67979590782,
+        "rank": 5,
+        "regular": false,
+        "alpha": 0,
+        "l1": 1,
+        "features": [
+          "R&D Spend",
+          "Marketing Spend",
+          "State"
+        ],
+        "target": "Profit",
+        "method": "RFE"
+      },
+      "test": {
+        "n": 10,
+        "rmse": 7257.846296158396,
+        "mae": 6600.653811397218,
+        "r2": 0.9569919806358617,
+        "adjusted": 0.922585565144551,
+        "adjustedReason": null,
+        "r2Reason": null
+      },
+      "train": {
+        "n": 40,
+        "rmse": 9291.85157675563,
+        "mae": 6696.109831389478,
+        "r2": 0.9462086771321631,
+        "adjusted": 0.9400610973758389,
+        "adjustedReason": null,
+        "r2Reason": null
+      },
+      "residuals": [
+        {
+          "row": 26,
+          "actual": 108552.04,
+          "predicted": 112408.59533923405,
+          "residual": -3856.5553392340516,
+          "absolute": 3856.5553392340516,
+          "percent": 3.5527248859017777
+        },
+        {
+          "row": 20,
+          "actual": 124266.9,
+          "predicted": 129514.69287009627,
+          "residual": -5247.79287009628,
+          "absolute": 5247.79287009628,
+          "percent": 4.22300135442043
+        },
+        {
+          "row": 28,
+          "actual": 105733.54,
+          "predicted": 112270.84159403559,
+          "residual": -6537.301594035598,
+          "absolute": 6537.301594035598,
+          "percent": 6.182807833763627
+        },
+        {
+          "row": 5,
+          "actual": 182901.99,
+          "predicted": 172525.61755517882,
+          "residual": 10376.372444821172,
+          "absolute": 10376.372444821172,
+          "percent": 5.673187287257604
+        },
+        {
+          "row": 14,
+          "actual": 141585.52,
+          "predicted": 130064.6290643221,
+          "residual": 11520.89093567789,
+          "absolute": 11520.89093567789,
+          "percent": 8.137054506476291
+        },
+        {
+          "row": 42,
+          "actual": 78239.91,
+          "predicted": 73850.73423310017,
+          "residual": 4389.1757668998325,
+          "absolute": 4389.1757668998325,
+          "percent": 5.609893680731269
+        },
+        {
+          "row": 9,
+          "actual": 155752.6,
+          "predicted": 161142.72317682108,
+          "residual": -5390.123176821071,
+          "absolute": 5390.123176821071,
+          "percent": 3.4606954727054773
+        },
+        {
+          "row": 6,
+          "actual": 166187.94,
+          "predicted": 171680.37548422464,
+          "residual": -5492.435484224639,
+          "absolute": 5492.435484224639,
+          "percent": 3.3049543090940525
+        },
+        {
+          "row": 44,
+          "actual": 71498.49,
+          "predicted": 69123.32415961835,
+          "residual": 2375.1658403816546,
+          "absolute": 2375.1658403816546,
+          "percent": 3.321980422777676
+        },
+        {
+          "row": 13,
+          "actual": 144259.4,
+          "predicted": 133438.67533822,
+          "residual": 10820.724661779997,
+          "absolute": 10820.724661779997,
+          "percent": 7.500880124123626
+        }
+      ],
+      "unknownCategories": []
+    },
+    {
+      "method": "RFE",
+      "k": 4,
+      "alpha": 0,
+      "l1": 1,
+      "cvRMSE": 10106.804173605586,
+      "cvSD": 3138.833121821683,
+      "cvR2": 0.9002156204098266,
+      "id": 12,
+      "model": {
+        "prep": {
+          "fields": [
+            {
+              "name": "R&D Spend",
+              "type": "number",
+              "fill": 65828.5,
+              "min": 0,
+              "max": 165349.2
+            },
+            {
+              "name": "Administration",
+              "type": "number",
+              "fill": 125604.625,
+              "min": 51283.14,
+              "max": 182645.56
+            },
+            {
+              "name": "Marketing Spend",
+              "type": "number",
+              "fill": 208157.65500000003,
+              "min": 0,
+              "max": 471784.1
+            },
+            {
+              "name": "State",
+              "type": "category",
+              "fill": "New York",
+              "levels": [
+                "California",
+                "Florida",
+                "New York"
+              ],
+              "reference": "California"
+            }
+          ],
+          "columns": [
+            {
+              "name": "R&D Spend",
+              "source": "R&D Spend",
+              "type": "number",
+              "fill": 65828.5
+            },
+            {
+              "name": "Administration",
+              "source": "Administration",
+              "type": "number",
+              "fill": 125604.625
+            },
+            {
+              "name": "Marketing Spend",
+              "source": "Marketing Spend",
+              "type": "number",
+              "fill": 208157.65500000003
+            },
+            {
+              "name": "State = Florida",
+              "source": "State",
+              "type": "category",
+              "level": "Florida",
+              "fill": "New York"
+            },
+            {
+              "name": "State = New York",
+              "source": "State",
+              "type": "category",
+              "level": "New York",
+              "fill": "New York"
+            }
+          ],
+          "means": [
+            69456.24724999999,
+            123004.96300000002,
+            202202.12374999997,
+            0.275,
+            0.375
+          ],
+          "scales": [
+            45729.172643081845,
+            29265.151219570285,
+            126180.65937955241,
+            0.4465142774872937,
+            0.4841229182759271
+          ]
+        },
+        "coef": [
+          0.8103437552100476,
+          -0.023237075986425194,
+          0.023030849247007944,
+          2098.2430017954734,
+          646.1105321666549
+        ],
+        "standardCoef": [
+          37056.349482243524,
+          -680.0365426433787,
+          2906.0477440585305,
+          936.8954579394762,
+          312.7969163613333
+        ],
+        "intercept": 49139.98529800856,
+        "rank": 6,
+        "regular": false,
+        "alpha": 0,
+        "l1": 1,
+        "features": [
+          "R&D Spend",
+          "Administration",
+          "Marketing Spend",
+          "State"
+        ],
+        "target": "Profit",
+        "method": "RFE"
+      },
+      "test": {
+        "n": 10,
+        "rmse": 7183.511976313583,
+        "mae": 6607.567527021129,
+        "r2": 0.9578684390682787,
+        "adjusted": 0.905203987903627,
+        "adjustedReason": null,
+        "r2Reason": null
+      },
+      "train": {
+        "n": 40,
+        "rmse": 9271.541870912792,
+        "mae": 6654.803828631528,
+        "r2": 0.946443569388529,
+        "adjusted": 0.9385676237103715,
+        "adjustedReason": null,
+        "r2Reason": null
+      },
+      "residuals": [
+        {
+          "row": 26,
+          "actual": 108552.04,
+          "predicted": 113148.77742543834,
+          "residual": -4596.737425438347,
+          "absolute": 4596.737425438347,
+          "percent": 4.234593311593542
+        },
+        {
+          "row": 20,
+          "actual": 124266.9,
+          "predicted": 129725.72380019381,
+          "residual": -5458.823800193815,
+          "absolute": 5458.823800193815,
+          "percent": 4.392822062990077
+        },
+        {
+          "row": 28,
+          "actual": 105733.54,
+          "predicted": 112018.49592541653,
+          "residual": -6284.955925416536,
+          "absolute": 6284.955925416536,
+          "percent": 5.944145940272629
+        },
+        {
+          "row": 5,
+          "actual": 182901.99,
+          "predicted": 172845.20258213094,
+          "residual": 10056.787417869054,
+          "absolute": 10056.787417869054,
+          "percent": 5.498457079591674
+        },
+        {
+          "row": 14,
+          "actual": 141585.52,
+          "predicted": 130095.5930868175,
+          "residual": 11489.926913182484,
+          "absolute": 11489.926913182484,
+          "percent": 8.115185022580334
+        },
+        {
+          "row": 42,
+          "actual": 78239.91,
+          "predicted": 73665.84450332267,
+          "residual": 4574.065496677329,
+          "absolute": 4574.065496677329,
+          "percent": 5.846204956878566
+        },
+        {
+          "row": 9,
+          "actual": 155752.6,
+          "predicted": 160901.96619002344,
+          "residual": -5149.366190023429,
+          "absolute": 5149.366190023429,
+          "percent": 3.3061189283668004
+        },
+        {
+          "row": 6,
+          "actual": 166187.94,
+          "predicted": 172703.51601432625,
+          "residual": -6515.576014326245,
+          "absolute": 6515.576014326245,
+          "percent": 3.920607003327826
+        },
+        {
+          "row": 44,
+          "actual": 71498.49,
+          "predicted": 69470.69080225014,
+          "residual": 2027.7991977498605,
+          "absolute": 2027.7991977498605,
+          "percent": 2.8361426902160596
+        },
+        {
+          "row": 13,
+          "actual": 144259.4,
+          "predicted": 134337.7631106658,
+          "residual": 9921.636889334186,
+          "absolute": 9921.636889334186,
+          "percent": 6.877636319944617
+        }
+      ],
+      "unknownCategories": []
+    },
+    {
+      "method": "Elastic Net",
+      "k": 1,
+      "alpha": 0.001,
+      "l1": 0.3,
+      "cvRMSE": 10031.4871846503,
+      "cvSD": 3330.660425619842,
+      "cvR2": 0.9063210555944388,
+      "id": 13,
+      "model": {
+        "prep": {
+          "fields": [
+            {
+              "name": "R&D Spend",
+              "type": "number",
+              "fill": 65828.5,
+              "min": 0,
+              "max": 165349.2
+            }
+          ],
+          "columns": [
+            {
+              "name": "R&D Spend",
+              "source": "R&D Spend",
+              "type": "number",
+              "fill": 65828.5
+            }
+          ],
+          "means": [
+            69456.24724999999
+          ],
+          "scales": [
+            45729.172643081845
+          ]
+        },
+        "coef": [
+          0.8494278457129466
+        ],
+        "standardCoef": [
+          38843.63260444842
+        ],
+        "intercept": 49043.27027712676,
+        "rank": 2,
+        "regular": true,
+        "alpha": 0.001,
+        "l1": 0.3,
+        "iterations": 2,
+        "features": [
+          "R&D Spend"
+        ],
+        "target": "Profit",
+        "method": "Elastic Net"
+      },
+      "test": {
+        "n": 10,
+        "rmse": 7327.70423251847,
+        "mae": 6436.115297717794,
+        "r2": 0.9561600780243816,
+        "adjusted": null,
+        "adjustedReason": "正則化模型的有效自由度不等同非零係數數量",
+        "r2Reason": null
+      },
+      "train": {
+        "n": 40,
+        "rmse": 9653.493551243486,
+        "mae": 7026.073787427577,
+        "r2": 0.941940041848607,
+        "adjusted": null,
+        "adjustedReason": "正則化模型的有效自由度不等同非零係數數量",
+        "r2Reason": null
+      },
+      "residuals": [
+        {
+          "row": 26,
+          "actual": 108552.04,
+          "predicted": 114486.59771651347,
+          "residual": -5934.557716513475,
+          "absolute": 5934.557716513475,
+          "percent": 5.467016296067283
+        },
+        {
+          "row": 20,
+          "actual": 124266.9,
+          "predicted": 126977.56160189922,
+          "residual": -2710.661601899221,
+          "absolute": 2710.661601899221,
+          "percent": 2.1813223005476288
+        },
+        {
+          "row": 28,
+          "actual": 105733.54,
+          "predicted": 113029.71004121736,
+          "residual": -7296.170041217367,
+          "absolute": 7296.170041217367,
+          "percent": 6.900525643251297
+        },
+        {
+          "row": 5,
+          "actual": 182901.99,
+          "predicted": 171677.21548381302,
+          "residual": 11224.774516186968,
+          "absolute": 11224.774516186968,
+          "percent": 6.137043405698849
+        },
+        {
+          "row": 14,
+          "actual": 141585.52,
+          "predicted": 128773.75323016534,
+          "residual": 12811.766769834649,
+          "absolute": 12811.766769834649,
+          "percent": 9.048783215850499
+        },
+        {
+          "row": 42,
+          "actual": 78239.91,
+          "predicted": 73467.99886394592,
+          "residual": 4771.911136054085,
+          "absolute": 4771.911136054085,
+          "percent": 6.099075441234639
+        },
+        {
+          "row": 9,
+          "actual": 155752.6,
+          "predicted": 159722.13014345223,
+          "residual": -3969.530143452226,
+          "absolute": 3969.530143452226,
+          "percent": 2.5486124427150663
+        },
+        {
+          "row": 6,
+          "actual": 166187.94,
+          "predicted": 169753.201953324,
+          "residual": -3565.261953323992,
+          "absolute": 3565.261953323992,
+          "percent": 2.1453193013428002
+        },
+        {
+          "row": 44,
+          "actual": 71498.49,
+          "predicted": 69124.53451767733,
+          "residual": 2373.955482322679,
+          "absolute": 2373.955482322679,
+          "percent": 3.320287578552608
+        },
+        {
+          "row": 13,
+          "actual": 144259.4,
+          "predicted": 134556.8363836267,
+          "residual": 9702.563616373285,
+          "absolute": 9702.563616373285,
+          "percent": 6.725775662711259
+        }
+      ],
+      "unknownCategories": []
+    },
+    {
+      "method": "Elastic Net",
+      "k": 2,
+      "alpha": 0.001,
+      "l1": 0.3,
+      "cvRMSE": 9816.630872150348,
+      "cvSD": 3293.039570286928,
+      "cvR2": 0.9099314620238717,
+      "id": 14,
+      "model": {
+        "prep": {
+          "fields": [
+            {
+              "name": "R&D Spend",
+              "type": "number",
+              "fill": 65828.5,
+              "min": 0,
+              "max": 165349.2
+            },
+            {
+              "name": "Marketing Spend",
+              "type": "number",
+              "fill": 208157.65500000003,
+              "min": 0,
+              "max": 471784.1
+            }
+          ],
+          "columns": [
+            {
+              "name": "R&D Spend",
+              "source": "R&D Spend",
+              "type": "number",
+              "fill": 65828.5
+            },
+            {
+              "name": "Marketing Spend",
+              "source": "Marketing Spend",
+              "type": "number",
+              "fill": 208157.65500000003
+            }
+          ],
+          "means": [
+            69456.24724999999,
+            202202.12374999997
+          ],
+          "scales": [
+            45729.172643081845,
+            126180.65937955241
+          ]
+        },
+        "coef": [
+          0.7962789364138362,
+          0.027685730730210658
+        ],
+        "standardCoef": [
+          36413.176955317904,
+          3493.403758942718
+        ],
+        "intercept": 47136.68051125436,
+        "rank": 3,
+        "regular": true,
+        "alpha": 0.001,
+        "l1": 0.3,
+        "iterations": 23,
+        "features": [
+          "R&D Spend",
+          "Marketing Spend"
+        ],
+        "target": "Profit",
+        "method": "Elastic Net"
+      },
+      "test": {
+        "n": 10,
+        "rmse": 6888.028470546912,
+        "mae": 5925.62815719332,
+        "r2": 0.961263196874945,
+        "adjusted": null,
+        "adjustedReason": "正則化模型的有效自由度不等同非零係數數量",
+        "r2Reason": null
+      },
+      "train": {
+        "n": 40,
+        "rmse": 9326.45253514666,
+        "mae": 6628.05465897932,
+        "r2": 0.9458073154161066,
+        "adjusted": null,
+        "adjustedReason": "正則化模型的有效自由度不等同非零係數數量",
+        "r2Reason": null
+      },
+      "residuals": [
+        {
+          "row": 26,
+          "actual": 108552.04,
+          "predicted": 112377.11918822184,
+          "residual": -3825.0791882218473,
+          "absolute": 3825.0791882218473,
+          "percent": 3.523728516038803
+        },
+        {
+          "row": 20,
+          "actual": 124266.9,
+          "predicted": 128359.66785500676,
+          "residual": -4092.767855006765,
+          "absolute": 4092.767855006765,
+          "percent": 3.293530179803926
+        },
+        {
+          "row": 28,
+          "actual": 105733.54,
+          "predicted": 110830.74713849637,
+          "residual": -5097.207138496378,
+          "absolute": 5097.207138496378,
+          "percent": 4.820804390448271
+        },
+        {
+          "row": 5,
+          "actual": 182901.99,
+          "predicted": 172706.5510887957,
+          "residual": 10195.438911204285,
+          "absolute": 10195.438911204285,
+          "percent": 5.5742635228869215
+        },
+        {
+          "row": 14,
+          "actual": 141585.52,
+          "predicted": 128795.3949906952,
+          "residual": 12790.125009304786,
+          "absolute": 12790.125009304786,
+          "percent": 9.033497923590481
+        },
+        {
+          "row": 42,
+          "actual": 78239.91,
+          "predicted": 74817.12221191317,
+          "residual": 3422.7877880868327,
+          "absolute": 3422.7877880868327,
+          "percent": 4.374733800290456
+        },
+        {
+          "row": 9,
+          "actual": 155752.6,
+          "predicted": 159857.09943664074,
+          "residual": -4104.499436640734,
+          "absolute": 4104.499436640734,
+          "percent": 2.6352686482541756
+        },
+        {
+          "row": 6,
+          "actual": 166187.94,
+          "predicted": 170431.40234108042,
+          "residual": -4243.46234108042,
+          "absolute": 4243.46234108042,
+          "percent": 2.553411722343041
+        },
+        {
+          "row": 44,
+          "actual": 71498.49,
+          "predicted": 70058.97398672061,
+          "residual": 1439.5160132793972,
+          "absolute": 1439.5160132793972,
+          "percent": 2.013351629215382
+        },
+        {
+          "row": 13,
+          "actual": 144259.4,
+          "predicted": 134214.00210938824,
+          "residual": 10045.397890611755,
+          "absolute": 10045.397890611755,
+          "percent": 6.963426917491517
+        }
+      ],
+      "unknownCategories": []
+    },
+    {
+      "method": "Elastic Net",
+      "k": 3,
+      "alpha": 0.01,
+      "l1": 0.7,
+      "cvRMSE": 9929.380173635433,
+      "cvSD": 3222.6734962998767,
+      "cvR2": 0.9095246958200592,
+      "id": 15,
+      "model": {
+        "prep": {
+          "fields": [
+            {
+              "name": "R&D Spend",
+              "type": "number",
+              "fill": 65828.5,
+              "min": 0,
+              "max": 165349.2
+            },
+            {
+              "name": "Marketing Spend",
+              "type": "number",
+              "fill": 208157.65500000003,
+              "min": 0,
+              "max": 471784.1
+            },
+            {
+              "name": "State",
+              "type": "category",
+              "fill": "New York",
+              "levels": [
+                "California",
+                "Florida",
+                "New York"
+              ],
+              "reference": "California"
+            }
+          ],
+          "columns": [
+            {
+              "name": "R&D Spend",
+              "source": "R&D Spend",
+              "type": "number",
+              "fill": 65828.5
+            },
+            {
+              "name": "Marketing Spend",
+              "source": "Marketing Spend",
+              "type": "number",
+              "fill": 208157.65500000003
+            },
+            {
+              "name": "State = Florida",
+              "source": "State",
+              "type": "category",
+              "level": "Florida",
+              "fill": "New York"
+            },
+            {
+              "name": "State = New York",
+              "source": "State",
+              "type": "category",
+              "level": "New York",
+              "fill": "New York"
+            }
+          ],
+          "means": [
+            69456.24724999999,
+            202202.12374999997,
+            0.275,
+            0.375
+          ],
+          "scales": [
+            45729.172643081845,
+            126180.65937955241,
+            0.4465142774872937,
+            0.4841229182759271
+          ]
+        },
+        "coef": [
+          0.7919180943521054,
+          0.025991961084377544,
+          1063.8005296967506,
+          0
+        ],
+        "standardCoef": [
+          36213.7592558078,
+          3279.6827881944246,
+          475.00212490814494,
+          0
+        ],
+        "intercept": 47489.506909576274,
+        "rank": 5,
+        "regular": true,
+        "alpha": 0.01,
+        "l1": 0.7,
+        "iterations": 24,
+        "features": [
+          "R&D Spend",
+          "Marketing Spend",
+          "State"
+        ],
+        "target": "Profit",
+        "method": "Elastic Net"
+      },
+      "test": {
+        "n": 10,
+        "rmse": 7120.282004756889,
+        "mae": 6180.673389267921,
+        "r2": 0.9586068670444345,
+        "adjusted": null,
+        "adjustedReason": "正則化模型的有效自由度不等同非零係數數量",
+        "r2Reason": null
+      },
+      "train": {
+        "n": 40,
+        "rmse": 9308.879929532539,
+        "mae": 6668.771731948999,
+        "r2": 0.9460113392969521,
+        "adjusted": null,
+        "adjustedReason": "正則化模型的有效自由度不等同非零係數數量",
+        "r2Reason": null
+      },
+      "residuals": [
+        {
+          "row": 26,
+          "actual": 108552.04,
+          "predicted": 112155.86748098458,
+          "residual": -3603.82748098459,
+          "absolute": 3603.82748098459,
+          "percent": 3.3199076507310132
+        },
+        {
+          "row": 20,
+          "actual": 124266.9,
+          "predicted": 128876.6653713408,
+          "residual": -4609.765371340807,
+          "absolute": 4609.765371340807,
+          "percent": 3.709568172490669
+        },
+        {
+          "row": 28,
+          "actual": 105733.54,
+          "predicted": 111691.82682216859,
+          "residual": -5958.286822168593,
+          "absolute": 5958.286822168593,
+          "percent": 5.6351908979578225
+        },
+        {
+          "row": 5,
+          "actual": 182901.99,
+          "predicted": 171780.74032438538,
+          "residual": 11121.249675614614,
+          "absolute": 11121.249675614614,
+          "percent": 6.080442140413352
+        },
+        {
+          "row": 14,
+          "actual": 141585.52,
+          "predicted": 129379.52646983814,
+          "residual": 12205.993530161853,
+          "absolute": 12205.993530161853,
+          "percent": 8.620933503766384
+        },
+        {
+          "row": 42,
+          "actual": 78239.91,
+          "predicted": 74751.8794577368,
+          "residual": 3488.030542263208,
+          "absolute": 3488.030542263208,
+          "percent": 4.458121874454109
+        },
+        {
+          "row": 9,
+          "actual": 155752.6,
+          "predicted": 160156.94430921332,
+          "residual": -4404.344309213309,
+          "absolute": 4404.344309213309,
+          "percent": 2.8277822066619174
+        },
+        {
+          "row": 6,
+          "actual": 166187.94,
+          "predicted": 170608.11664848775,
+          "residual": -4420.176648487744,
+          "absolute": 4420.176648487744,
+          "percent": 2.659745736355926
+        },
+        {
+          "row": 44,
+          "actual": 71498.49,
+          "predicted": 70058.02623545247,
+          "residual": 1440.4637645475304,
+          "absolute": 1440.4637645475304,
+          "percent": 2.0146771834587422
+        },
+        {
+          "row": 13,
+          "actual": 144259.4,
+          "predicted": 133704.80425210303,
+          "residual": 10554.595747896965,
+          "absolute": 10554.595747896965,
+          "percent": 7.316400697560758
+        }
+      ],
+      "unknownCategories": []
+    },
+    {
+      "method": "Elastic Net",
+      "k": 4,
+      "alpha": 0.01,
+      "l1": 0.7,
+      "cvRMSE": 9972.214301402131,
+      "cvSD": 3195.94895701264,
+      "cvR2": 0.9075821210083435,
+      "id": 16,
+      "model": {
+        "prep": {
+          "fields": [
+            {
+              "name": "R&D Spend",
+              "type": "number",
+              "fill": 65828.5,
+              "min": 0,
+              "max": 165349.2
+            },
+            {
+              "name": "Administration",
+              "type": "number",
+              "fill": 125604.625,
+              "min": 51283.14,
+              "max": 182645.56
+            },
+            {
+              "name": "Marketing Spend",
+              "type": "number",
+              "fill": 208157.65500000003,
+              "min": 0,
+              "max": 471784.1
+            },
+            {
+              "name": "State",
+              "type": "category",
+              "fill": "New York",
+              "levels": [
+                "California",
+                "Florida",
+                "New York"
+              ],
+              "reference": "California"
+            }
+          ],
+          "columns": [
+            {
+              "name": "R&D Spend",
+              "source": "R&D Spend",
+              "type": "number",
+              "fill": 65828.5
+            },
+            {
+              "name": "Administration",
+              "source": "Administration",
+              "type": "number",
+              "fill": 125604.625
+            },
+            {
+              "name": "Marketing Spend",
+              "source": "Marketing Spend",
+              "type": "number",
+              "fill": 208157.65500000003
+            },
+            {
+              "name": "State = Florida",
+              "source": "State",
+              "type": "category",
+              "level": "Florida",
+              "fill": "New York"
+            },
+            {
+              "name": "State = New York",
+              "source": "State",
+              "type": "category",
+              "level": "New York",
+              "fill": "New York"
+            }
+          ],
+          "means": [
+            69456.24724999999,
+            123004.96300000002,
+            202202.12374999997,
+            0.275,
+            0.375
+          ],
+          "scales": [
+            45729.172643081845,
+            29265.151219570285,
+            126180.65937955241,
+            0.4465142774872937,
+            0.4841229182759271
+          ]
+        },
+        "coef": [
+          0.7945633689061221,
+          -0.006926159286154865,
+          0.025294644795493627,
+          1073.8092979729872,
+          0
+        ],
+        "standardCoef": [
+          36334.725472576785,
+          -202.6950988801531,
+          3191.6949590669497,
+          479.47118284354644,
+          0
+        ],
+        "intercept": 48295.97445609578,
+        "rank": 6,
+        "regular": true,
+        "alpha": 0.01,
+        "l1": 0.7,
+        "iterations": 31,
+        "features": [
+          "R&D Spend",
+          "Administration",
+          "Marketing Spend",
+          "State"
+        ],
+        "target": "Profit",
+        "method": "Elastic Net"
+      },
+      "test": {
+        "n": 10,
+        "rmse": 7090.344949701967,
+        "mae": 6183.808240818282,
+        "r2": 0.958954208183503,
+        "adjusted": null,
+        "adjustedReason": "正則化模型的有效自由度不等同非零係數數量",
+        "r2Reason": null
+      },
+      "train": {
+        "n": 40,
+        "rmse": 9298.499648748733,
+        "mae": 6644.7829798827415,
+        "r2": 0.9461316770824361,
+        "adjusted": null,
+        "adjustedReason": "正則化模型的有效自由度不等同非零係數數量",
+        "r2Reason": null
+      },
+      "residuals": [
+        {
+          "row": 26,
+          "actual": 108552.04,
+          "predicted": 112380.47410689385,
+          "residual": -3828.434106893852,
+          "absolute": 3828.434106893852,
+          "percent": 3.5268191246280147
+        },
+        {
+          "row": 20,
+          "actual": 124266.9,
+          "predicted": 128939.39147620274,
+          "residual": -4672.491476202747,
+          "absolute": 4672.491476202747,
+          "percent": 3.760045093426124
+        },
+        {
+          "row": 28,
+          "actual": 105733.54,
+          "predicted": 111615.7846262751,
+          "residual": -5882.244626275104,
+          "absolute": 5882.244626275104,
+          "percent": 5.563272189955149
+        },
+        {
+          "row": 5,
+          "actual": 182901.99,
+          "predicted": 171879.96106057716,
+          "residual": 11022.028939422831,
+          "absolute": 11022.028939422831,
+          "percent": 6.026194105062952
+        },
+        {
+          "row": 14,
+          "actual": 141585.52,
+          "predicted": 129388.23983068205,
+          "residual": 12197.280169317935,
+          "absolute": 12197.280169317935,
+          "percent": 8.61477937102462
+        },
+        {
+          "row": 42,
+          "actual": 78239.91,
+          "predicted": 74692.848041339,
+          "residual": 3547.0619586609973,
+          "absolute": 3547.0619586609973,
+          "percent": 4.533571113081543
+        },
+        {
+          "row": 9,
+          "actual": 155752.6,
+          "predicted": 160084.2860906967,
+          "residual": -4331.68609069669,
+          "absolute": 4331.68609069669,
+          "percent": 2.781132443822248
+        },
+        {
+          "row": 6,
+          "actual": 166187.94,
+          "predicted": 170912.17673351997,
+          "residual": -4724.236733519967,
+          "absolute": 4724.236733519967,
+          "percent": 2.8427073189065144
+        },
+        {
+          "row": 44,
+          "actual": 71498.49,
+          "predicted": 70157.60224870207,
+          "residual": 1340.887751297938,
+          "absolute": 1340.887751297938,
+          "percent": 1.8754070908321812
+        },
+        {
+          "row": 13,
+          "actual": 144259.4,
+          "predicted": 133967.66944410524,
+          "residual": 10291.730555894756,
+          "absolute": 10291.730555894756,
+          "percent": 7.134183669067497
+        }
+      ],
+      "unknownCategories": []
+    },
+    {
+      "method": "Exhaustive Search",
+      "k": 1,
+      "alpha": 0,
+      "l1": 1,
+      "cvRMSE": 10030.324491955445,
+      "cvSD": 3331.7204070208827,
+      "cvR2": 0.9061382179093617,
+      "id": 17,
+      "model": {
+        "prep": {
+          "fields": [
+            {
+              "name": "R&D Spend",
+              "type": "number",
+              "fill": 65828.5,
+              "min": 0,
+              "max": 165349.2
+            }
+          ],
+          "columns": [
+            {
+              "name": "R&D Spend",
+              "source": "R&D Spend",
+              "type": "number",
+              "fill": 65828.5
+            }
+          ],
+          "means": [
+            69456.24724999999
+          ],
+          "scales": [
+            45729.172643081845
+          ]
+        },
+        "coef": [
+          0.8502852746767817
+        ],
+        "standardCoef": [
+          38882.84212156482
+        ],
+        "intercept": 48983.71647901531,
+        "rank": 2,
+        "regular": false,
+        "alpha": 0,
+        "l1": 1,
+        "features": [
+          "R&D Spend"
+        ],
+        "target": "Profit",
+        "method": "Exhaustive Search"
+      },
+      "test": {
+        "n": 10,
+        "rmse": 7321.899645160497,
+        "mae": 6446.852377321103,
+        "r2": 0.9562295054629012,
+        "adjusted": 0.9507581936457639,
+        "adjustedReason": null,
+        "r2Reason": null
+      },
+      "train": {
+        "n": 40,
+        "rmse": 9653.41392242491,
+        "mae": 7023.291791203164,
+        "r2": 0.9419409996835673,
+        "adjusted": 0.9404131312541875,
+        "adjustedReason": null,
+        "r2Reason": null
+      },
+      "residuals": [
+        {
+          "row": 26,
+          "actual": 108552.04,
+          "predicted": 114493.10368406602,
+          "residual": -5941.06368406603,
+          "absolute": 5941.06368406603,
+          "percent": 5.473009704899171
+        },
+        {
+          "row": 20,
+          "actual": 124266.9,
+          "predicted": 126996.67619097931,
+          "residual": -2729.776190979319,
+          "absolute": 2729.776190979319,
+          "percent": 2.196704183478721
+        },
+        {
+          "row": 28,
+          "actual": 105733.54,
+          "predicted": 113034.7453980569,
+          "residual": -7301.2053980569035,
+          "absolute": 7301.2053980569035,
+          "percent": 6.905287951256437
+        },
+        {
+          "row": 5,
+          "actual": 182901.99,
+          "predicted": 171741.45077161427,
+          "residual": 11160.539228385722,
+          "absolute": 11160.539228385722,
+          "percent": 6.101923346151522
+        },
+        {
+          "row": 14,
+          "actual": 141585.52,
+          "predicted": 128794.6809299581,
+          "residual": 12790.839070041897,
+          "absolute": 12790.839070041897,
+          "percent": 9.034002255344966
+        },
+        {
+          "row": 42,
+          "actual": 78239.91,
+          "predicted": 73433.09986121213,
+          "residual": 4806.8101387878705,
+          "absolute": 4806.8101387878705,
+          "percent": 6.143680557388001
+        },
+        {
+          "row": 9,
+          "actual": 155752.6,
+          "predicted": 159774.29773593633,
+          "residual": -4021.6977359363227,
+          "absolute": 4021.6977359363227,
+          "percent": 2.5821063249899665
+        },
+        {
+          "row": 6,
+          "actual": 166187.94,
+          "predicted": 169815.49510450213,
+          "residual": -3627.5551045021275,
+          "absolute": 3627.5551045021275,
+          "percent": 2.182802858319399
+        },
+        {
+          "row": 44,
+          "actual": 71498.49,
+          "predicted": 69085.25113767988,
+          "residual": 2413.238862320126,
+          "absolute": 2413.238862320126,
+          "percent": 3.3752305290924682
+        },
+        {
+          "row": 13,
+          "actual": 144259.4,
+          "predicted": 134583.6016398653,
+          "residual": 9675.798360134708,
+          "absolute": 9675.798360134708,
+          "percent": 6.707222101391458
+        }
+      ],
+      "unknownCategories": []
+    },
+    {
+      "method": "Exhaustive Search",
+      "k": 2,
+      "alpha": 0,
+      "l1": 1,
+      "cvRMSE": 9848.358342956282,
+      "cvSD": 3496.4358659639383,
+      "cvR2": 0.9037795319346651,
+      "id": 18,
+      "model": {
+        "prep": {
+          "fields": [
+            {
+              "name": "R&D Spend",
+              "type": "number",
+              "fill": 65828.5,
+              "min": 0,
+              "max": 165349.2
+            },
+            {
+              "name": "Marketing Spend",
+              "type": "number",
+              "fill": 208157.65500000003,
+              "min": 0,
+              "max": 471784.1
+            }
+          ],
+          "columns": [
+            {
+              "name": "R&D Spend",
+              "source": "R&D Spend",
+              "type": "number",
+              "fill": 65828.5
+            },
+            {
+              "name": "Marketing Spend",
+              "source": "Marketing Spend",
+              "type": "number",
+              "fill": 208157.65500000003
+            }
+          ],
+          "means": [
+            69456.24724999999,
+            202202.12374999997
+          ],
+          "scales": [
+            45729.172643081845,
+            126180.65937955241
+          ]
+        },
+        "coef": [
+          0.7974433495837181,
+          0.027506563725020094
+        ],
+        "standardCoef": [
+          36466.424606191315,
+          3470.796348088713
+        ],
+        "intercept": 47092.03269118135,
+        "rank": 3,
+        "regular": false,
+        "alpha": 0,
+        "l1": 1,
+        "features": [
+          "R&D Spend",
+          "Marketing Spend"
+        ],
+        "target": "Profit",
+        "method": "Exhaustive Search"
+      },
+      "test": {
+        "n": 10,
+        "rmse": 6884.665620842403,
+        "mae": 5939.205920463176,
+        "r2": 0.9613010115409202,
+        "adjusted": 0.9502441576954688,
+        "adjustedReason": null,
+        "r2Reason": null
+      },
+      "train": {
+        "n": 40,
+        "rmse": 9326.362992955239,
+        "mae": 6625.640894111898,
+        "r2": 0.9458083560064969,
+        "adjusted": 0.942879077952794,
+        "adjustedReason": null,
+        "r2Reason": null
+      },
+      "residuals": [
+        {
+          "row": 26,
+          "actual": 108552.04,
+          "predicted": 112396.99606034042,
+          "residual": -3844.9560603404243,
+          "absolute": 3844.9560603404243,
+          "percent": 3.5420394313551586
+        },
+        {
+          "row": 20,
+          "actual": 124266.9,
+          "predicted": 128369.01410903435,
+          "residual": -4102.114109034359,
+          "absolute": 4102.114109034359,
+          "percent": 3.301051292849793
+        },
+        {
+          "row": 28,
+          "actual": 105733.54,
+          "predicted": 110849.79589713621,
+          "residual": -5116.255897136216,
+          "absolute": 5116.255897136216,
+          "percent": 4.838820205146083
+        },
+        {
+          "row": 5,
+          "actual": 182901.99,
+          "predicted": 172761.3556759887,
+          "residual": 10140.634324011276,
+          "absolute": 10140.634324011276,
+          "percent": 5.544299613148702
+        },
+        {
+          "row": 14,
+          "actual": 141585.52,
+          "predicted": 128815.28037305342,
+          "residual": 12770.239626946568,
+          "absolute": 12770.239626946568,
+          "percent": 9.019453138249284
+        },
+        {
+          "row": 42,
+          "actual": 78239.91,
+          "predicted": 74774.99702967949,
+          "residual": 3464.912970320511,
+          "absolute": 3464.912970320511,
+          "percent": 4.428574841561693
+        },
+        {
+          "row": 9,
+          "actual": 155752.6,
+          "predicted": 159906.14446034405,
+          "residual": -4153.544460344041,
+          "absolute": 4153.544460344041,
+          "percent": 2.666757704426148
+        },
+        {
+          "row": 6,
+          "actual": 166187.94,
+          "predicted": 170486.62088003356,
+          "residual": -4298.680880033557,
+          "absolute": 4298.680880033557,
+          "percent": 2.5866382843626057
+        },
+        {
+          "row": 44,
+          "actual": 71498.49,
+          "predicted": 70015.33706124427,
+          "residual": 1483.1529387557384,
+          "absolute": 1483.1529387557384,
+          "percent": 2.0743835831438373
+        },
+        {
+          "row": 13,
+          "actual": 144259.4,
+          "predicted": 134241.83206229092,
+          "residual": 10017.567937709071,
+          "absolute": 10017.567937709071,
+          "percent": 6.944135312991093
+        }
+      ],
+      "unknownCategories": []
+    },
+    {
+      "method": "Exhaustive Search",
+      "k": 3,
+      "alpha": 0,
+      "l1": 1,
+      "cvRMSE": 9980.780405214366,
+      "cvSD": 3329.4846295843345,
+      "cvR2": 0.8976607958553794,
+      "id": 19,
+      "model": {
+        "prep": {
+          "fields": [
+            {
+              "name": "R&D Spend",
+              "type": "number",
+              "fill": 65828.5,
+              "min": 0,
+              "max": 165349.2
+            },
+            {
+              "name": "Marketing Spend",
+              "type": "number",
+              "fill": 208157.65500000003,
+              "min": 0,
+              "max": 471784.1
+            },
+            {
+              "name": "State",
+              "type": "category",
+              "fill": "New York",
+              "levels": [
+                "California",
+                "Florida",
+                "New York"
+              ],
+              "reference": "California"
+            }
+          ],
+          "columns": [
+            {
+              "name": "R&D Spend",
+              "source": "R&D Spend",
+              "type": "number",
+              "fill": 65828.5
+            },
+            {
+              "name": "Marketing Spend",
+              "source": "Marketing Spend",
+              "type": "number",
+              "fill": 208157.65500000003
+            },
+            {
+              "name": "State = Florida",
+              "source": "State",
+              "type": "category",
+              "level": "Florida",
+              "fill": "New York"
+            },
+            {
+              "name": "State = New York",
+              "source": "State",
+              "type": "category",
+              "level": "New York",
+              "fill": "New York"
+            }
+          ],
+          "means": [
+            69456.24724999999,
+            202202.12374999997,
+            0.275,
+            0.375
+          ],
+          "scales": [
+            45729.172643081845,
+            126180.65937955241,
+            0.4465142774872937,
+            0.4841229182759271
+          ]
+        },
+        "coef": [
+          0.8013898002459849,
+          0.025392000055818632,
+          2079.574331149529,
+          677.1561759098739
+        ],
+        "standardCoef": [
+          36646.89252985352,
+          3203.979310008827,
+          928.559629954354,
+          327.82682401005525
+        ],
+        "intercept": 46419.67979590782,
+        "rank": 5,
+        "regular": false,
+        "alpha": 0,
+        "l1": 1,
+        "features": [
+          "R&D Spend",
+          "Marketing Spend",
+          "State"
+        ],
+        "target": "Profit",
+        "method": "Exhaustive Search"
+      },
+      "test": {
+        "n": 10,
+        "rmse": 7257.846296158396,
+        "mae": 6600.653811397218,
+        "r2": 0.9569919806358617,
+        "adjusted": 0.922585565144551,
+        "adjustedReason": null,
+        "r2Reason": null
+      },
+      "train": {
+        "n": 40,
+        "rmse": 9291.85157675563,
+        "mae": 6696.109831389478,
+        "r2": 0.9462086771321631,
+        "adjusted": 0.9400610973758389,
+        "adjustedReason": null,
+        "r2Reason": null
+      },
+      "residuals": [
+        {
+          "row": 26,
+          "actual": 108552.04,
+          "predicted": 112408.59533923405,
+          "residual": -3856.5553392340516,
+          "absolute": 3856.5553392340516,
+          "percent": 3.5527248859017777
+        },
+        {
+          "row": 20,
+          "actual": 124266.9,
+          "predicted": 129514.69287009627,
+          "residual": -5247.79287009628,
+          "absolute": 5247.79287009628,
+          "percent": 4.22300135442043
+        },
+        {
+          "row": 28,
+          "actual": 105733.54,
+          "predicted": 112270.84159403559,
+          "residual": -6537.301594035598,
+          "absolute": 6537.301594035598,
+          "percent": 6.182807833763627
+        },
+        {
+          "row": 5,
+          "actual": 182901.99,
+          "predicted": 172525.61755517882,
+          "residual": 10376.372444821172,
+          "absolute": 10376.372444821172,
+          "percent": 5.673187287257604
+        },
+        {
+          "row": 14,
+          "actual": 141585.52,
+          "predicted": 130064.6290643221,
+          "residual": 11520.89093567789,
+          "absolute": 11520.89093567789,
+          "percent": 8.137054506476291
+        },
+        {
+          "row": 42,
+          "actual": 78239.91,
+          "predicted": 73850.73423310017,
+          "residual": 4389.1757668998325,
+          "absolute": 4389.1757668998325,
+          "percent": 5.609893680731269
+        },
+        {
+          "row": 9,
+          "actual": 155752.6,
+          "predicted": 161142.72317682108,
+          "residual": -5390.123176821071,
+          "absolute": 5390.123176821071,
+          "percent": 3.4606954727054773
+        },
+        {
+          "row": 6,
+          "actual": 166187.94,
+          "predicted": 171680.37548422464,
+          "residual": -5492.435484224639,
+          "absolute": 5492.435484224639,
+          "percent": 3.3049543090940525
+        },
+        {
+          "row": 44,
+          "actual": 71498.49,
+          "predicted": 69123.32415961835,
+          "residual": 2375.1658403816546,
+          "absolute": 2375.1658403816546,
+          "percent": 3.321980422777676
+        },
+        {
+          "row": 13,
+          "actual": 144259.4,
+          "predicted": 133438.67533822,
+          "residual": 10820.724661779997,
+          "absolute": 10820.724661779997,
+          "percent": 7.500880124123626
+        }
+      ],
+      "unknownCategories": []
+    },
+    {
+      "method": "Exhaustive Search",
+      "k": 4,
+      "alpha": 0,
+      "l1": 1,
+      "cvRMSE": 10106.804173605586,
+      "cvSD": 3138.833121821683,
+      "cvR2": 0.9002156204098266,
+      "id": 20,
+      "model": {
+        "prep": {
+          "fields": [
+            {
+              "name": "R&D Spend",
+              "type": "number",
+              "fill": 65828.5,
+              "min": 0,
+              "max": 165349.2
+            },
+            {
+              "name": "Administration",
+              "type": "number",
+              "fill": 125604.625,
+              "min": 51283.14,
+              "max": 182645.56
+            },
+            {
+              "name": "Marketing Spend",
+              "type": "number",
+              "fill": 208157.65500000003,
+              "min": 0,
+              "max": 471784.1
+            },
+            {
+              "name": "State",
+              "type": "category",
+              "fill": "New York",
+              "levels": [
+                "California",
+                "Florida",
+                "New York"
+              ],
+              "reference": "California"
+            }
+          ],
+          "columns": [
+            {
+              "name": "R&D Spend",
+              "source": "R&D Spend",
+              "type": "number",
+              "fill": 65828.5
+            },
+            {
+              "name": "Administration",
+              "source": "Administration",
+              "type": "number",
+              "fill": 125604.625
+            },
+            {
+              "name": "Marketing Spend",
+              "source": "Marketing Spend",
+              "type": "number",
+              "fill": 208157.65500000003
+            },
+            {
+              "name": "State = Florida",
+              "source": "State",
+              "type": "category",
+              "level": "Florida",
+              "fill": "New York"
+            },
+            {
+              "name": "State = New York",
+              "source": "State",
+              "type": "category",
+              "level": "New York",
+              "fill": "New York"
+            }
+          ],
+          "means": [
+            69456.24724999999,
+            123004.96300000002,
+            202202.12374999997,
+            0.275,
+            0.375
+          ],
+          "scales": [
+            45729.172643081845,
+            29265.151219570285,
+            126180.65937955241,
+            0.4465142774872937,
+            0.4841229182759271
+          ]
+        },
+        "coef": [
+          0.8103437552100476,
+          -0.023237075986425194,
+          0.023030849247007944,
+          2098.2430017954734,
+          646.1105321666549
+        ],
+        "standardCoef": [
+          37056.349482243524,
+          -680.0365426433787,
+          2906.0477440585305,
+          936.8954579394762,
+          312.7969163613333
+        ],
+        "intercept": 49139.98529800856,
+        "rank": 6,
+        "regular": false,
+        "alpha": 0,
+        "l1": 1,
+        "features": [
+          "R&D Spend",
+          "Administration",
+          "Marketing Spend",
+          "State"
+        ],
+        "target": "Profit",
+        "method": "Exhaustive Search"
+      },
+      "test": {
+        "n": 10,
+        "rmse": 7183.511976313583,
+        "mae": 6607.567527021129,
+        "r2": 0.9578684390682787,
+        "adjusted": 0.905203987903627,
+        "adjustedReason": null,
+        "r2Reason": null
+      },
+      "train": {
+        "n": 40,
+        "rmse": 9271.541870912792,
+        "mae": 6654.803828631528,
+        "r2": 0.946443569388529,
+        "adjusted": 0.9385676237103715,
+        "adjustedReason": null,
+        "r2Reason": null
+      },
+      "residuals": [
+        {
+          "row": 26,
+          "actual": 108552.04,
+          "predicted": 113148.77742543834,
+          "residual": -4596.737425438347,
+          "absolute": 4596.737425438347,
+          "percent": 4.234593311593542
+        },
+        {
+          "row": 20,
+          "actual": 124266.9,
+          "predicted": 129725.72380019381,
+          "residual": -5458.823800193815,
+          "absolute": 5458.823800193815,
+          "percent": 4.392822062990077
+        },
+        {
+          "row": 28,
+          "actual": 105733.54,
+          "predicted": 112018.49592541653,
+          "residual": -6284.955925416536,
+          "absolute": 6284.955925416536,
+          "percent": 5.944145940272629
+        },
+        {
+          "row": 5,
+          "actual": 182901.99,
+          "predicted": 172845.20258213094,
+          "residual": 10056.787417869054,
+          "absolute": 10056.787417869054,
+          "percent": 5.498457079591674
+        },
+        {
+          "row": 14,
+          "actual": 141585.52,
+          "predicted": 130095.5930868175,
+          "residual": 11489.926913182484,
+          "absolute": 11489.926913182484,
+          "percent": 8.115185022580334
+        },
+        {
+          "row": 42,
+          "actual": 78239.91,
+          "predicted": 73665.84450332267,
+          "residual": 4574.065496677329,
+          "absolute": 4574.065496677329,
+          "percent": 5.846204956878566
+        },
+        {
+          "row": 9,
+          "actual": 155752.6,
+          "predicted": 160901.96619002344,
+          "residual": -5149.366190023429,
+          "absolute": 5149.366190023429,
+          "percent": 3.3061189283668004
+        },
+        {
+          "row": 6,
+          "actual": 166187.94,
+          "predicted": 172703.51601432625,
+          "residual": -6515.576014326245,
+          "absolute": 6515.576014326245,
+          "percent": 3.920607003327826
+        },
+        {
+          "row": 44,
+          "actual": 71498.49,
+          "predicted": 69470.69080225014,
+          "residual": 2027.7991977498605,
+          "absolute": 2027.7991977498605,
+          "percent": 2.8361426902160596
+        },
+        {
+          "row": 13,
+          "actual": 144259.4,
+          "predicted": 134337.7631106658,
+          "residual": 9921.636889334186,
+          "absolute": 9921.636889334186,
+          "percent": 6.877636319944617
+        }
+      ],
+      "unknownCategories": []
+    }
+  ],
+  "exhaustiveDisabled": false
+}

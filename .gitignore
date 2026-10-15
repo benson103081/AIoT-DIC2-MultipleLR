@@ -1,0 +1,12 @@
+node_modules/
+dist/
+.browser-profile/
+*.log
+.deploy/
+__pycache__/
+*.py[cod]
+.venv/
+venv/
+.vercel/
+.DS_Store
+Thumbs.db

@@ -1,0 +1,4420 @@
+{
+  "workflow": "scripts/analyze.mjs",
+  "dataFile": "data/mtcars.csv",
+  "sha256": "4d6dfa9b029dbcc15333a6e3598803fae8ae7c4d08605040b1706e6367695058",
+  "seed": 20261015,
+  "target": "mpg",
+  "features": [
+    "wt",
+    "hp",
+    "disp",
+    "qsec",
+    "am"
+  ],
+  "rows": 32,
+  "dropped": 0,
+  "trainRows": 25,
+  "testRows": 7,
+  "trainIDs": [
+    11,
+    9,
+    30,
+    28,
+    14,
+    27,
+    17,
+    20,
+    22,
+    33,
+    7,
+    2,
+    18,
+    24,
+    23,
+    10,
+    12,
+    15,
+    5,
+    32,
+    8,
+    25,
+    13,
+    21,
+    16
+  ],
+  "testIDs": [
+    6,
+    26,
+    29,
+    31,
+    19,
+    3,
+    4
+  ],
+  "recommended": 8,
+  "results": [
+    {
+      "method": "OLS baseline",
+      "k": 5,
+      "alpha": 0,
+      "l1": 1,
+      "cvRMSE": 2.4350419615878325,
+      "cvSD": 0.7332308125026141,
+      "cvR2": 0.5641684234734724,
+      "id": 0,
+      "model": {
+        "prep": {
+          "fields": [
+            {
+              "name": "wt",
+              "type": "number",
+              "fill": 3.44,
+              "min": 1.615,
+              "max": 5.424
+            },
+            {
+              "name": "hp",
+              "type": "number",
+              "fill": 123,
+              "min": 52,
+              "max": 335
+            },
+            {
+              "name": "disp",
+              "type": "number",
+              "fill": 258,
+              "min": 71.1,
+              "max": 472
+            },
+            {
+              "name": "qsec",
+              "type": "number",
+              "fill": 17.98,
+              "min": 14.5,
+              "max": 22.9
+            },
+            {
+              "name": "am",
+              "type": "number",
+              "fill": 0,
+              "min": 0,
+              "max": 1
+            }
+          ],
+          "columns": [
+            {
+              "name": "wt",
+              "source": "wt",
+              "type": "number",
+              "fill": 3.44
+            },
+            {
+              "name": "hp",
+              "source": "hp",
+              "type": "number",
+              "fill": 123
+            },
+            {
+              "name": "disp",
+              "source": "disp",
+              "type": "number",
+              "fill": 258
+            },
+            {
+              "name": "qsec",
+              "source": "qsec",
+              "type": "number",
+              "fill": 17.98
+            },
+            {
+              "name": "am",
+              "source": "am",
+              "type": "number",
+              "fill": 0
+            }
+          ],
+          "means": [
+            3.3595599999999997,
+            151.48,
+            241.452,
+            17.9836,
+            0.32
+          ],
+          "scales": [
+            0.9729802908589671,
+            72.35308977507457,
+            119.8372333459013,
+            1.8643730957080453,
+            0.466476151587624
+          ]
+        },
+        "coef": [
+          -2.45622312314468,
+          -0.01934027211953016,
+          -0.002152325701540958,
+          0.830522865117571,
+          3.8429245181460026
+        ],
+        "standardCoef": [
+          -2.389856688771831,
+          -1.399328444938737,
+          -0.25792875733194454,
+          1.5484044850955612,
+          1.7926326400664716
+        ],
+        "intercept": 14.683649878611762,
+        "rank": 6,
+        "regular": false,
+        "alpha": 0,
+        "l1": 1,
+        "features": [
+          "wt",
+          "hp",
+          "disp",
+          "qsec",
+          "am"
+        ],
+        "target": "mpg",
+        "method": "OLS baseline"
+      },
+      "test": {
+        "n": 7,
+        "rmse": 3.311025221458803,
+        "mae": 3.116130737431906,
+        "r2": 0.5950750683393289,
+        "adjusted": -1.4295495899640267,
+        "adjustedReason": null,
+        "r2Reason": null
+      },
+      "train": {
+        "n": 25,
+        "rmse": 1.919398701421636,
+        "mae": 1.5804759353955051,
+        "r2": 0.8896955380431054,
+        "adjusted": 0.860668048054449,
+        "adjustedReason": null,
+        "r2Reason": null
+      },
+      "residuals": [
+        {
+          "row": 6,
+          "actual": 18.7,
+          "predicted": 16.210356625822598,
+          "residual": 2.489643374177401,
+          "absolute": 2.489643374177401,
+          "percent": 13.313600931429953
+        },
+        {
+          "row": 26,
+          "actual": 19.2,
+          "predicted": 15.154408918840893,
+          "residual": 4.045591081159106,
+          "absolute": 4.045591081159106,
+          "percent": 21.070786881037012
+        },
+        {
+          "row": 29,
+          "actual": 30.4,
+          "predicted": 26.45600830820336,
+          "residual": 3.94399169179664,
+          "absolute": 3.94399169179664,
+          "percent": 12.973656880910001
+        },
+        {
+          "row": 31,
+          "actual": 19.7,
+          "predicted": 20.899305907328134,
+          "residual": -1.1993059073281351,
+          "absolute": 1.1993059073281351,
+          "percent": 6.087847245320483
+        },
+        {
+          "row": 19,
+          "actual": 32.4,
+          "predicted": 27.84731771707831,
+          "residual": 4.552682282921687,
+          "absolute": 4.552682282921687,
+          "percent": 14.05148852753607
+        },
+        {
+          "row": 3,
+          "actual": 21,
+          "predicted": 23.128630036622997,
+          "residual": -2.1286300366229973,
+          "absolute": 2.1286300366229973,
+          "percent": 10.13633350772856
+        },
+        {
+          "row": 4,
+          "actual": 22.8,
+          "predicted": 26.253070788017375,
+          "residual": -3.4530707880173743,
+          "absolute": 3.4530707880173743,
+          "percent": 15.145047315865675
+        }
+      ],
+      "unknownCategories": []
+    },
+    {
+      "method": "Lasso",
+      "k": 1,
+      "alpha": 0.1,
+      "l1": 1,
+      "cvRMSE": 3.371557957744263,
+      "cvSD": 0.517527622233513,
+      "cvR2": 0.3416807575373081,
+      "id": 1,
+      "model": {
+        "prep": {
+          "fields": [
+            {
+              "name": "wt",
+              "type": "number",
+              "fill": 3.44,
+              "min": 1.615,
+              "max": 5.424
+            }
+          ],
+          "columns": [
+            {
+              "name": "wt",
+              "source": "wt",
+              "type": "number",
+              "fill": 3.44
+            }
+          ],
+          "means": [
+            3.3595599999999997
+          ],
+          "scales": [
+            0.9729802908589671
+          ]
+        },
+        "coef": [
+          -4.549664581444437
+        ],
+        "standardCoef": [
+          -4.42673396776455
+        ],
+        "intercept": 34.43287114123747,
+        "rank": 2,
+        "regular": true,
+        "alpha": 0.1,
+        "l1": 1,
+        "iterations": 2,
+        "features": [
+          "wt"
+        ],
+        "target": "mpg",
+        "method": "Lasso"
+      },
+      "test": {
+        "n": 7,
+        "rmse": 3.436994638720468,
+        "mae": 2.3900444994886736,
+        "r2": 0.5636778616460865,
+        "adjusted": null,
+        "adjustedReason": "正則化模型的有效自由度不等同非零係數數量",
+        "r2Reason": null
+      },
+      "train": {
+        "n": 25,
+        "rmse": 2.9473233973055666,
+        "mae": 2.3208005905345317,
+        "r2": 0.7399132242696125,
+        "adjusted": null,
+        "adjustedReason": "正則化模型的有效自由度不等同非零係數數量",
+        "r2Reason": null
+      },
+      "residuals": [
+        {
+          "row": 6,
+          "actual": 18.7,
+          "predicted": 18.782024981068606,
+          "residual": -0.08202498106860645,
+          "absolute": 0.08202498106860645,
+          "percent": 0.438636262398965
+        },
+        {
+          "row": 26,
+          "actual": 19.2,
+          "predicted": 16.939410825583607,
+          "residual": 2.260589174416392,
+          "absolute": 2.260589174416392,
+          "percent": 11.773901950085374
+        },
+        {
+          "row": 29,
+          "actual": 30.4,
+          "predicted": 27.549228629512037,
+          "residual": 2.850771370487962,
+          "absolute": 2.850771370487962,
+          "percent": 9.377537402920929
+        },
+        {
+          "row": 31,
+          "actual": 19.7,
+          "predicted": 21.830300250636377,
+          "residual": -2.1303002506363775,
+          "absolute": 2.1303002506363775,
+          "percent": 10.813706856022222
+        },
+        {
+          "row": 19,
+          "actual": 32.4,
+          "predicted": 24.423609062059707,
+          "residual": 7.976390937940291,
+          "absolute": 7.976390937940291,
+          "percent": 24.61849054919843
+        },
+        {
+          "row": 3,
+          "actual": 21,
+          "predicted": 21.35258546958471,
+          "residual": -0.35258546958471015,
+          "absolute": 0.35258546958471015,
+          "percent": 1.6789784265938579
+        },
+        {
+          "row": 4,
+          "actual": 22.8,
+          "predicted": 23.877649312286376,
+          "residual": -1.0776493122863755,
+          "absolute": 1.0776493122863755,
+          "percent": 4.726532071431471
+        }
+      ],
+      "unknownCategories": []
+    },
+    {
+      "method": "Lasso",
+      "k": 2,
+      "alpha": 0.1,
+      "l1": 1,
+      "cvRMSE": 3.126622230724731,
+      "cvSD": 0.6722594675795174,
+      "cvR2": 0.4342972748434528,
+      "id": 2,
+      "model": {
+        "prep": {
+          "fields": [
+            {
+              "name": "wt",
+              "type": "number",
+              "fill": 3.44,
+              "min": 1.615,
+              "max": 5.424
+            },
+            {
+              "name": "hp",
+              "type": "number",
+              "fill": 123,
+              "min": 52,
+              "max": 335
+            }
+          ],
+          "columns": [
+            {
+              "name": "wt",
+              "source": "wt",
+              "type": "number",
+              "fill": 3.44
+            },
+            {
+              "name": "hp",
+              "source": "hp",
+              "type": "number",
+              "fill": 123
+            }
+          ],
+          "means": [
+            3.3595599999999997,
+            151.48
+          ],
+          "scales": [
+            0.9729802908589671,
+            72.35308977507457
+          ]
+        },
+        "coef": [
+          -3.279907917420277,
+          -0.026331403411476054
+        ],
+        "standardCoef": [
+          -3.19128575948221,
+          -1.9051583949342317
+        ],
+        "intercept": 34.15572843181886,
+        "rank": 3,
+        "regular": true,
+        "alpha": 0.1,
+        "l1": 1,
+        "iterations": 21,
+        "features": [
+          "wt",
+          "hp"
+        ],
+        "target": "mpg",
+        "method": "Lasso"
+      },
+      "test": {
+        "n": 7,
+        "rmse": 3.328816050527445,
+        "mae": 2.424039170978532,
+        "r2": 0.5907118853822437,
+        "adjusted": null,
+        "adjustedReason": "正則化模型的有效自由度不等同非零係數數量",
+        "r2Reason": null
+      },
+      "train": {
+        "n": 25,
+        "rmse": 2.4102571419726093,
+        "mae": 1.8666650176347768,
+        "r2": 0.8260640137316076,
+        "adjusted": null,
+        "adjustedReason": "正則化模型的有效自由度不等同非零係數數量",
+        "r2Reason": null
+      },
+      "residuals": [
+        {
+          "row": 6,
+          "actual": 18.7,
+          "predicted": 18.264849598884794,
+          "residual": 0.4351504011152052,
+          "absolute": 0.4351504011152052,
+          "percent": 2.32700749259468
+        },
+        {
+          "row": 26,
+          "actual": 19.2,
+          "predicted": 16.936486892329583,
+          "residual": 2.2635131076704162,
+          "absolute": 2.2635131076704162,
+          "percent": 11.78913076911675
+        },
+        {
+          "row": 29,
+          "actual": 30.4,
+          "predicted": 26.217779167265185,
+          "residual": 4.182220832734814,
+          "absolute": 4.182220832734814,
+          "percent": 13.757305370838202
+        },
+        {
+          "row": 31,
+          "actual": 19.7,
+          "predicted": 20.46238790355638,
+          "residual": -0.7623879035563803,
+          "absolute": 0.7623879035563803,
+          "percent": 3.8699893581542146
+        },
+        {
+          "row": 19,
+          "actual": 32.4,
+          "predicted": 25.202058388336827,
+          "residual": 7.197941611663172,
+          "absolute": 7.197941611663172,
+          "percent": 22.215869171799916
+        },
+        {
+          "row": 3,
+          "actual": 21,
+          "predicted": 21.829538793973196,
+          "residual": -0.829538793973196,
+          "absolute": 0.829538793973196,
+          "percent": 3.950184733205695
+        },
+        {
+          "row": 4,
+          "actual": 22.8,
+          "predicted": 24.09752154613654,
+          "residual": -1.2975215461365401,
+          "absolute": 1.2975215461365401,
+          "percent": 5.690883974283071
+        }
+      ],
+      "unknownCategories": []
+    },
+    {
+      "method": "Lasso",
+      "k": 3,
+      "alpha": 0.001,
+      "l1": 1,
+      "cvRMSE": 2.7240054958339037,
+      "cvSD": 0.8119454310576759,
+      "cvR2": 0.48822620866879135,
+      "id": 3,
+      "model": {
+        "prep": {
+          "fields": [
+            {
+              "name": "wt",
+              "type": "number",
+              "fill": 3.44,
+              "min": 1.615,
+              "max": 5.424
+            },
+            {
+              "name": "am",
+              "type": "number",
+              "fill": 0,
+              "min": 0,
+              "max": 1
+            },
+            {
+              "name": "qsec",
+              "type": "number",
+              "fill": 17.98,
+              "min": 14.5,
+              "max": 22.9
+            }
+          ],
+          "columns": [
+            {
+              "name": "wt",
+              "source": "wt",
+              "type": "number",
+              "fill": 3.44
+            },
+            {
+              "name": "am",
+              "source": "am",
+              "type": "number",
+              "fill": 0
+            },
+            {
+              "name": "qsec",
+              "source": "qsec",
+              "type": "number",
+              "fill": 17.98
+            }
+          ],
+          "means": [
+            3.3595599999999997,
+            0.32,
+            17.9836
+          ],
+          "scales": [
+            0.9729802908589671,
+            0.466476151587624,
+            1.8643730957080453
+          ]
+        },
+        "coef": [
+          -3.4492673738416992,
+          3.7197797217125257,
+          1.3291592345829735
+        ],
+        "standardCoef": [
+          -3.3560691726508423,
+          1.735188529338142,
+          2.4780487168683942
+        ],
+        "intercept": 5.642623176469245,
+        "rank": 4,
+        "regular": true,
+        "alpha": 0.001,
+        "l1": 1,
+        "iterations": 36,
+        "features": [
+          "wt",
+          "am",
+          "qsec"
+        ],
+        "target": "mpg",
+        "method": "Lasso"
+      },
+      "test": {
+        "n": 7,
+        "rmse": 3.20741876562761,
+        "mae": 2.867531381472562,
+        "r2": 0.6200198837897009,
+        "adjusted": null,
+        "adjustedReason": "正則化模型的有效自由度不等同非零係數數量",
+        "r2Reason": null
+      },
+      "train": {
+        "n": 25,
+        "rmse": 2.0298696955706363,
+        "mae": 1.6859116186656262,
+        "r2": 0.8766329990609374,
+        "adjusted": null,
+        "adjustedReason": "正則化模型的有效自由度不等同非零係數數量",
+        "r2Reason": null
+      },
+      "residuals": [
+        {
+          "row": 6,
+          "actual": 18.7,
+          "predicted": 16.39943358305601,
+          "residual": 2.3005664169439903,
+          "absolute": 2.3005664169439903,
+          "percent": 12.302494208256633
+        },
+        {
+          "row": 26,
+          "actual": 19.2,
+          "predicted": 15.04235507368761,
+          "residual": 4.15764492631239,
+          "absolute": 4.15764492631239,
+          "percent": 21.654400657877034
+        },
+        {
+          "row": 29,
+          "actual": 30.4,
+          "predicted": 26.60645242601153,
+          "residual": 3.7935475739884694,
+          "absolute": 3.7935475739884694,
+          "percent": 12.478774914435755
+        },
+        {
+          "row": 31,
+          "actual": 19.7,
+          "predicted": 20.40990040867635,
+          "residual": -0.7099004086763507,
+          "absolute": 0.7099004086763507,
+          "percent": 3.603555373991628
+        },
+        {
+          "row": 19,
+          "actual": 32.4,
+          "predicted": 27.65274497306052,
+          "residual": 4.747255026939477,
+          "absolute": 4.747255026939477,
+          "percent": 14.652021688084806
+        },
+        {
+          "row": 3,
+          "actual": 21,
+          "predicted": 22.068049370989094,
+          "residual": -1.068049370989094,
+          "absolute": 1.068049370989094,
+          "percent": 5.085949385662352
+        },
+        {
+          "row": 4,
+          "actual": 22.8,
+          "predicted": 26.095755946458162,
+          "residual": -3.2957559464581614,
+          "absolute": 3.2957559464581614,
+          "percent": 14.455069940605972
+        }
+      ],
+      "unknownCategories": []
+    },
+    {
+      "method": "Lasso",
+      "k": 4,
+      "alpha": 0.01,
+      "l1": 1,
+      "cvRMSE": 2.447936596727645,
+      "cvSD": 0.7698365259890407,
+      "cvR2": 0.595778462545544,
+      "id": 4,
+      "model": {
+        "prep": {
+          "fields": [
+            {
+              "name": "wt",
+              "type": "number",
+              "fill": 3.44,
+              "min": 1.615,
+              "max": 5.424
+            },
+            {
+              "name": "am",
+              "type": "number",
+              "fill": 0,
+              "min": 0,
+              "max": 1
+            },
+            {
+              "name": "qsec",
+              "type": "number",
+              "fill": 17.98,
+              "min": 14.5,
+              "max": 22.9
+            },
+            {
+              "name": "hp",
+              "type": "number",
+              "fill": 123,
+              "min": 52,
+              "max": 335
+            }
+          ],
+          "columns": [
+            {
+              "name": "wt",
+              "source": "wt",
+              "type": "number",
+              "fill": 3.44
+            },
+            {
+              "name": "am",
+              "source": "am",
+              "type": "number",
+              "fill": 0
+            },
+            {
+              "name": "qsec",
+              "source": "qsec",
+              "type": "number",
+              "fill": 17.98
+            },
+            {
+              "name": "hp",
+              "source": "hp",
+              "type": "number",
+              "fill": 123
+            }
+          ],
+          "means": [
+            3.3595599999999997,
+            0.32,
+            17.9836,
+            151.48
+          ],
+          "scales": [
+            0.9729802908589671,
+            0.466476151587624,
+            1.8643730957080453,
+            72.35308977507457
+          ]
+        },
+        "coef": [
+          -2.6414895976455495,
+          3.686941116664929,
+          0.809146161703702,
+          -0.02035293062733432
+        ],
+        "standardCoef": [
+          -2.5701173170181026,
+          1.7198701032320332,
+          1.5085503343758135,
+          -1.4725974168653848
+        ],
+        "intercept": 15.374122653147207,
+        "rank": 5,
+        "regular": true,
+        "alpha": 0.01,
+        "l1": 1,
+        "iterations": 59,
+        "features": [
+          "wt",
+          "am",
+          "qsec",
+          "hp"
+        ],
+        "target": "mpg",
+        "method": "Lasso"
+      },
+      "test": {
+        "n": 7,
+        "rmse": 3.2288175672460264,
+        "mae": 2.9961623650579523,
+        "r2": 0.6149327755911482,
+        "adjusted": null,
+        "adjustedReason": "正則化模型的有效自由度不等同非零係數數量",
+        "r2Reason": null
+      },
+      "train": {
+        "n": 25,
+        "rmse": 1.923432826960941,
+        "mae": 1.5809587200925035,
+        "r2": 0.8892313826066586,
+        "adjusted": null,
+        "adjustedReason": "正則化模型的有效自由度不等同非零係數數量",
+        "r2Reason": null
+      },
+      "residuals": [
+        {
+          "row": 6,
+          "actual": 18.7,
+          "predicted": 16.49730324966002,
+          "residual": 2.202696750339978,
+          "absolute": 2.202696750339978,
+          "percent": 11.779127007165659
+        },
+        {
+          "row": 26,
+          "actual": 19.2,
+          "predicted": 15.451774347464681,
+          "residual": 3.748225652535318,
+          "absolute": 3.748225652535318,
+          "percent": 19.52200860695478
+        },
+        {
+          "row": 29,
+          "actual": 30.4,
+          "predicted": 26.439178980478204,
+          "residual": 3.960821019521795,
+          "absolute": 3.960821019521795,
+          "percent": 13.029016511584853
+        },
+        {
+          "row": 31,
+          "actual": 19.7,
+          "predicted": 20.72414023095784,
+          "residual": -1.0241402309578405,
+          "absolute": 1.0241402309578405,
+          "percent": 5.19868137542051
+        },
+        {
+          "row": 19,
+          "actual": 32.4,
+          "predicted": 27.66056900195894,
+          "residual": 4.739430998041058,
+          "absolute": 4.739430998041058,
+          "percent": 14.627873450744008
+        },
+        {
+          "row": 3,
+          "actual": 21,
+          "predicted": 22.999626479771415,
+          "residual": -1.9996264797714147,
+          "absolute": 1.9996264797714147,
+          "percent": 9.522030856054355
+        },
+        {
+          "row": 4,
+          "actual": 22.8,
+          "predicted": 26.098195424238263,
+          "residual": -3.298195424238262,
+          "absolute": 3.298195424238262,
+          "percent": 14.46576940455378
+        }
+      ],
+      "unknownCategories": []
+    },
+    {
+      "method": "Lasso",
+      "k": 5,
+      "alpha": 0.01,
+      "l1": 1,
+      "cvRMSE": 2.3959786266128207,
+      "cvSD": 0.708098228759799,
+      "cvR2": 0.6029219703466373,
+      "id": 5,
+      "model": {
+        "prep": {
+          "fields": [
+            {
+              "name": "wt",
+              "type": "number",
+              "fill": 3.44,
+              "min": 1.615,
+              "max": 5.424
+            },
+            {
+              "name": "hp",
+              "type": "number",
+              "fill": 123,
+              "min": 52,
+              "max": 335
+            },
+            {
+              "name": "disp",
+              "type": "number",
+              "fill": 258,
+              "min": 71.1,
+              "max": 472
+            },
+            {
+              "name": "qsec",
+              "type": "number",
+              "fill": 17.98,
+              "min": 14.5,
+              "max": 22.9
+            },
+            {
+              "name": "am",
+              "type": "number",
+              "fill": 0,
+              "min": 0,
+              "max": 1
+            }
+          ],
+          "columns": [
+            {
+              "name": "wt",
+              "source": "wt",
+              "type": "number",
+              "fill": 3.44
+            },
+            {
+              "name": "hp",
+              "source": "hp",
+              "type": "number",
+              "fill": 123
+            },
+            {
+              "name": "disp",
+              "source": "disp",
+              "type": "number",
+              "fill": 258
+            },
+            {
+              "name": "qsec",
+              "source": "qsec",
+              "type": "number",
+              "fill": 17.98
+            },
+            {
+              "name": "am",
+              "source": "am",
+              "type": "number",
+              "fill": 0
+            }
+          ],
+          "means": [
+            3.3595599999999997,
+            151.48,
+            241.452,
+            17.9836,
+            0.32
+          ],
+          "scales": [
+            0.9729802908589671,
+            72.35308977507457,
+            119.8372333459013,
+            1.8643730957080453,
+            0.466476151587624
+          ]
+        },
+        "coef": [
+          -2.3824254595797174,
+          -0.01948200790026585,
+          -0.0030877537926411345,
+          0.7593808518510349,
+          3.627142181246954
+        ],
+        "standardCoef": [
+          -2.3180530166116817,
+          -1.409583466606647,
+          -0.3700278717634274,
+          1.4157692295869264,
+          1.6919753259692194
+        ],
+        "intercept": 16.031493177111393,
+        "rank": 6,
+        "regular": true,
+        "alpha": 0.01,
+        "l1": 1,
+        "iterations": 109,
+        "features": [
+          "wt",
+          "hp",
+          "disp",
+          "qsec",
+          "am"
+        ],
+        "target": "mpg",
+        "method": "Lasso"
+      },
+      "test": {
+        "n": 7,
+        "rmse": 3.331384934137905,
+        "mae": 3.1296837917064293,
+        "r2": 0.5900799374420334,
+        "adjusted": null,
+        "adjustedReason": "正則化模型的有效自由度不等同非零係數數量",
+        "r2Reason": null
+      },
+      "train": {
+        "n": 25,
+        "rmse": 1.9221478683876294,
+        "mae": 1.5580858008588827,
+        "r2": 0.8893793321887051,
+        "adjusted": null,
+        "adjustedReason": "正則化模型的有效自由度不等同非零係數數量",
+        "r2Reason": null
+      },
+      "residuals": [
+        {
+          "row": 6,
+          "actual": 18.7,
+          "predicted": 16.239668946764446,
+          "residual": 2.460331053235553,
+          "absolute": 2.460331053235553,
+          "percent": 13.15685055206178
+        },
+        {
+          "row": 26,
+          "actual": 19.2,
+          "predicted": 15.174057909484546,
+          "residual": 4.0259420905154535,
+          "absolute": 4.0259420905154535,
+          "percent": 20.968448388101322
+        },
+        {
+          "row": 29,
+          "actual": 30.4,
+          "predicted": 26.39244975588651,
+          "residual": 4.007550244113489,
+          "absolute": 4.007550244113489,
+          "percent": 13.182731066162793
+        },
+        {
+          "row": 31,
+          "actual": 19.7,
+          "predicted": 20.972644356534083,
+          "residual": -1.2726443565340837,
+          "absolute": 1.2726443565340837,
+          "percent": 6.460123637228851
+        },
+        {
+          "row": 19,
+          "actual": 32.4,
+          "predicted": 27.673625787924216,
+          "residual": 4.726374212075783,
+          "absolute": 4.726374212075783,
+          "percent": 14.58757472862896
+        },
+        {
+          "row": 3,
+          "actual": 21,
+          "predicted": 23.09676278471945,
+          "residual": -2.0967627847194485,
+          "absolute": 2.0967627847194485,
+          "percent": 9.984584689140231
+        },
+        {
+          "row": 4,
+          "actual": 22.8,
+          "predicted": 26.118181800751195,
+          "residual": -3.3181818007511943,
+          "absolute": 3.3181818007511943,
+          "percent": 14.553428950663132
+        }
+      ],
+      "unknownCategories": []
+    },
+    {
+      "method": "Forward Selection",
+      "k": 1,
+      "alpha": 0,
+      "l1": 1,
+      "cvRMSE": 2.8530912263316663,
+      "cvSD": 0.7435662812958183,
+      "cvR2": 0.5774181354165158,
+      "id": 6,
+      "model": {
+        "prep": {
+          "fields": [
+            {
+              "name": "disp",
+              "type": "number",
+              "fill": 258,
+              "min": 71.1,
+              "max": 472
+            }
+          ],
+          "columns": [
+            {
+              "name": "disp",
+              "source": "disp",
+              "type": "number",
+              "fill": 258
+            }
+          ],
+          "means": [
+            241.452
+          ],
+          "scales": [
+            119.8372333459013
+          ]
+        },
+        "coef": [
+          -0.0429213916665882
+        ],
+        "standardCoef": [
+          -5.143580828679753
+        ],
+        "intercept": 29.51145586068105,
+        "rank": 2,
+        "regular": false,
+        "alpha": 0,
+        "l1": 1,
+        "features": [
+          "disp"
+        ],
+        "target": "mpg",
+        "method": "Forward Selection"
+      },
+      "test": {
+        "n": 7,
+        "rmse": 4.666137174109279,
+        "mae": 4.291714988468297,
+        "r2": 0.19579912088418538,
+        "adjusted": 0.034958945061022484,
+        "adjustedReason": null,
+        "r2Reason": null
+      },
+      "train": {
+        "n": 25,
+        "rmse": 2.634933065343046,
+        "mae": 2.0803700189828827,
+        "r2": 0.7921251915358305,
+        "adjusted": 0.7830871563852144,
+        "adjustedReason": null,
+        "r2Reason": null
+      },
+      "residuals": [
+        {
+          "row": 6,
+          "actual": 18.7,
+          "predicted": 14.0597548607093,
+          "residual": 4.6402451392907,
+          "absolute": 4.6402451392907,
+          "percent": 24.814145129896794
+        },
+        {
+          "row": 26,
+          "actual": 19.2,
+          "predicted": 12.34289919404577,
+          "residual": 6.857100805954229,
+          "absolute": 6.857100805954229,
+          "percent": 35.71406669767828
+        },
+        {
+          "row": 29,
+          "actual": 30.4,
+          "predicted": 25.42963151318851,
+          "residual": 4.970368486811488,
+          "absolute": 4.970368486811488,
+          "percent": 16.349896338195684
+        },
+        {
+          "row": 31,
+          "actual": 19.7,
+          "predicted": 23.287854069025762,
+          "residual": -3.587854069025763,
+          "absolute": 3.587854069025763,
+          "percent": 18.212457203176463
+        },
+        {
+          "row": 19,
+          "actual": 32.4,
+          "predicted": 26.13354233652056,
+          "residual": 6.266457663479439,
+          "absolute": 6.266457663479439,
+          "percent": 19.340918714442715
+        },
+        {
+          "row": 3,
+          "actual": 21,
+          "predicted": 22.64403319402694,
+          "residual": -1.6440331940269388,
+          "absolute": 1.6440331940269388,
+          "percent": 7.8287294953663755
+        },
+        {
+          "row": 4,
+          "actual": 22.8,
+          "predicted": 24.875945560689523,
+          "residual": -2.0759455606895223,
+          "absolute": 2.0759455606895223,
+          "percent": 9.105024388989133
+        }
+      ],
+      "unknownCategories": []
+    },
+    {
+      "method": "Forward Selection",
+      "k": 2,
+      "alpha": 0,
+      "l1": 1,
+      "cvRMSE": 2.725375605983659,
+      "cvSD": 0.7508554805034476,
+      "cvR2": 0.5949761065543135,
+      "id": 7,
+      "model": {
+        "prep": {
+          "fields": [
+            {
+              "name": "disp",
+              "type": "number",
+              "fill": 258,
+              "min": 71.1,
+              "max": 472
+            },
+            {
+              "name": "am",
+              "type": "number",
+              "fill": 0,
+              "min": 0,
+              "max": 1
+            }
+          ],
+          "columns": [
+            {
+              "name": "disp",
+              "source": "disp",
+              "type": "number",
+              "fill": 258
+            },
+            {
+              "name": "am",
+              "source": "am",
+              "type": "number",
+              "fill": 0
+            }
+          ],
+          "means": [
+            241.452,
+            0.32
+          ],
+          "scales": [
+            119.8372333459013,
+            0.466476151587624
+          ]
+        },
+        "coef": [
+          -0.03881608271694746,
+          2.2588023841669695
+        ],
+        "standardCoef": [
+          -4.6516119621246395,
+          1.0536774433631577
+        ],
+        "intercept": 27.797404041238963,
+        "rank": 3,
+        "regular": false,
+        "alpha": 0,
+        "l1": 1,
+        "features": [
+          "disp",
+          "am"
+        ],
+        "target": "mpg",
+        "method": "Forward Selection"
+      },
+      "test": {
+        "n": 7,
+        "rmse": 4.736748159350609,
+        "mae": 4.5538306031306055,
+        "r2": 0.171275592761712,
+        "adjusted": -0.2430866108574321,
+        "adjustedReason": null,
+        "r2Reason": null
+      },
+      "train": {
+        "n": 25,
+        "rmse": 2.464684456445754,
+        "mae": 1.8628321968585837,
+        "r2": 0.8181198349257031,
+        "adjusted": 0.8015852744644033,
+        "adjustedReason": null,
+        "r2Reason": null
+      },
+      "residuals": [
+        {
+          "row": 6,
+          "actual": 18.7,
+          "predicted": 13.823614263137877,
+          "residual": 4.876385736862122,
+          "absolute": 4.876385736862122,
+          "percent": 26.076929074128998
+        },
+        {
+          "row": 26,
+          "actual": 19.2,
+          "predicted": 12.270970954459978,
+          "residual": 6.929029045540021,
+          "absolute": 6.929029045540021,
+          "percent": 36.08869294552095
+        },
+        {
+          "row": 29,
+          "actual": 30.4,
+          "predicted": 26.36479695902423,
+          "residual": 4.0352030409757695,
+          "absolute": 4.0352030409757695,
+          "percent": 13.273694213736084
+        },
+        {
+          "row": 31,
+          "actual": 19.7,
+          "predicted": 24.42787443144855,
+          "residual": -4.7278744314485515,
+          "absolute": 4.7278744314485515,
+          "percent": 23.99936259618554
+        },
+        {
+          "row": 19,
+          "actual": 32.4,
+          "predicted": 27.001380715582165,
+          "residual": 5.398619284417833,
+          "absolute": 5.398619284417833,
+          "percent": 16.662405198820473
+        },
+        {
+          "row": 3,
+          "actual": 21,
+          "predicted": 23.845633190694336,
+          "residual": -2.845633190694336,
+          "absolute": 2.845633190694336,
+          "percent": 13.550634241401601
+        },
+        {
+          "row": 4,
+          "actual": 22.8,
+          "predicted": 25.864069491975606,
+          "residual": -3.064069491975605,
+          "absolute": 3.064069491975605,
+          "percent": 13.43890128059476
+        }
+      ],
+      "unknownCategories": []
+    },
+    {
+      "method": "Forward Selection",
+      "k": 3,
+      "alpha": 0,
+      "l1": 1,
+      "cvRMSE": 2.3101241568585955,
+      "cvSD": 0.805185765091556,
+      "cvR2": 0.6692393791321514,
+      "id": 8,
+      "model": {
+        "prep": {
+          "fields": [
+            {
+              "name": "disp",
+              "type": "number",
+              "fill": 258,
+              "min": 71.1,
+              "max": 472
+            },
+            {
+              "name": "am",
+              "type": "number",
+              "fill": 0,
+              "min": 0,
+              "max": 1
+            },
+            {
+              "name": "qsec",
+              "type": "number",
+              "fill": 17.98,
+              "min": 14.5,
+              "max": 22.9
+            }
+          ],
+          "columns": [
+            {
+              "name": "disp",
+              "source": "disp",
+              "type": "number",
+              "fill": 258
+            },
+            {
+              "name": "am",
+              "source": "am",
+              "type": "number",
+              "fill": 0
+            },
+            {
+              "name": "qsec",
+              "source": "qsec",
+              "type": "number",
+              "fill": 17.98
+            }
+          ],
+          "means": [
+            241.452,
+            0.32,
+            17.9836
+          ],
+          "scales": [
+            119.8372333459013,
+            0.466476151587624,
+            1.8643730957080453
+          ]
+        },
+        "coef": [
+          -0.02807384754759667,
+          4.447771666814808,
+          0.8610801177471759
+        ],
+        "standardCoef": [
+          -3.364292219478601,
+          2.0747794102762436,
+          1.6053746047769504
+        ],
+        "intercept": 9.017879299163457,
+        "rank": 4,
+        "regular": false,
+        "alpha": 0,
+        "l1": 1,
+        "features": [
+          "disp",
+          "am",
+          "qsec"
+        ],
+        "target": "mpg",
+        "method": "Forward Selection"
+      },
+      "test": {
+        "n": 7,
+        "rmse": 4.5652091390198155,
+        "mae": 4.374756442391676,
+        "r2": 0.23021242732168046,
+        "adjusted": -0.5395751453566391,
+        "adjustedReason": null,
+        "r2Reason": null
+      },
+      "train": {
+        "n": 25,
+        "rmse": 2.229304874964182,
+        "mae": 1.8096988020708136,
+        "r2": 0.8512004496879495,
+        "adjusted": 0.8299433710719423,
+        "adjustedReason": null,
+        "r2Reason": null
+      },
+      "residuals": [
+        {
+          "row": 6,
+          "actual": 18.7,
+          "predicted": 13.56687778608559,
+          "residual": 5.13312221391441,
+          "absolute": 5.13312221391441,
+          "percent": 27.44985141130701
+        },
+        {
+          "row": 26,
+          "actual": 19.2,
+          "predicted": 12.469756287714139,
+          "residual": 6.73024371228586,
+          "absolute": 6.73024371228586,
+          "percent": 35.053352668155526
+        },
+        {
+          "row": 29,
+          "actual": 30.4,
+          "predicted": 25.348082054129094,
+          "residual": 5.051917945870905,
+          "absolute": 5.051917945870905,
+          "percent": 16.61815113773324
+        },
+        {
+          "row": 31,
+          "actual": 19.7,
+          "predicted": 22.741684896657976,
+          "residual": -3.0416848966579764,
+          "absolute": 3.0416848966579764,
+          "percent": 15.44002485613186
+        },
+        {
+          "row": 19,
+          "actual": 32.4,
+          "predicted": 28.02146905651992,
+          "residual": 4.378530943480079,
+          "absolute": 4.378530943480079,
+          "percent": 13.513984393457035
+        },
+        {
+          "row": 3,
+          "actual": 21,
+          "predicted": 23.62941896241973,
+          "residual": -2.629418962419731,
+          "absolute": 2.629418962419731,
+          "percent": 12.521042678189195
+        },
+        {
+          "row": 4,
+          "actual": 22.8,
+          "predicted": 26.458376422112767,
+          "residual": -3.6583764221127666,
+          "absolute": 3.6583764221127666,
+          "percent": 16.045510623301606
+        }
+      ],
+      "unknownCategories": []
+    },
+    {
+      "method": "Forward Selection",
+      "k": 4,
+      "alpha": 0,
+      "l1": 1,
+      "cvRMSE": 2.354005140734673,
+      "cvSD": 0.7089040066412694,
+      "cvR2": 0.6704017074036058,
+      "id": 9,
+      "model": {
+        "prep": {
+          "fields": [
+            {
+              "name": "disp",
+              "type": "number",
+              "fill": 258,
+              "min": 71.1,
+              "max": 472
+            },
+            {
+              "name": "am",
+              "type": "number",
+              "fill": 0,
+              "min": 0,
+              "max": 1
+            },
+            {
+              "name": "qsec",
+              "type": "number",
+              "fill": 17.98,
+              "min": 14.5,
+              "max": 22.9
+            },
+            {
+              "name": "hp",
+              "type": "number",
+              "fill": 123,
+              "min": 52,
+              "max": 335
+            }
+          ],
+          "columns": [
+            {
+              "name": "disp",
+              "source": "disp",
+              "type": "number",
+              "fill": 258
+            },
+            {
+              "name": "am",
+              "source": "am",
+              "type": "number",
+              "fill": 0
+            },
+            {
+              "name": "qsec",
+              "source": "qsec",
+              "type": "number",
+              "fill": 17.98
+            },
+            {
+              "name": "hp",
+              "source": "hp",
+              "type": "number",
+              "fill": 123
+            }
+          ],
+          "means": [
+            241.452,
+            0.32,
+            17.9836,
+            151.48
+          ],
+          "scales": [
+            119.8372333459013,
+            0.466476151587624,
+            1.8643730957080453,
+            72.35308977507457
+          ]
+        },
+        "coef": [
+          -0.019014260393479115,
+          4.577776361754971,
+          0.46273025536869145,
+          -0.02451741767258809
+        ],
+        "standardCoef": [
+          -2.278616359673086,
+          2.135423500060254,
+          0.8627018386795017,
+          -1.7739109219177658
+        ],
+        "intercept": 17.66648537335997,
+        "rank": 5,
+        "regular": false,
+        "alpha": 0,
+        "l1": 1,
+        "features": [
+          "disp",
+          "am",
+          "qsec",
+          "hp"
+        ],
+        "target": "mpg",
+        "method": "Forward Selection"
+      },
+      "test": {
+        "n": 7,
+        "rmse": 4.206130557697899,
+        "mae": 4.111532376958613,
+        "r2": 0.34654597461850234,
+        "adjusted": -0.9603620761444929,
+        "adjustedReason": null,
+        "r2Reason": null
+      },
+      "train": {
+        "n": 25,
+        "rmse": 2.081650799577201,
+        "mae": 1.6122623349308327,
+        "r2": 0.8702586410390086,
+        "adjusted": 0.8443103692468104,
+        "adjustedReason": null,
+        "r2Reason": null
+      },
+      "residuals": [
+        {
+          "row": 6,
+          "actual": 18.7,
+          "predicted": 14.4064724853797,
+          "residual": 4.293527514620299,
+          "absolute": 4.293527514620299,
+          "percent": 22.96004018513529
+        },
+        {
+          "row": 26,
+          "actual": 19.2,
+          "predicted": 13.659783977301597,
+          "residual": 5.540216022698402,
+          "absolute": 5.540216022698402,
+          "percent": 28.855291784887516
+        },
+        {
+          "row": 29,
+          "actual": 30.4,
+          "predicted": 25.485678690423505,
+          "residual": 4.9143213095764935,
+          "absolute": 4.9143213095764935,
+          "percent": 16.165530623606887
+        },
+        {
+          "row": 31,
+          "actual": 19.7,
+          "predicted": 22.368964843572268,
+          "residual": -2.668964843572269,
+          "absolute": 2.668964843572269,
+          "percent": 13.548044891229791
+        },
+        {
+          "row": 19,
+          "actual": 32.4,
+          "predicted": 28.13904794778574,
+          "residual": 4.260952052214257,
+          "absolute": 4.260952052214257,
+          "percent": 13.151086580908203
+        },
+        {
+          "row": 3,
+          "actual": 21,
+          "predicted": 24.380733074548722,
+          "residual": -3.380733074548722,
+          "absolute": 3.380733074548722,
+          "percent": 16.09872892642249
+        },
+        {
+          "row": 4,
+          "actual": 22.8,
+          "predicted": 26.52201182147985,
+          "residual": -3.7220118214798497,
+          "absolute": 3.7220118214798497,
+          "percent": 16.3246132521046
+        }
+      ],
+      "unknownCategories": []
+    },
+    {
+      "method": "Forward Selection",
+      "k": 5,
+      "alpha": 0,
+      "l1": 1,
+      "cvRMSE": 2.4350419615878325,
+      "cvSD": 0.7332308125026141,
+      "cvR2": 0.5641684234734724,
+      "id": 10,
+      "model": {
+        "prep": {
+          "fields": [
+            {
+              "name": "wt",
+              "type": "number",
+              "fill": 3.44,
+              "min": 1.615,
+              "max": 5.424
+            },
+            {
+              "name": "hp",
+              "type": "number",
+              "fill": 123,
+              "min": 52,
+              "max": 335
+            },
+            {
+              "name": "disp",
+              "type": "number",
+              "fill": 258,
+              "min": 71.1,
+              "max": 472
+            },
+            {
+              "name": "qsec",
+              "type": "number",
+              "fill": 17.98,
+              "min": 14.5,
+              "max": 22.9
+            },
+            {
+              "name": "am",
+              "type": "number",
+              "fill": 0,
+              "min": 0,
+              "max": 1
+            }
+          ],
+          "columns": [
+            {
+              "name": "wt",
+              "source": "wt",
+              "type": "number",
+              "fill": 3.44
+            },
+            {
+              "name": "hp",
+              "source": "hp",
+              "type": "number",
+              "fill": 123
+            },
+            {
+              "name": "disp",
+              "source": "disp",
+              "type": "number",
+              "fill": 258
+            },
+            {
+              "name": "qsec",
+              "source": "qsec",
+              "type": "number",
+              "fill": 17.98
+            },
+            {
+              "name": "am",
+              "source": "am",
+              "type": "number",
+              "fill": 0
+            }
+          ],
+          "means": [
+            3.3595599999999997,
+            151.48,
+            241.452,
+            17.9836,
+            0.32
+          ],
+          "scales": [
+            0.9729802908589671,
+            72.35308977507457,
+            119.8372333459013,
+            1.8643730957080453,
+            0.466476151587624
+          ]
+        },
+        "coef": [
+          -2.45622312314468,
+          -0.01934027211953016,
+          -0.002152325701540958,
+          0.830522865117571,
+          3.8429245181460026
+        ],
+        "standardCoef": [
+          -2.389856688771831,
+          -1.399328444938737,
+          -0.25792875733194454,
+          1.5484044850955612,
+          1.7926326400664716
+        ],
+        "intercept": 14.683649878611762,
+        "rank": 6,
+        "regular": false,
+        "alpha": 0,
+        "l1": 1,
+        "features": [
+          "wt",
+          "hp",
+          "disp",
+          "qsec",
+          "am"
+        ],
+        "target": "mpg",
+        "method": "Forward Selection"
+      },
+      "test": {
+        "n": 7,
+        "rmse": 3.311025221458803,
+        "mae": 3.116130737431906,
+        "r2": 0.5950750683393289,
+        "adjusted": -1.4295495899640267,
+        "adjustedReason": null,
+        "r2Reason": null
+      },
+      "train": {
+        "n": 25,
+        "rmse": 1.919398701421636,
+        "mae": 1.5804759353955051,
+        "r2": 0.8896955380431054,
+        "adjusted": 0.860668048054449,
+        "adjustedReason": null,
+        "r2Reason": null
+      },
+      "residuals": [
+        {
+          "row": 6,
+          "actual": 18.7,
+          "predicted": 16.210356625822598,
+          "residual": 2.489643374177401,
+          "absolute": 2.489643374177401,
+          "percent": 13.313600931429953
+        },
+        {
+          "row": 26,
+          "actual": 19.2,
+          "predicted": 15.154408918840893,
+          "residual": 4.045591081159106,
+          "absolute": 4.045591081159106,
+          "percent": 21.070786881037012
+        },
+        {
+          "row": 29,
+          "actual": 30.4,
+          "predicted": 26.45600830820336,
+          "residual": 3.94399169179664,
+          "absolute": 3.94399169179664,
+          "percent": 12.973656880910001
+        },
+        {
+          "row": 31,
+          "actual": 19.7,
+          "predicted": 20.899305907328134,
+          "residual": -1.1993059073281351,
+          "absolute": 1.1993059073281351,
+          "percent": 6.087847245320483
+        },
+        {
+          "row": 19,
+          "actual": 32.4,
+          "predicted": 27.84731771707831,
+          "residual": 4.552682282921687,
+          "absolute": 4.552682282921687,
+          "percent": 14.05148852753607
+        },
+        {
+          "row": 3,
+          "actual": 21,
+          "predicted": 23.128630036622997,
+          "residual": -2.1286300366229973,
+          "absolute": 2.1286300366229973,
+          "percent": 10.13633350772856
+        },
+        {
+          "row": 4,
+          "actual": 22.8,
+          "predicted": 26.253070788017375,
+          "residual": -3.4530707880173743,
+          "absolute": 3.4530707880173743,
+          "percent": 15.145047315865675
+        }
+      ],
+      "unknownCategories": []
+    },
+    {
+      "method": "RFE",
+      "k": 1,
+      "alpha": 0,
+      "l1": 1,
+      "cvRMSE": 3.3019652671611843,
+      "cvSD": 0.8248267291945182,
+      "cvR2": 0.26947642769850066,
+      "id": 11,
+      "model": {
+        "prep": {
+          "fields": [
+            {
+              "name": "wt",
+              "type": "number",
+              "fill": 3.44,
+              "min": 1.615,
+              "max": 5.424
+            }
+          ],
+          "columns": [
+            {
+              "name": "wt",
+              "source": "wt",
+              "type": "number",
+              "fill": 3.44
+            }
+          ],
+          "means": [
+            3.3595599999999997
+          ],
+          "scales": [
+            0.9729802908589671
+          ]
+        },
+        "coef": [
+          -5.143634722194716
+        ],
+        "standardCoef": [
+          -5.004655208073297
+        ],
+        "intercept": 36.42834946729647,
+        "rank": 2,
+        "regular": false,
+        "alpha": 0,
+        "l1": 1,
+        "features": [
+          "wt"
+        ],
+        "target": "mpg",
+        "method": "RFE"
+      },
+      "test": {
+        "n": 7,
+        "rmse": 3.209822539662123,
+        "mae": 2.3486838130019128,
+        "r2": 0.6194501243234483,
+        "adjusted": 0.5433401491881379,
+        "adjustedReason": null,
+        "r2Reason": null
+      },
+      "train": {
+        "n": 25,
+        "rmse": 2.890107653410998,
+        "mae": 2.3276061498029823,
+        "r2": 0.7499132242696125,
+        "adjusted": 0.7390398861943783,
+        "adjustedReason": null,
+        "r2Reason": null
+      },
+      "residuals": [
+        {
+          "row": 6,
+          "actual": 18.7,
+          "predicted": 18.734246022946646,
+          "residual": -0.034246022946646804,
+          "absolute": 0.034246022946646804,
+          "percent": 0.1831338125489134
+        },
+        {
+          "row": 26,
+          "actual": 19.2,
+          "predicted": 16.651073960457786,
+          "residual": 2.548926039542213,
+          "absolute": 2.548926039542213,
+          "percent": 13.275656455949026
+        },
+        {
+          "row": 29,
+          "actual": 30.4,
+          "predicted": 28.646030132615866,
+          "residual": 1.7539698673841322,
+          "absolute": 1.7539698673841322,
+          "percent": 5.76963772165833
+        },
+        {
+          "row": 31,
+          "actual": 19.7,
+          "predicted": 22.180481286817106,
+          "residual": -2.4804812868171062,
+          "absolute": 2.4804812868171062,
+          "percent": 12.591275567599524
+        },
+        {
+          "row": 19,
+          "actual": 32.4,
+          "predicted": 25.112353078468097,
+          "residual": 7.287646921531902,
+          "absolute": 7.287646921531902,
+          "percent": 22.4927374121355
+        },
+        {
+          "row": 3,
+          "actual": 21,
+          "predicted": 21.64039964098666,
+          "residual": -0.6403996409866615,
+          "absolute": 0.6403996409866615,
+          "percent": 3.049522099936483
+        },
+        {
+          "row": 4,
+          "actual": 22.8,
+          "predicted": 24.49511691180473,
+          "residual": -1.6951169118047282,
+          "absolute": 1.6951169118047282,
+          "percent": 7.4347232973891595
+        }
+      ],
+      "unknownCategories": []
+    },
+    {
+      "method": "RFE",
+      "k": 2,
+      "alpha": 0,
+      "l1": 1,
+      "cvRMSE": 3.041947018905346,
+      "cvSD": 1.0227137789863796,
+      "cvR2": 0.3497845800841576,
+      "id": 12,
+      "model": {
+        "prep": {
+          "fields": [
+            {
+              "name": "wt",
+              "type": "number",
+              "fill": 3.44,
+              "min": 1.615,
+              "max": 5.424
+            },
+            {
+              "name": "qsec",
+              "type": "number",
+              "fill": 17.98,
+              "min": 14.5,
+              "max": 22.9
+            }
+          ],
+          "columns": [
+            {
+              "name": "wt",
+              "source": "wt",
+              "type": "number",
+              "fill": 3.44
+            },
+            {
+              "name": "qsec",
+              "source": "qsec",
+              "type": "number",
+              "fill": 17.98
+            }
+          ],
+          "means": [
+            3.3595599999999997,
+            17.9836
+          ],
+          "scales": [
+            0.9729802908589671,
+            1.8643730957080453
+          ]
+        },
+        "coef": [
+          -4.750830155173701,
+          0.9407191395111805
+        ],
+        "standardCoef": [
+          -4.622464106202459,
+          1.753851454322268
+        ],
+        "intercept": 18.19118223880209,
+        "rank": 3,
+        "regular": false,
+        "alpha": 0,
+        "l1": 1,
+        "features": [
+          "wt",
+          "qsec"
+        ],
+        "target": "mpg",
+        "method": "RFE"
+      },
+      "test": {
+        "n": 7,
+        "rmse": 3.1033345262216137,
+        "mae": 2.3343671001106294,
+        "r2": 0.644281275798407,
+        "adjusted": 0.46642191369761044,
+        "adjustedReason": null,
+        "r2Reason": null
+      },
+      "train": {
+        "n": 25,
+        "rmse": 2.3286900529752215,
+        "mae": 1.78265136515678,
+        "r2": 0.8376373752660613,
+        "adjusted": 0.8228771366538851,
+        "adjustedReason": null,
+        "r2Reason": null
+      },
+      "residuals": [
+        {
+          "row": 6,
+          "actual": 18.7,
+          "predicted": 17.859366259484847,
+          "residual": 0.8406337405151518,
+          "absolute": 0.8406337405151518,
+          "percent": 4.495367596337711
+        },
+        {
+          "row": 26,
+          "actual": 19.2,
+          "predicted": 15.963501620824836,
+          "residual": 3.2364983791751634,
+          "absolute": 3.2364983791751634,
+          "percent": 16.856762391537313
+        },
+        {
+          "row": 29,
+          "actual": 30.4,
+          "predicted": 26.90132967176323,
+          "residual": 3.49867032823677,
+          "absolute": 3.49867032823677,
+          "percent": 11.508783974463059
+        },
+        {
+          "row": 31,
+          "actual": 19.7,
+          "predicted": 19.61252937139423,
+          "residual": 0.08747062860576804,
+          "absolute": 0.08747062860576804,
+          "percent": 0.44401334317648755
+        },
+        {
+          "row": 19,
+          "actual": 32.4,
+          "predicted": 26.055157543702627,
+          "residual": 6.344842456297371,
+          "absolute": 6.344842456297371,
+          "percent": 19.582847087337566
+        },
+        {
+          "row": 3,
+          "actual": 21,
+          "predicted": 20.54358529715799,
+          "residual": 0.4564147028420109,
+          "absolute": 0.4564147028420109,
+          "percent": 2.1734033468667184
+        },
+        {
+          "row": 4,
+          "actual": 22.8,
+          "predicted": 24.67603946510217,
+          "residual": -1.8760394651021706,
+          "absolute": 1.8760394651021706,
+          "percent": 8.228243267991976
+        }
+      ],
+      "unknownCategories": []
+    },
+    {
+      "method": "RFE",
+      "k": 3,
+      "alpha": 0,
+      "l1": 1,
+      "cvRMSE": 2.686954778470414,
+      "cvSD": 0.7730462053796654,
+      "cvR2": 0.4928727801560252,
+      "id": 13,
+      "model": {
+        "prep": {
+          "fields": [
+            {
+              "name": "wt",
+              "type": "number",
+              "fill": 3.44,
+              "min": 1.615,
+              "max": 5.424
+            },
+            {
+              "name": "am",
+              "type": "number",
+              "fill": 0,
+              "min": 0,
+              "max": 1
+            },
+            {
+              "name": "qsec",
+              "type": "number",
+              "fill": 17.98,
+              "min": 14.5,
+              "max": 22.9
+            }
+          ],
+          "columns": [
+            {
+              "name": "wt",
+              "source": "wt",
+              "type": "number",
+              "fill": 3.44
+            },
+            {
+              "name": "am",
+              "source": "am",
+              "type": "number",
+              "fill": 0
+            },
+            {
+              "name": "qsec",
+              "source": "qsec",
+              "type": "number",
+              "fill": 17.98
+            }
+          ],
+          "means": [
+            3.3595599999999997,
+            0.32,
+            17.9836
+          ],
+          "scales": [
+            0.9729802908589671,
+            0.466476151587624,
+            1.8643730957080453
+          ]
+        },
+        "coef": [
+          -3.447151134225741,
+          3.739840837912507,
+          1.3338130396024264
+        ],
+        "standardCoef": [
+          -3.35401011321378,
+          1.7445465616196614,
+          2.4867251457393333
+        ],
+        "intercept": 5.545401817373232,
+        "rank": 4,
+        "regular": false,
+        "alpha": 0,
+        "l1": 1,
+        "features": [
+          "wt",
+          "am",
+          "qsec"
+        ],
+        "target": "mpg",
+        "method": "RFE"
+      },
+      "test": {
+        "n": 7,
+        "rmse": 3.208240114435487,
+        "mae": 2.8705312308461566,
+        "r2": 0.619825249911973,
+        "adjusted": 0.23965049982394593,
+        "adjustedReason": null,
+        "r2Reason": null
+      },
+      "train": {
+        "n": 25,
+        "rmse": 2.0298469537473576,
+        "mae": 1.6861136766692995,
+        "r2": 0.8766357633514962,
+        "adjusted": 0.8590123009731385,
+        "adjustedReason": null,
+        "r2Reason": null
+      },
+      "residuals": [
+        {
+          "row": 6,
+          "actual": 18.7,
+          "predicted": 16.388699849669976,
+          "residual": 2.3113001503300232,
+          "absolute": 2.3113001503300232,
+          "percent": 12.35989385203221
+        },
+        {
+          "row": 26,
+          "actual": 19.2,
+          "predicted": 15.032618031496629,
+          "residual": 4.167381968503371,
+          "absolute": 4.167381968503371,
+          "percent": 21.70511441928839
+        },
+        {
+          "row": 29,
+          "actual": 30.4,
+          "predicted": 26.611143358483194,
+          "residual": 3.788856641516805,
+          "absolute": 3.788856641516805,
+          "percent": 12.463344215515807
+        },
+        {
+          "row": 31,
+          "actual": 19.7,
+          "predicted": 20.410736127318046,
+          "residual": -0.7107361273180466,
+          "absolute": 0.7107361273180466,
+          "percent": 3.607797600599221
+        },
+        {
+          "row": 19,
+          "actual": 32.4,
+          "predicted": 27.67085004104835,
+          "residual": 4.729149958951648,
+          "absolute": 4.729149958951648,
+          "percent": 14.596141848616199
+        },
+        {
+          "row": 3,
+          "actual": 21,
+          "predicted": 22.076181078420028,
+          "residual": -1.0761810784200279,
+          "absolute": 1.0761810784200279,
+          "percent": 5.124671802000132
+        },
+        {
+          "row": 4,
+          "actual": 22.8,
+          "predicted": 26.110112690883174,
+          "residual": -3.310112690883173,
+          "absolute": 3.310112690883173,
+          "percent": 14.518038117908652
+        }
+      ],
+      "unknownCategories": []
+    },
+    {
+      "method": "RFE",
+      "k": 4,
+      "alpha": 0,
+      "l1": 1,
+      "cvRMSE": 2.6113894096400347,
+      "cvSD": 0.872350635754375,
+      "cvR2": 0.47770575556130856,
+      "id": 14,
+      "model": {
+        "prep": {
+          "fields": [
+            {
+              "name": "wt",
+              "type": "number",
+              "fill": 3.44,
+              "min": 1.615,
+              "max": 5.424
+            },
+            {
+              "name": "am",
+              "type": "number",
+              "fill": 0,
+              "min": 0,
+              "max": 1
+            },
+            {
+              "name": "qsec",
+              "type": "number",
+              "fill": 17.98,
+              "min": 14.5,
+              "max": 22.9
+            },
+            {
+              "name": "hp",
+              "type": "number",
+              "fill": 123,
+              "min": 52,
+              "max": 335
+            }
+          ],
+          "columns": [
+            {
+              "name": "wt",
+              "source": "wt",
+              "type": "number",
+              "fill": 3.44
+            },
+            {
+              "name": "am",
+              "source": "am",
+              "type": "number",
+              "fill": 0
+            },
+            {
+              "name": "qsec",
+              "source": "qsec",
+              "type": "number",
+              "fill": 17.98
+            },
+            {
+              "name": "hp",
+              "source": "hp",
+              "type": "number",
+              "fill": 123
+            }
+          ],
+          "means": [
+            3.3595599999999997,
+            0.32,
+            17.9836,
+            151.48
+          ],
+          "scales": [
+            0.9729802908589671,
+            0.466476151587624,
+            1.8643730957080453,
+            72.35308977507457
+          ]
+        },
+        "coef": [
+          -2.6368043933581777,
+          3.8846074920720537,
+          0.8652118934164967,
+          -0.019947350765864177
+        ],
+        "standardCoef": [
+          -2.565558705587842,
+          1.8120767533302233,
+          1.6130777761723334,
+          -1.4432524607374733
+        ],
+        "intercept": 14.225428257855533,
+        "rank": 5,
+        "regular": false,
+        "alpha": 0,
+        "l1": 1,
+        "features": [
+          "wt",
+          "am",
+          "qsec",
+          "hp"
+        ],
+        "target": "mpg",
+        "method": "RFE"
+      },
+      "test": {
+        "n": 7,
+        "rmse": 3.2384152132602226,
+        "mae": 3.023059323292116,
+        "r2": 0.6126401519800038,
+        "adjusted": -0.1620795440599887,
+        "adjustedReason": null,
+        "r2Reason": null
+      },
+      "train": {
+        "n": 25,
+        "rmse": 1.9209850371319876,
+        "mae": 1.5964195560477907,
+        "r2": 0.8895131348611365,
+        "adjusted": 0.8674157618333638,
+        "adjustedReason": null,
+        "r2Reason": null
+      },
+      "residuals": [
+        {
+          "row": 6,
+          "actual": 18.7,
+          "predicted": 16.389941186625943,
+          "residual": 2.310058813374056,
+          "absolute": 2.310058813374056,
+          "percent": 12.353255686492277
+        },
+        {
+          "row": 26,
+          "actual": 19.2,
+          "predicted": 15.347991764118378,
+          "residual": 3.8520082358816214,
+          "absolute": 3.8520082358816214,
+          "percent": 20.06254289521678
+        },
+        {
+          "row": 29,
+          "actual": 30.4,
+          "predicted": 26.488581064972806,
+          "residual": 3.911418935027193,
+          "absolute": 3.911418935027193,
+          "percent": 12.866509654694713
+        },
+        {
+          "row": 31,
+          "actual": 19.7,
+          "predicted": 20.726085544254904,
+          "residual": -1.0260855442549044,
+          "absolute": 1.0260855442549044,
+          "percent": 5.208556062207636
+        },
+        {
+          "row": 19,
+          "actual": 32.4,
+          "predicted": 27.83821649881175,
+          "residual": 4.561783501188248,
+          "absolute": 4.561783501188248,
+          "percent": 14.079578707371137
+        },
+        {
+          "row": 3,
+          "actual": 21,
+          "predicted": 23.06092096072654,
+          "residual": -2.0609209607265413,
+          "absolute": 2.0609209607265413,
+          "percent": 9.813909336793055
+        },
+        {
+          "row": 4,
+          "actual": 22.8,
+          "predicted": 26.239139272592247,
+          "residual": -3.4391392725922465,
+          "absolute": 3.4391392725922465,
+          "percent": 15.083944178036168
+        }
+      ],
+      "unknownCategories": []
+    },
+    {
+      "method": "RFE",
+      "k": 5,
+      "alpha": 0,
+      "l1": 1,
+      "cvRMSE": 2.4350419615878325,
+      "cvSD": 0.7332308125026141,
+      "cvR2": 0.5641684234734724,
+      "id": 15,
+      "model": {
+        "prep": {
+          "fields": [
+            {
+              "name": "wt",
+              "type": "number",
+              "fill": 3.44,
+              "min": 1.615,
+              "max": 5.424
+            },
+            {
+              "name": "hp",
+              "type": "number",
+              "fill": 123,
+              "min": 52,
+              "max": 335
+            },
+            {
+              "name": "disp",
+              "type": "number",
+              "fill": 258,
+              "min": 71.1,
+              "max": 472
+            },
+            {
+              "name": "qsec",
+              "type": "number",
+              "fill": 17.98,
+              "min": 14.5,
+              "max": 22.9
+            },
+            {
+              "name": "am",
+              "type": "number",
+              "fill": 0,
+              "min": 0,
+              "max": 1
+            }
+          ],
+          "columns": [
+            {
+              "name": "wt",
+              "source": "wt",
+              "type": "number",
+              "fill": 3.44
+            },
+            {
+              "name": "hp",
+              "source": "hp",
+              "type": "number",
+              "fill": 123
+            },
+            {
+              "name": "disp",
+              "source": "disp",
+              "type": "number",
+              "fill": 258
+            },
+            {
+              "name": "qsec",
+              "source": "qsec",
+              "type": "number",
+              "fill": 17.98
+            },
+            {
+              "name": "am",
+              "source": "am",
+              "type": "number",
+              "fill": 0
+            }
+          ],
+          "means": [
+            3.3595599999999997,
+            151.48,
+            241.452,
+            17.9836,
+            0.32
+          ],
+          "scales": [
+            0.9729802908589671,
+            72.35308977507457,
+            119.8372333459013,
+            1.8643730957080453,
+            0.466476151587624
+          ]
+        },
+        "coef": [
+          -2.45622312314468,
+          -0.01934027211953016,
+          -0.002152325701540958,
+          0.830522865117571,
+          3.8429245181460026
+        ],
+        "standardCoef": [
+          -2.389856688771831,
+          -1.399328444938737,
+          -0.25792875733194454,
+          1.5484044850955612,
+          1.7926326400664716
+        ],
+        "intercept": 14.683649878611762,
+        "rank": 6,
+        "regular": false,
+        "alpha": 0,
+        "l1": 1,
+        "features": [
+          "wt",
+          "hp",
+          "disp",
+          "qsec",
+          "am"
+        ],
+        "target": "mpg",
+        "method": "RFE"
+      },
+      "test": {
+        "n": 7,
+        "rmse": 3.311025221458803,
+        "mae": 3.116130737431906,
+        "r2": 0.5950750683393289,
+        "adjusted": -1.4295495899640267,
+        "adjustedReason": null,
+        "r2Reason": null
+      },
+      "train": {
+        "n": 25,
+        "rmse": 1.919398701421636,
+        "mae": 1.5804759353955051,
+        "r2": 0.8896955380431054,
+        "adjusted": 0.860668048054449,
+        "adjustedReason": null,
+        "r2Reason": null
+      },
+      "residuals": [
+        {
+          "row": 6,
+          "actual": 18.7,
+          "predicted": 16.210356625822598,
+          "residual": 2.489643374177401,
+          "absolute": 2.489643374177401,
+          "percent": 13.313600931429953
+        },
+        {
+          "row": 26,
+          "actual": 19.2,
+          "predicted": 15.154408918840893,
+          "residual": 4.045591081159106,
+          "absolute": 4.045591081159106,
+          "percent": 21.070786881037012
+        },
+        {
+          "row": 29,
+          "actual": 30.4,
+          "predicted": 26.45600830820336,
+          "residual": 3.94399169179664,
+          "absolute": 3.94399169179664,
+          "percent": 12.973656880910001
+        },
+        {
+          "row": 31,
+          "actual": 19.7,
+          "predicted": 20.899305907328134,
+          "residual": -1.1993059073281351,
+          "absolute": 1.1993059073281351,
+          "percent": 6.087847245320483
+        },
+        {
+          "row": 19,
+          "actual": 32.4,
+          "predicted": 27.84731771707831,
+          "residual": 4.552682282921687,
+          "absolute": 4.552682282921687,
+          "percent": 14.05148852753607
+        },
+        {
+          "row": 3,
+          "actual": 21,
+          "predicted": 23.128630036622997,
+          "residual": -2.1286300366229973,
+          "absolute": 2.1286300366229973,
+          "percent": 10.13633350772856
+        },
+        {
+          "row": 4,
+          "actual": 22.8,
+          "predicted": 26.253070788017375,
+          "residual": -3.4530707880173743,
+          "absolute": 3.4530707880173743,
+          "percent": 15.145047315865675
+        }
+      ],
+      "unknownCategories": []
+    },
+    {
+      "method": "Elastic Net",
+      "k": 1,
+      "alpha": 0.1,
+      "l1": 0.3,
+      "cvRMSE": 3.260405700319596,
+      "cvSD": 0.6377566274938156,
+      "cvR2": 0.3462730015189183,
+      "id": 16,
+      "model": {
+        "prep": {
+          "fields": [
+            {
+              "name": "wt",
+              "type": "number",
+              "fill": 3.44,
+              "min": 1.615,
+              "max": 5.424
+            }
+          ],
+          "columns": [
+            {
+              "name": "wt",
+              "source": "wt",
+              "type": "number",
+              "fill": 3.44
+            }
+          ],
+          "means": [
+            3.3595599999999997
+          ],
+          "scales": [
+            0.9729802908589671
+          ]
+        },
+        "coef": [
+          -4.640601570065076
+        ],
+        "standardCoef": [
+          -4.515213865402497
+        ],
+        "intercept": 34.73837941072782,
+        "rank": 2,
+        "regular": true,
+        "alpha": 0.1,
+        "l1": 0.3,
+        "iterations": 2,
+        "features": [
+          "wt"
+        ],
+        "target": "mpg",
+        "method": "Elastic Net"
+      },
+      "test": {
+        "n": 7,
+        "rmse": 3.396797845485308,
+        "mae": 2.3837121672410673,
+        "r2": 0.5738240456561878,
+        "adjusted": null,
+        "adjustedReason": "正則化模型的有效自由度不等同非零係數數量",
+        "r2Reason": null
+      },
+      "train": {
+        "n": 25,
+        "rmse": 2.931258275249764,
+        "mae": 2.3111708984030988,
+        "r2": 0.742740832734312,
+        "adjusted": null,
+        "adjustedReason": "正則化模型的有效自由度不等同非零係數數量",
+        "r2Reason": null
+      },
+      "residuals": [
+        {
+          "row": 6,
+          "actual": 18.7,
+          "predicted": 18.77471000970396,
+          "residual": -0.07471000970395991,
+          "absolute": 0.07471000970395991,
+          "percent": 0.3995187684703739
+        },
+        {
+          "row": 26,
+          "actual": 19.2,
+          "predicted": 16.895266373827603,
+          "residual": 2.3047336261723963,
+          "absolute": 2.3047336261723963,
+          "percent": 12.003820969647897
+        },
+        {
+          "row": 29,
+          "actual": 30.4,
+          "predicted": 27.717149235219363,
+          "residual": 2.6828507647806354,
+          "absolute": 2.6828507647806354,
+          "percent": 8.825166989409986
+        },
+        {
+          "row": 31,
+          "actual": 19.7,
+          "predicted": 21.88391306164756,
+          "residual": -2.183913061647562,
+          "absolute": 2.183913061647562,
+          "percent": 11.08585310480996
+        },
+        {
+          "row": 19,
+          "actual": 32.4,
+          "predicted": 24.529055956584656,
+          "residual": 7.870944043415342,
+          "absolute": 7.870944043415342,
+          "percent": 24.29303717103501
+        },
+        {
+          "row": 3,
+          "actual": 21,
+          "predicted": 21.396649896790727,
+          "residual": -0.39664989679072704,
+          "absolute": 0.39664989679072704,
+          "percent": 1.8888090323367954
+        },
+        {
+          "row": 4,
+          "actual": 22.8,
+          "predicted": 23.972183768176848,
+          "residual": -1.172183768176847,
+          "absolute": 1.172183768176847,
+          "percent": 5.141156877968627
+        }
+      ],
+      "unknownCategories": []
+    },
+    {
+      "method": "Elastic Net",
+      "k": 2,
+      "alpha": 0.1,
+      "l1": 0.7,
+      "cvRMSE": 3.1519290202489043,
+      "cvSD": 0.6204108173838638,
+      "cvR2": 0.41396089129675884,
+      "id": 17,
+      "model": {
+        "prep": {
+          "fields": [
+            {
+              "name": "wt",
+              "type": "number",
+              "fill": 3.44,
+              "min": 1.615,
+              "max": 5.424
+            },
+            {
+              "name": "hp",
+              "type": "number",
+              "fill": 123,
+              "min": 52,
+              "max": 335
+            }
+          ],
+          "columns": [
+            {
+              "name": "wt",
+              "source": "wt",
+              "type": "number",
+              "fill": 3.44
+            },
+            {
+              "name": "hp",
+              "source": "hp",
+              "type": "number",
+              "fill": 123
+            }
+          ],
+          "means": [
+            3.3595599999999997,
+            151.48
+          ],
+          "scales": [
+            0.9729802908589671,
+            72.35308977507457
+          ]
+        },
+        "coef": [
+          -3.2872907558291966,
+          -0.027828422710386103
+        ],
+        "standardCoef": [
+          -3.1984691157446856,
+          -2.0134723666632897
+        ],
+        "intercept": 34.40730000382282,
+        "rank": 3,
+        "regular": true,
+        "alpha": 0.1,
+        "l1": 0.7,
+        "iterations": 20,
+        "features": [
+          "wt",
+          "hp"
+        ],
+        "target": "mpg",
+        "method": "Elastic Net"
+      },
+      "test": {
+        "n": 7,
+        "rmse": 3.285519236241336,
+        "mae": 2.4235920982679184,
+        "r2": 0.6012895961662867,
+        "adjusted": null,
+        "adjustedReason": "正則化模型的有效自由度不等同非零係數數量",
+        "r2Reason": null
+      },
+      "train": {
+        "n": 25,
+        "rmse": 2.385086034585177,
+        "mae": 1.8408126995698129,
+        "r2": 0.8296779850577316,
+        "adjusted": null,
+        "adjustedReason": "正則化模型的有效自由度不等同非零係數數量",
+        "r2Reason": null
+      },
+      "residuals": [
+        {
+          "row": 6,
+          "actual": 18.7,
+          "predicted": 18.229045829452815,
+          "residual": 0.47095417054718425,
+          "absolute": 0.47095417054718425,
+          "percent": 2.518471500252322
+        },
+        {
+          "row": 26,
+          "actual": 19.2,
+          "predicted": 16.89769307334199,
+          "residual": 2.3023069266580087,
+          "absolute": 2.3023069266580087,
+          "percent": 11.99118190967713
+        },
+        {
+          "row": 29,
+          "actual": 30.4,
+          "predicted": 26.289017323979614,
+          "residual": 4.1109826760203845,
+          "absolute": 4.1109826760203845,
+          "percent": 13.522969329014423
+        },
+        {
+          "row": 31,
+          "actual": 19.7,
+          "predicted": 20.431530635858376,
+          "residual": -0.7315306358583769,
+          "absolute": 0.7315306358583769,
+          "percent": 3.713353481514604
+        },
+        {
+          "row": 19,
+          "actual": 32.4,
+          "predicted": 25.338584442113103,
+          "residual": 7.061415557886896,
+          "absolute": 7.061415557886896,
+          "percent": 21.794492462613878
+        },
+        {
+          "row": 3,
+          "actual": 21,
+          "predicted": 21.895212582671405,
+          "residual": -0.8952125826714052,
+          "absolute": 0.8952125826714052,
+          "percent": 4.262917060340024
+        },
+        {
+          "row": 4,
+          "actual": 22.8,
+          "predicted": 24.192742138233175,
+          "residual": -1.3927421382331744,
+          "absolute": 1.3927421382331744,
+          "percent": 6.1085181501455015
+        }
+      ],
+      "unknownCategories": []
+    },
+    {
+      "method": "Elastic Net",
+      "k": 3,
+      "alpha": 0.1,
+      "l1": 0.3,
+      "cvRMSE": 2.6137461166205846,
+      "cvSD": 0.7907187474330377,
+      "cvR2": 0.5566015607050627,
+      "id": 18,
+      "model": {
+        "prep": {
+          "fields": [
+            {
+              "name": "wt",
+              "type": "number",
+              "fill": 3.44,
+              "min": 1.615,
+              "max": 5.424
+            },
+            {
+              "name": "am",
+              "type": "number",
+              "fill": 0,
+              "min": 0,
+              "max": 1
+            },
+            {
+              "name": "hp",
+              "type": "number",
+              "fill": 123,
+              "min": 52,
+              "max": 335
+            }
+          ],
+          "columns": [
+            {
+              "name": "wt",
+              "source": "wt",
+              "type": "number",
+              "fill": 3.44
+            },
+            {
+              "name": "am",
+              "source": "am",
+              "type": "number",
+              "fill": 0
+            },
+            {
+              "name": "hp",
+              "source": "hp",
+              "type": "number",
+              "fill": 123
+            }
+          ],
+          "means": [
+            3.3595599999999997,
+            0.32,
+            151.48
+          ],
+          "scales": [
+            0.9729802908589671,
+            0.466476151587624,
+            72.35308977507457
+          ]
+        },
+        "coef": [
+          -2.335388764563072,
+          2.4928370611849706,
+          -0.035398749481054564
+        ],
+        "standardCoef": [
+          -2.2722872394133415,
+          1.1628490388365675,
+          -2.5612088991281152
+        ],
+        "intercept": 31.558373389686462,
+        "rank": 4,
+        "regular": true,
+        "alpha": 0.1,
+        "l1": 0.3,
+        "iterations": 36,
+        "features": [
+          "wt",
+          "am",
+          "hp"
+        ],
+        "target": "mpg",
+        "method": "Elastic Net"
+      },
+      "test": {
+        "n": 7,
+        "rmse": 3.2526692695370794,
+        "mae": 2.937558423722507,
+        "r2": 0.6092226775771863,
+        "adjusted": null,
+        "adjustedReason": "正則化模型的有效自由度不等同非零係數數量",
+        "r2Reason": null
+      },
+      "train": {
+        "n": 25,
+        "rmse": 2.1590584053260145,
+        "mae": 1.667371807339136,
+        "r2": 0.8604301959655403,
+        "adjusted": null,
+        "adjustedReason": "正則化模型的有效自由度不等同非零係數數量",
+        "r2Reason": null
+      },
+      "residuals": [
+        {
+          "row": 6,
+          "actual": 18.7,
+          "predicted": 17.329854880404945,
+          "residual": 1.3701451195950547,
+          "absolute": 1.3701451195950547,
+          "percent": 7.326979249171416
+        },
+        {
+          "row": 26,
+          "actual": 19.2,
+          "predicted": 16.3840224307569,
+          "residual": 2.815977569243099,
+          "absolute": 2.815977569243099,
+          "percent": 14.666549839807807
+        },
+        {
+          "row": 29,
+          "actual": 30.4,
+          "predicted": 26.517708558728337,
+          "residual": 3.8822914412716614,
+          "absolute": 3.8822914412716614,
+          "percent": 12.770695530498887
+        },
+        {
+          "row": 31,
+          "actual": 19.7,
+          "predicted": 21.387402413847173,
+          "residual": -1.687402413847174,
+          "absolute": 1.687402413847174,
+          "percent": 8.56549448653388
+        },
+        {
+          "row": 19,
+          "actual": 32.4,
+          "predicted": 26.57703770308307,
+          "residual": 5.822962296916927,
+          "absolute": 5.822962296916927,
+          "percent": 17.972105854681875
+        },
+        {
+          "row": 3,
+          "actual": 21,
+          "predicted": 23.4431053098366,
+          "residual": -2.4431053098366,
+          "absolute": 2.4431053098366,
+          "percent": 11.633834808745714
+        },
+        {
+          "row": 4,
+          "actual": 22.8,
+          "predicted": 25.341024815347033,
+          "residual": -2.5410248153470327,
+          "absolute": 2.5410248153470327,
+          "percent": 11.144845681346634
+        }
+      ],
+      "unknownCategories": []
+    },
+    {
+      "method": "Elastic Net",
+      "k": 4,
+      "alpha": 0.01,
+      "l1": 0.3,
+      "cvRMSE": 2.427564860637876,
+      "cvSD": 0.7683246606300288,
+      "cvR2": 0.6041526460939757,
+      "id": 19,
+      "model": {
+        "prep": {
+          "fields": [
+            {
+              "name": "wt",
+              "type": "number",
+              "fill": 3.44,
+              "min": 1.615,
+              "max": 5.424
+            },
+            {
+              "name": "am",
+              "type": "number",
+              "fill": 0,
+              "min": 0,
+              "max": 1
+            },
+            {
+              "name": "qsec",
+              "type": "number",
+              "fill": 17.98,
+              "min": 14.5,
+              "max": 22.9
+            },
+            {
+              "name": "hp",
+              "type": "number",
+              "fill": 123,
+              "min": 52,
+              "max": 335
+            }
+          ],
+          "columns": [
+            {
+              "name": "wt",
+              "source": "wt",
+              "type": "number",
+              "fill": 3.44
+            },
+            {
+              "name": "am",
+              "source": "am",
+              "type": "number",
+              "fill": 0
+            },
+            {
+              "name": "qsec",
+              "source": "qsec",
+              "type": "number",
+              "fill": 17.98
+            },
+            {
+              "name": "hp",
+              "source": "hp",
+              "type": "number",
+              "fill": 123
+            }
+          ],
+          "means": [
+            3.3595599999999997,
+            0.32,
+            17.9836,
+            151.48
+          ],
+          "scales": [
+            0.9729802908589671,
+            0.466476151587624,
+            1.8643730957080453,
+            72.35308977507457
+          ]
+        },
+        "coef": [
+          -2.614004366174915,
+          3.8075886480541032,
+          0.8338441465415601,
+          -0.020429464988124396
+        ],
+        "standardCoef": [
+          -2.5433747285074784,
+          1.7761492993730021,
+          1.5545965928257215,
+          -1.478134914342507
+        ],
+        "intercept": 14.810611903705562,
+        "rank": 5,
+        "regular": true,
+        "alpha": 0.01,
+        "l1": 0.3,
+        "iterations": 57,
+        "features": [
+          "wt",
+          "am",
+          "qsec",
+          "hp"
+        ],
+        "target": "mpg",
+        "method": "Elastic Net"
+      },
+      "test": {
+        "n": 7,
+        "rmse": 3.2378560446710702,
+        "mae": 3.015510104349474,
+        "r2": 0.6127739092320058,
+        "adjusted": null,
+        "adjustedReason": "正則化模型的有效自由度不等同非零係數數量",
+        "r2Reason": null
+      },
+      "train": {
+        "n": 25,
+        "rmse": 1.9216444247702942,
+        "mae": 1.5909211581679534,
+        "r2": 0.8894372715146225,
+        "adjusted": null,
+        "adjustedReason": "正則化模型的有效自由度不等同非零係數數量",
+        "r2Reason": null
+      },
+      "residuals": [
+        {
+          "row": 6,
+          "actual": 18.7,
+          "predicted": 16.43530788527944,
+          "residual": 2.2646921147205603,
+          "absolute": 2.2646921147205603,
+          "percent": 12.110653019896045
+        },
+        {
+          "row": 26,
+          "actual": 19.2,
+          "predicted": 15.401651441374845,
+          "residual": 3.798348558625154,
+          "absolute": 3.798348558625154,
+          "percent": 19.783065409506012
+        },
+        {
+          "row": 29,
+          "actual": 30.4,
+          "predicted": 26.446648478631325,
+          "residual": 3.953351521368674,
+          "absolute": 3.953351521368674,
+          "percent": 13.004445793975902
+        },
+        {
+          "row": 31,
+          "actual": 19.7,
+          "predicted": 20.726836355927563,
+          "residual": -1.0268363559275642,
+          "absolute": 1.0268363559275642,
+          "percent": 5.212367288972406
+        },
+        {
+          "row": 19,
+          "actual": 32.4,
+          "predicted": 27.753991790122818,
+          "residual": 4.646008209877181,
+          "absolute": 4.646008209877181,
+          "percent": 14.339531511966609
+        },
+        {
+          "row": 3,
+          "actual": 21,
+          "predicted": 23.047724224450455,
+          "residual": -2.047724224450455,
+          "absolute": 2.047724224450455,
+          "percent": 9.751067735478358
+        },
+        {
+          "row": 4,
+          "actual": 22.8,
+          "predicted": 26.17160974547673,
+          "residual": -3.3716097454767286,
+          "absolute": 3.3716097454767286,
+          "percent": 14.787762041564598
+        }
+      ],
+      "unknownCategories": []
+    },
+    {
+      "method": "Elastic Net",
+      "k": 5,
+      "alpha": 0.01,
+      "l1": 0.3,
+      "cvRMSE": 2.3676072824416763,
+      "cvSD": 0.6992692104684899,
+      "cvR2": 0.6102909566141383,
+      "id": 20,
+      "model": {
+        "prep": {
+          "fields": [
+            {
+              "name": "wt",
+              "type": "number",
+              "fill": 3.44,
+              "min": 1.615,
+              "max": 5.424
+            },
+            {
+              "name": "hp",
+              "type": "number",
+              "fill": 123,
+              "min": 52,
+              "max": 335
+            },
+            {
+              "name": "disp",
+              "type": "number",
+              "fill": 258,
+              "min": 71.1,
+              "max": 472
+            },
+            {
+              "name": "qsec",
+              "type": "number",
+              "fill": 17.98,
+              "min": 14.5,
+              "max": 22.9
+            },
+            {
+              "name": "am",
+              "type": "number",
+              "fill": 0,
+              "min": 0,
+              "max": 1
+            }
+          ],
+          "columns": [
+            {
+              "name": "wt",
+              "source": "wt",
+              "type": "number",
+              "fill": 3.44
+            },
+            {
+              "name": "hp",
+              "source": "hp",
+              "type": "number",
+              "fill": 123
+            },
+            {
+              "name": "disp",
+              "source": "disp",
+              "type": "number",
+              "fill": 258
+            },
+            {
+              "name": "qsec",
+              "source": "qsec",
+              "type": "number",
+              "fill": 17.98
+            },
+            {
+              "name": "am",
+              "source": "am",
+              "type": "number",
+              "fill": 0
+            }
+          ],
+          "means": [
+            3.3595599999999997,
+            151.48,
+            241.452,
+            17.9836,
+            0.32
+          ],
+          "scales": [
+            0.9729802908589671,
+            72.35308977507457,
+            119.8372333459013,
+            1.8643730957080453,
+            0.466476151587624
+          ]
+        },
+        "coef": [
+          -2.3178451705932797,
+          -0.019346363760386343,
+          -0.0036048163789788564,
+          0.7769946134896294,
+          3.732733806721398
+        ],
+        "standardCoef": [
+          -2.255217668249901,
+          -1.3997691939764823,
+          -0.4319912215768162,
+          1.4486078529001365,
+          1.7412313010604197
+        ],
+        "intercept": 15.568282078775933,
+        "rank": 6,
+        "regular": true,
+        "alpha": 0.01,
+        "l1": 0.3,
+        "iterations": 102,
+        "features": [
+          "wt",
+          "hp",
+          "disp",
+          "qsec",
+          "am"
+        ],
+        "target": "mpg",
+        "method": "Elastic Net"
+      },
+      "test": {
+        "n": 7,
+        "rmse": 3.3585585964549702,
+        "mae": 3.1699142059800955,
+        "r2": 0.5833653371385494,
+        "adjusted": null,
+        "adjustedReason": "正則化模型的有效自由度不等同非零係數數量",
+        "r2Reason": null
+      },
+      "train": {
+        "n": 25,
+        "rmse": 1.9207433251339,
+        "mae": 1.5638380697509393,
+        "r2": 0.8895409375980131,
+        "adjusted": null,
+        "adjustedReason": "正則化模型的有效自由度不等同非零係數數量",
+        "r2Reason": null
+      },
+      "residuals": [
+        {
+          "row": 6,
+          "actual": 18.7,
+          "predicted": 16.135995459028543,
+          "residual": 2.5640045409714567,
+          "absolute": 2.5640045409714567,
+          "percent": 13.711254229793887
+        },
+        {
+          "row": 26,
+          "actual": 19.2,
+          "predicted": 15.0763853481838,
+          "residual": 4.123614651816199,
+          "absolute": 4.123614651816199,
+          "percent": 21.477159644876036
+        },
+        {
+          "row": 29,
+          "actual": 30.4,
+          "predicted": 26.39636796779989,
+          "residual": 4.003632032200109,
+          "absolute": 4.003632032200109,
+          "percent": 13.169842211184568
+        },
+        {
+          "row": 31,
+          "actual": 19.7,
+          "predicted": 21.015689239023658,
+          "residual": -1.3156892390236585,
+          "absolute": 1.3156892390236585,
+          "percent": 6.678625578800297
+        },
+        {
+          "row": 19,
+          "actual": 32.4,
+          "predicted": 27.769282577624065,
+          "residual": 4.630717422375934,
+          "absolute": 4.630717422375934,
+          "percent": 14.292337723382511
+        },
+        {
+          "row": 3,
+          "actual": 21,
+          "predicted": 23.15678870735603,
+          "residual": -2.1567887073560286,
+          "absolute": 2.1567887073560286,
+          "percent": 10.270422415981088
+        },
+        {
+          "row": 4,
+          "actual": 22.8,
+          "predicted": 26.194952848117282,
+          "residual": -3.3949528481172813,
+          "absolute": 3.3949528481172813,
+          "percent": 14.890144070689828
+        }
+      ],
+      "unknownCategories": []
+    },
+    {
+      "method": "Exhaustive Search",
+      "k": 1,
+      "alpha": 0,
+      "l1": 1,
+      "cvRMSE": 2.8530912263316663,
+      "cvSD": 0.7435662812958183,
+      "cvR2": 0.5774181354165158,
+      "id": 21,
+      "model": {
+        "prep": {
+          "fields": [
+            {
+              "name": "disp",
+              "type": "number",
+              "fill": 258,
+              "min": 71.1,
+              "max": 472
+            }
+          ],
+          "columns": [
+            {
+              "name": "disp",
+              "source": "disp",
+              "type": "number",
+              "fill": 258
+            }
+          ],
+          "means": [
+            241.452
+          ],
+          "scales": [
+            119.8372333459013
+          ]
+        },
+        "coef": [
+          -0.0429213916665882
+        ],
+        "standardCoef": [
+          -5.143580828679753
+        ],
+        "intercept": 29.51145586068105,
+        "rank": 2,
+        "regular": false,
+        "alpha": 0,
+        "l1": 1,
+        "features": [
+          "disp"
+        ],
+        "target": "mpg",
+        "method": "Exhaustive Search"
+      },
+      "test": {
+        "n": 7,
+        "rmse": 4.666137174109279,
+        "mae": 4.291714988468297,
+        "r2": 0.19579912088418538,
+        "adjusted": 0.034958945061022484,
+        "adjustedReason": null,
+        "r2Reason": null
+      },
+      "train": {
+        "n": 25,
+        "rmse": 2.634933065343046,
+        "mae": 2.0803700189828827,
+        "r2": 0.7921251915358305,
+        "adjusted": 0.7830871563852144,
+        "adjustedReason": null,
+        "r2Reason": null
+      },
+      "residuals": [
+        {
+          "row": 6,
+          "actual": 18.7,
+          "predicted": 14.0597548607093,
+          "residual": 4.6402451392907,
+          "absolute": 4.6402451392907,
+          "percent": 24.814145129896794
+        },
+        {
+          "row": 26,
+          "actual": 19.2,
+          "predicted": 12.34289919404577,
+          "residual": 6.857100805954229,
+          "absolute": 6.857100805954229,
+          "percent": 35.71406669767828
+        },
+        {
+          "row": 29,
+          "actual": 30.4,
+          "predicted": 25.42963151318851,
+          "residual": 4.970368486811488,
+          "absolute": 4.970368486811488,
+          "percent": 16.349896338195684
+        },
+        {
+          "row": 31,
+          "actual": 19.7,
+          "predicted": 23.287854069025762,
+          "residual": -3.587854069025763,
+          "absolute": 3.587854069025763,
+          "percent": 18.212457203176463
+        },
+        {
+          "row": 19,
+          "actual": 32.4,
+          "predicted": 26.13354233652056,
+          "residual": 6.266457663479439,
+          "absolute": 6.266457663479439,
+          "percent": 19.340918714442715
+        },
+        {
+          "row": 3,
+          "actual": 21,
+          "predicted": 22.64403319402694,
+          "residual": -1.6440331940269388,
+          "absolute": 1.6440331940269388,
+          "percent": 7.8287294953663755
+        },
+        {
+          "row": 4,
+          "actual": 22.8,
+          "predicted": 24.875945560689523,
+          "residual": -2.0759455606895223,
+          "absolute": 2.0759455606895223,
+          "percent": 9.105024388989133
+        }
+      ],
+      "unknownCategories": []
+    },
+    {
+      "method": "Exhaustive Search",
+      "k": 2,
+      "alpha": 0,
+      "l1": 1,
+      "cvRMSE": 2.966405025230969,
+      "cvSD": 0.9481942795951211,
+      "cvR2": 0.361714337935669,
+      "id": 22,
+      "model": {
+        "prep": {
+          "fields": [
+            {
+              "name": "disp",
+              "type": "number",
+              "fill": 258,
+              "min": 71.1,
+              "max": 472
+            },
+            {
+              "name": "am",
+              "type": "number",
+              "fill": 0,
+              "min": 0,
+              "max": 1
+            }
+          ],
+          "columns": [
+            {
+              "name": "disp",
+              "source": "disp",
+              "type": "number",
+              "fill": 258
+            },
+            {
+              "name": "am",
+              "source": "am",
+              "type": "number",
+              "fill": 0
+            }
+          ],
+          "means": [
+            241.452,
+            0.32
+          ],
+          "scales": [
+            119.8372333459013,
+            0.466476151587624
+          ]
+        },
+        "coef": [
+          -0.03881608271694746,
+          2.2588023841669695
+        ],
+        "standardCoef": [
+          -4.6516119621246395,
+          1.0536774433631577
+        ],
+        "intercept": 27.797404041238963,
+        "rank": 3,
+        "regular": false,
+        "alpha": 0,
+        "l1": 1,
+        "features": [
+          "disp",
+          "am"
+        ],
+        "target": "mpg",
+        "method": "Exhaustive Search"
+      },
+      "test": {
+        "n": 7,
+        "rmse": 4.736748159350609,
+        "mae": 4.5538306031306055,
+        "r2": 0.171275592761712,
+        "adjusted": -0.2430866108574321,
+        "adjustedReason": null,
+        "r2Reason": null
+      },
+      "train": {
+        "n": 25,
+        "rmse": 2.464684456445754,
+        "mae": 1.8628321968585837,
+        "r2": 0.8181198349257031,
+        "adjusted": 0.8015852744644033,
+        "adjustedReason": null,
+        "r2Reason": null
+      },
+      "residuals": [
+        {
+          "row": 6,
+          "actual": 18.7,
+          "predicted": 13.823614263137877,
+          "residual": 4.876385736862122,
+          "absolute": 4.876385736862122,
+          "percent": 26.076929074128998
+        },
+        {
+          "row": 26,
+          "actual": 19.2,
+          "predicted": 12.270970954459978,
+          "residual": 6.929029045540021,
+          "absolute": 6.929029045540021,
+          "percent": 36.08869294552095
+        },
+        {
+          "row": 29,
+          "actual": 30.4,
+          "predicted": 26.36479695902423,
+          "residual": 4.0352030409757695,
+          "absolute": 4.0352030409757695,
+          "percent": 13.273694213736084
+        },
+        {
+          "row": 31,
+          "actual": 19.7,
+          "predicted": 24.42787443144855,
+          "residual": -4.7278744314485515,
+          "absolute": 4.7278744314485515,
+          "percent": 23.99936259618554
+        },
+        {
+          "row": 19,
+          "actual": 32.4,
+          "predicted": 27.001380715582165,
+          "residual": 5.398619284417833,
+          "absolute": 5.398619284417833,
+          "percent": 16.662405198820473
+        },
+        {
+          "row": 3,
+          "actual": 21,
+          "predicted": 23.845633190694336,
+          "residual": -2.845633190694336,
+          "absolute": 2.845633190694336,
+          "percent": 13.550634241401601
+        },
+        {
+          "row": 4,
+          "actual": 22.8,
+          "predicted": 25.864069491975606,
+          "residual": -3.064069491975605,
+          "absolute": 3.064069491975605,
+          "percent": 13.43890128059476
+        }
+      ],
+      "unknownCategories": []
+    },
+    {
+      "method": "Exhaustive Search",
+      "k": 3,
+      "alpha": 0,
+      "l1": 1,
+      "cvRMSE": 2.8413414382670155,
+      "cvSD": 1.0361950255641814,
+      "cvR2": 0.33083459782168245,
+      "id": 23,
+      "model": {
+        "prep": {
+          "fields": [
+            {
+              "name": "disp",
+              "type": "number",
+              "fill": 258,
+              "min": 71.1,
+              "max": 472
+            },
+            {
+              "name": "qsec",
+              "type": "number",
+              "fill": 17.98,
+              "min": 14.5,
+              "max": 22.9
+            },
+            {
+              "name": "am",
+              "type": "number",
+              "fill": 0,
+              "min": 0,
+              "max": 1
+            }
+          ],
+          "columns": [
+            {
+              "name": "disp",
+              "source": "disp",
+              "type": "number",
+              "fill": 258
+            },
+            {
+              "name": "qsec",
+              "source": "qsec",
+              "type": "number",
+              "fill": 17.98
+            },
+            {
+              "name": "am",
+              "source": "am",
+              "type": "number",
+              "fill": 0
+            }
+          ],
+          "means": [
+            241.452,
+            17.9836,
+            0.32
+          ],
+          "scales": [
+            119.8372333459013,
+            1.8643730957080453,
+            0.466476151587624
+          ]
+        },
+        "coef": [
+          -0.028073847547596665,
+          0.8610801177471764,
+          4.447771666814809
+        ],
+        "standardCoef": [
+          -3.3642922194786005,
+          1.6053746047769515,
+          2.074779410276244
+        ],
+        "intercept": 9.017879299163447,
+        "rank": 4,
+        "regular": false,
+        "alpha": 0,
+        "l1": 1,
+        "features": [
+          "disp",
+          "qsec",
+          "am"
+        ],
+        "target": "mpg",
+        "method": "Exhaustive Search"
+      },
+      "test": {
+        "n": 7,
+        "rmse": 4.5652091390198155,
+        "mae": 4.374756442391676,
+        "r2": 0.23021242732168046,
+        "adjusted": -0.5395751453566391,
+        "adjustedReason": null,
+        "r2Reason": null
+      },
+      "train": {
+        "n": 25,
+        "rmse": 2.229304874964182,
+        "mae": 1.8096988020708138,
+        "r2": 0.8512004496879495,
+        "adjusted": 0.8299433710719423,
+        "adjustedReason": null,
+        "r2Reason": null
+      },
+      "residuals": [
+        {
+          "row": 6,
+          "actual": 18.7,
+          "predicted": 13.56687778608559,
+          "residual": 5.13312221391441,
+          "absolute": 5.13312221391441,
+          "percent": 27.44985141130701
+        },
+        {
+          "row": 26,
+          "actual": 19.2,
+          "predicted": 12.469756287714139,
+          "residual": 6.73024371228586,
+          "absolute": 6.73024371228586,
+          "percent": 35.053352668155526
+        },
+        {
+          "row": 29,
+          "actual": 30.4,
+          "predicted": 25.348082054129094,
+          "residual": 5.051917945870905,
+          "absolute": 5.051917945870905,
+          "percent": 16.61815113773324
+        },
+        {
+          "row": 31,
+          "actual": 19.7,
+          "predicted": 22.741684896657976,
+          "residual": -3.0416848966579764,
+          "absolute": 3.0416848966579764,
+          "percent": 15.44002485613186
+        },
+        {
+          "row": 19,
+          "actual": 32.4,
+          "predicted": 28.02146905651992,
+          "residual": 4.378530943480079,
+          "absolute": 4.378530943480079,
+          "percent": 13.513984393457035
+        },
+        {
+          "row": 3,
+          "actual": 21,
+          "predicted": 23.62941896241973,
+          "residual": -2.629418962419731,
+          "absolute": 2.629418962419731,
+          "percent": 12.521042678189195
+        },
+        {
+          "row": 4,
+          "actual": 22.8,
+          "predicted": 26.458376422112767,
+          "residual": -3.6583764221127666,
+          "absolute": 3.6583764221127666,
+          "percent": 16.045510623301606
+        }
+      ],
+      "unknownCategories": []
+    },
+    {
+      "method": "Exhaustive Search",
+      "k": 4,
+      "alpha": 0,
+      "l1": 1,
+      "cvRMSE": 2.831500504836326,
+      "cvSD": 0.879500200140742,
+      "cvR2": 0.3674871331875471,
+      "id": 24,
+      "model": {
+        "prep": {
+          "fields": [
+            {
+              "name": "hp",
+              "type": "number",
+              "fill": 123,
+              "min": 52,
+              "max": 335
+            },
+            {
+              "name": "disp",
+              "type": "number",
+              "fill": 258,
+              "min": 71.1,
+              "max": 472
+            },
+            {
+              "name": "qsec",
+              "type": "number",
+              "fill": 17.98,
+              "min": 14.5,
+              "max": 22.9
+            },
+            {
+              "name": "am",
+              "type": "number",
+              "fill": 0,
+              "min": 0,
+              "max": 1
+            }
+          ],
+          "columns": [
+            {
+              "name": "hp",
+              "source": "hp",
+              "type": "number",
+              "fill": 123
+            },
+            {
+              "name": "disp",
+              "source": "disp",
+              "type": "number",
+              "fill": 258
+            },
+            {
+              "name": "qsec",
+              "source": "qsec",
+              "type": "number",
+              "fill": 17.98
+            },
+            {
+              "name": "am",
+              "source": "am",
+              "type": "number",
+              "fill": 0
+            }
+          ],
+          "means": [
+            151.48,
+            241.452,
+            17.9836,
+            0.32
+          ],
+          "scales": [
+            72.35308977507457,
+            119.8372333459013,
+            1.8643730957080453,
+            0.466476151587624
+          ]
+        },
+        "coef": [
+          -0.024517417672588093,
+          -0.019014260393479095,
+          0.4627302553686918,
+          4.577776361754973
+        ],
+        "standardCoef": [
+          -1.773910921917766,
+          -2.2786163596730833,
+          0.8627018386795022,
+          2.1354235000602544
+        ],
+        "intercept": 17.666485373359958,
+        "rank": 5,
+        "regular": false,
+        "alpha": 0,
+        "l1": 1,
+        "features": [
+          "hp",
+          "disp",
+          "qsec",
+          "am"
+        ],
+        "target": "mpg",
+        "method": "Exhaustive Search"
+      },
+      "test": {
+        "n": 7,
+        "rmse": 4.2061305576978985,
+        "mae": 4.111532376958612,
+        "r2": 0.3465459746185028,
+        "adjusted": -0.9603620761444915,
+        "adjustedReason": null,
+        "r2Reason": null
+      },
+      "train": {
+        "n": 25,
+        "rmse": 2.081650799577201,
+        "mae": 1.6122623349308327,
+        "r2": 0.8702586410390087,
+        "adjusted": 0.8443103692468105,
+        "adjustedReason": null,
+        "r2Reason": null
+      },
+      "residuals": [
+        {
+          "row": 6,
+          "actual": 18.7,
+          "predicted": 14.406472485379702,
+          "residual": 4.293527514620298,
+          "absolute": 4.293527514620298,
+          "percent": 22.960040185135284
+        },
+        {
+          "row": 26,
+          "actual": 19.2,
+          "predicted": 13.6597839773016,
+          "residual": 5.540216022698399,
+          "absolute": 5.540216022698399,
+          "percent": 28.855291784887495
+        },
+        {
+          "row": 29,
+          "actual": 30.4,
+          "predicted": 25.485678690423505,
+          "residual": 4.9143213095764935,
+          "absolute": 4.9143213095764935,
+          "percent": 16.165530623606887
+        },
+        {
+          "row": 31,
+          "actual": 19.7,
+          "predicted": 22.368964843572268,
+          "residual": -2.668964843572269,
+          "absolute": 2.668964843572269,
+          "percent": 13.548044891229791
+        },
+        {
+          "row": 19,
+          "actual": 32.4,
+          "predicted": 28.13904794778574,
+          "residual": 4.260952052214257,
+          "absolute": 4.260952052214257,
+          "percent": 13.151086580908203
+        },
+        {
+          "row": 3,
+          "actual": 21,
+          "predicted": 24.38073307454872,
+          "residual": -3.3807330745487185,
+          "absolute": 3.3807330745487185,
+          "percent": 16.09872892642247
+        },
+        {
+          "row": 4,
+          "actual": 22.8,
+          "predicted": 26.52201182147985,
+          "residual": -3.7220118214798497,
+          "absolute": 3.7220118214798497,
+          "percent": 16.3246132521046
+        }
+      ],
+      "unknownCategories": []
+    },
+    {
+      "method": "Exhaustive Search",
+      "k": 5,
+      "alpha": 0,
+      "l1": 1,
+      "cvRMSE": 2.4350419615878325,
+      "cvSD": 0.7332308125026141,
+      "cvR2": 0.5641684234734724,
+      "id": 25,
+      "model": {
+        "prep": {
+          "fields": [
+            {
+              "name": "wt",
+              "type": "number",
+              "fill": 3.44,
+              "min": 1.615,
+              "max": 5.424
+            },
+            {
+              "name": "hp",
+              "type": "number",
+              "fill": 123,
+              "min": 52,
+              "max": 335
+            },
+            {
+              "name": "disp",
+              "type": "number",
+              "fill": 258,
+              "min": 71.1,
+              "max": 472
+            },
+            {
+              "name": "qsec",
+              "type": "number",
+              "fill": 17.98,
+              "min": 14.5,
+              "max": 22.9
+            },
+            {
+              "name": "am",
+              "type": "number",
+              "fill": 0,
+              "min": 0,
+              "max": 1
+            }
+          ],
+          "columns": [
+            {
+              "name": "wt",
+              "source": "wt",
+              "type": "number",
+              "fill": 3.44
+            },
+            {
+              "name": "hp",
+              "source": "hp",
+              "type": "number",
+              "fill": 123
+            },
+            {
+              "name": "disp",
+              "source": "disp",
+              "type": "number",
+              "fill": 258
+            },
+            {
+              "name": "qsec",
+              "source": "qsec",
+              "type": "number",
+              "fill": 17.98
+            },
+            {
+              "name": "am",
+              "source": "am",
+              "type": "number",
+              "fill": 0
+            }
+          ],
+          "means": [
+            3.3595599999999997,
+            151.48,
+            241.452,
+            17.9836,
+            0.32
+          ],
+          "scales": [
+            0.9729802908589671,
+            72.35308977507457,
+            119.8372333459013,
+            1.8643730957080453,
+            0.466476151587624
+          ]
+        },
+        "coef": [
+          -2.45622312314468,
+          -0.01934027211953016,
+          -0.002152325701540958,
+          0.830522865117571,
+          3.8429245181460026
+        ],
+        "standardCoef": [
+          -2.389856688771831,
+          -1.399328444938737,
+          -0.25792875733194454,
+          1.5484044850955612,
+          1.7926326400664716
+        ],
+        "intercept": 14.683649878611762,
+        "rank": 6,
+        "regular": false,
+        "alpha": 0,
+        "l1": 1,
+        "features": [
+          "wt",
+          "hp",
+          "disp",
+          "qsec",
+          "am"
+        ],
+        "target": "mpg",
+        "method": "Exhaustive Search"
+      },
+      "test": {
+        "n": 7,
+        "rmse": 3.311025221458803,
+        "mae": 3.116130737431906,
+        "r2": 0.5950750683393289,
+        "adjusted": -1.4295495899640267,
+        "adjustedReason": null,
+        "r2Reason": null
+      },
+      "train": {
+        "n": 25,
+        "rmse": 1.919398701421636,
+        "mae": 1.5804759353955051,
+        "r2": 0.8896955380431054,
+        "adjusted": 0.860668048054449,
+        "adjustedReason": null,
+        "r2Reason": null
+      },
+      "residuals": [
+        {
+          "row": 6,
+          "actual": 18.7,
+          "predicted": 16.210356625822598,
+          "residual": 2.489643374177401,
+          "absolute": 2.489643374177401,
+          "percent": 13.313600931429953
+        },
+        {
+          "row": 26,
+          "actual": 19.2,
+          "predicted": 15.154408918840893,
+          "residual": 4.045591081159106,
+          "absolute": 4.045591081159106,
+          "percent": 21.070786881037012
+        },
+        {
+          "row": 29,
+          "actual": 30.4,
+          "predicted": 26.45600830820336,
+          "residual": 3.94399169179664,
+          "absolute": 3.94399169179664,
+          "percent": 12.973656880910001
+        },
+        {
+          "row": 31,
+          "actual": 19.7,
+          "predicted": 20.899305907328134,
+          "residual": -1.1993059073281351,
+          "absolute": 1.1993059073281351,
+          "percent": 6.087847245320483
+        },
+        {
+          "row": 19,
+          "actual": 32.4,
+          "predicted": 27.84731771707831,
+          "residual": 4.552682282921687,
+          "absolute": 4.552682282921687,
+          "percent": 14.05148852753607
+        },
+        {
+          "row": 3,
+          "actual": 21,
+          "predicted": 23.128630036622997,
+          "residual": -2.1286300366229973,
+          "absolute": 2.1286300366229973,
+          "percent": 10.13633350772856
+        },
+        {
+          "row": 4,
+          "actual": 22.8,
+          "predicted": 26.253070788017375,
+          "residual": -3.4530707880173743,
+          "absolute": 3.4530707880173743,
+          "percent": 15.145047315865675
+        }
+      ],
+      "unknownCategories": []
+    }
+  ],
+  "exhaustiveDisabled": false
+}

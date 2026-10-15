@@ -1,0 +1,79 @@
+{
+  "date": "2026-10-15",
+  "deployment_backup_regression": {
+    "passed": true,
+    "command": "powershell -NoProfile -ExecutionPolicy Bypass -File tests/backup.test.ps1",
+    "cases": [
+      "no existing legacy",
+      "existing legacy preserved",
+      "nested backup rejected"
+    ],
+    "fix": "Copy original files outside checkout before archiving them inside legacy; avoid recursive self-copy"
+  },
+  "core_and_loader_tests": {
+    "passed": true,
+    "tests": 19,
+    "failed": 0,
+    "command": "npm.cmd test",
+    "coverage": "core regression, CV isolation, both problems, target/features, HTTP and File bytes, errors, static references"
+  },
+  "static_build": {
+    "passed": true,
+    "output": "dist/",
+    "command": "npm.cmd run build"
+  },
+  "deployment_script_syntax": {
+    "passed": true,
+    "parser": "System.Management.Automation.Language.Parser"
+  },
+  "local_http_subpath": {
+    "passed": true,
+    "prefix": "/AIoT-DIC2-MultipleLR/",
+    "resources_returning_200": [
+      "index.html",
+      "styles.css",
+      "src/app.js",
+      "src/core.js",
+      "src/worker.js",
+      "src/data-loader.js",
+      "data/50_Startups.csv",
+      "data/mtcars.csv",
+      "README.md",
+      "reports/mtcars.json"
+    ]
+  },
+  "numerical_oracle": {
+    "passed": true,
+    "ols_models": 29,
+    "absolute_tolerance": 1e-06,
+    "evidence": "numeric-verification.json"
+  },
+  "workflow": {
+    "executed": true,
+    "problems": [
+      "startups",
+      "mtcars"
+    ],
+    "evidence": [
+      "startups.json",
+      "mtcars.json"
+    ]
+  },
+  "browser_ui_and_mobile": {
+    "passed": true,
+    "executed_by": "user account via deployment script",
+    "evidence": "browser-verification.json",
+    "cases": 13
+  },
+  "public_csv_cors": {
+    "passed": true,
+    "evidence": "browser-verification.json: public GitHub CSV URL"
+  },
+  "deployment": {
+    "new_version_deployed": false,
+    "expected_repository": "benson103081/AIoT-DIC2-MultipleLR",
+    "public_url_verified": false,
+    "reference_repository_only": "huanchen1107/AIoT-DIC2-MultipleLR",
+    "previous_attempt": "Local commit 6b3e4c2 exists in earlier checkout; teacher push rejected 403; new student publication excludes teacher history."
+  }
+}

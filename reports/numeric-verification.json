@@ -1,0 +1,210 @@
+{
+  "oracle": "Python Decimal precision=50; independent pivoted normal-equation solution",
+  "tolerance": 1e-06,
+  "passed": true,
+  "cases": [
+    {
+      "problem": "startups",
+      "method": "OLS baseline",
+      "k": 4,
+      "max_coefficient_error": 2.9103830456733704e-11,
+      "rmse_error": 1.1823431123048067e-11
+    },
+    {
+      "problem": "startups",
+      "method": "Forward Selection",
+      "k": 1,
+      "max_coefficient_error": 2.1827872842550278e-11,
+      "rmse_error": 1.0913936421275139e-11
+    },
+    {
+      "problem": "startups",
+      "method": "Forward Selection",
+      "k": 2,
+      "max_coefficient_error": 3.637978807091713e-11,
+      "rmse_error": 1.7280399333685637e-11
+    },
+    {
+      "problem": "startups",
+      "method": "Forward Selection",
+      "k": 3,
+      "max_coefficient_error": 1.4551915228366852e-11,
+      "rmse_error": 6.366462912410498e-12
+    },
+    {
+      "problem": "startups",
+      "method": "Forward Selection",
+      "k": 4,
+      "max_coefficient_error": 2.9103830456733704e-11,
+      "rmse_error": 1.1823431123048067e-11
+    },
+    {
+      "problem": "startups",
+      "method": "RFE",
+      "k": 1,
+      "max_coefficient_error": 2.1827872842550278e-11,
+      "rmse_error": 1.0913936421275139e-11
+    },
+    {
+      "problem": "startups",
+      "method": "RFE",
+      "k": 2,
+      "max_coefficient_error": 3.637978807091713e-11,
+      "rmse_error": 1.7280399333685637e-11
+    },
+    {
+      "problem": "startups",
+      "method": "RFE",
+      "k": 3,
+      "max_coefficient_error": 1.4551915228366852e-11,
+      "rmse_error": 6.366462912410498e-12
+    },
+    {
+      "problem": "startups",
+      "method": "RFE",
+      "k": 4,
+      "max_coefficient_error": 2.9103830456733704e-11,
+      "rmse_error": 1.1823431123048067e-11
+    },
+    {
+      "problem": "startups",
+      "method": "Exhaustive Search",
+      "k": 1,
+      "max_coefficient_error": 2.1827872842550278e-11,
+      "rmse_error": 1.0913936421275139e-11
+    },
+    {
+      "problem": "startups",
+      "method": "Exhaustive Search",
+      "k": 2,
+      "max_coefficient_error": 3.637978807091713e-11,
+      "rmse_error": 1.7280399333685637e-11
+    },
+    {
+      "problem": "startups",
+      "method": "Exhaustive Search",
+      "k": 3,
+      "max_coefficient_error": 1.4551915228366852e-11,
+      "rmse_error": 6.366462912410498e-12
+    },
+    {
+      "problem": "startups",
+      "method": "Exhaustive Search",
+      "k": 4,
+      "max_coefficient_error": 2.9103830456733704e-11,
+      "rmse_error": 1.1823431123048067e-11
+    },
+    {
+      "problem": "mtcars",
+      "method": "OLS baseline",
+      "k": 5,
+      "max_coefficient_error": 5.329070518200751e-15,
+      "rmse_error": 1.3322676295501878e-15
+    },
+    {
+      "problem": "mtcars",
+      "method": "Forward Selection",
+      "k": 1,
+      "max_coefficient_error": 3.552713678800501e-15,
+      "rmse_error": 8.881784197001252e-16
+    },
+    {
+      "problem": "mtcars",
+      "method": "Forward Selection",
+      "k": 2,
+      "max_coefficient_error": 3.552713678800501e-15,
+      "rmse_error": 1.7763568394002505e-15
+    },
+    {
+      "problem": "mtcars",
+      "method": "Forward Selection",
+      "k": 3,
+      "max_coefficient_error": 7.105427357601002e-15,
+      "rmse_error": 1.7763568394002505e-15
+    },
+    {
+      "problem": "mtcars",
+      "method": "Forward Selection",
+      "k": 4,
+      "max_coefficient_error": 7.105427357601002e-15,
+      "rmse_error": 8.881784197001252e-16
+    },
+    {
+      "problem": "mtcars",
+      "method": "Forward Selection",
+      "k": 5,
+      "max_coefficient_error": 5.329070518200751e-15,
+      "rmse_error": 1.3322676295501878e-15
+    },
+    {
+      "problem": "mtcars",
+      "method": "RFE",
+      "k": 1,
+      "max_coefficient_error": 7.105427357601002e-15,
+      "rmse_error": 1.3322676295501878e-15
+    },
+    {
+      "problem": "mtcars",
+      "method": "RFE",
+      "k": 2,
+      "max_coefficient_error": 7.105427357601002e-15,
+      "rmse_error": 3.1086244689504383e-15
+    },
+    {
+      "problem": "mtcars",
+      "method": "RFE",
+      "k": 3,
+      "max_coefficient_error": 6.217248937900877e-15,
+      "rmse_error": 4.440892098500626e-16
+    },
+    {
+      "problem": "mtcars",
+      "method": "RFE",
+      "k": 4,
+      "max_coefficient_error": 8.881784197001252e-15,
+      "rmse_error": 4.440892098500626e-16
+    },
+    {
+      "problem": "mtcars",
+      "method": "RFE",
+      "k": 5,
+      "max_coefficient_error": 5.329070518200751e-15,
+      "rmse_error": 1.3322676295501878e-15
+    },
+    {
+      "problem": "mtcars",
+      "method": "Exhaustive Search",
+      "k": 1,
+      "max_coefficient_error": 3.552713678800501e-15,
+      "rmse_error": 8.881784197001252e-16
+    },
+    {
+      "problem": "mtcars",
+      "method": "Exhaustive Search",
+      "k": 2,
+      "max_coefficient_error": 3.552713678800501e-15,
+      "rmse_error": 1.7763568394002505e-15
+    },
+    {
+      "problem": "mtcars",
+      "method": "Exhaustive Search",
+      "k": 3,
+      "max_coefficient_error": 3.552713678800501e-15,
+      "rmse_error": 1.7763568394002505e-15
+    },
+    {
+      "problem": "mtcars",
+      "method": "Exhaustive Search",
+      "k": 4,
+      "max_coefficient_error": 3.552713678800501e-15,
+      "rmse_error": 0.0
+    },
+    {
+      "problem": "mtcars",
+      "method": "Exhaustive Search",
+      "k": 5,
+      "max_coefficient_error": 5.329070518200751e-15,
+      "rmse_error": 1.3322676295501878e-15
+    }
+  ]
+}
