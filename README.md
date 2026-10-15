@@ -2,10 +2,10 @@
 
 本次主要繳交：**Problem 1 — 新創公司利潤預測與特徵選擇**。第二題以汽車燃油效率為情境，實際執行同一套可重現分析 workflow。網頁為繁體中文、純靜態 HTML / CSS / JavaScript；分析在 Web Worker 進行，不需要 Flask、Python 後端、CDN 或 npm 套件。
 
-預計繳交網址：<https://benson103081.github.io/AIoT-DIC2-MultipleLR/>  
+繳交網址：<https://benson103081.github.io/AIoT-DIC2-MultipleLR/>
 自己的 Repository：<https://github.com/benson103081/AIoT-DIC2-MultipleLR>
 
-**部署狀態（2026-10-15）：自己的網站尚未驗證部署成功。** 本機實作、數值及瀏覽器測試已完成。老師的 [參考網站](https://huanchen1107.github.io/AIoT-DIC2-MultipleLR/) 僅作功能與視覺參考，不是本作業部署目的地；以自己的 repository、Actions run 及公開網址作為繳交證據。
+**部署狀態（2026-10-15）：已成功部署至自己的 GitHub Pages。** [Actions run 38702207785](https://github.com/benson103081/AIoT-DIC2-MultipleLR/actions/runs/38702207785) 的 build 與 deploy 均成功，包含 CI 的數值及瀏覽器測試；使用者亦已實際開啟並確認網站正常。自動網頁讀取工具仍無法存取公開頁面，故公開內容可用性的依據是使用者實測。老師的 [參考網站](https://huanchen1107.github.io/AIoT-DIC2-MultipleLR/) 僅作功能與視覺參考，不是本作業部署目的地；以自己的 repository、Actions run 及公開網址作為繳交證據。
 
 ## 快速開始
 
@@ -149,7 +149,7 @@ powershell -NoProfile -ExecutionPolicy Bypass -File .\scripts\deploy.ps1
 
 僅想先完成檢查與 commit，可加 `-PrepareOnly`；之後於腳本列出的 checkout 執行 `git push -u origin main`。首次部署後的更新，請在該 checkout 正常修改、commit、push；初次發布腳本會拒絕覆蓋已非空的遠端。
 
-`.github/workflows/pages.yml`：main 推播／手動觸發 → Node/Python → 全部測試及分析 → 瀏覽器檢查與截圖 artifact → build → Pages artifact → deploy。網站只發布 `dist/`。CI 尚未在本次提交實際執行，Chrome 啟動或其他環境問題會使 gate 失敗，需要依 Actions log 修正。
+`.github/workflows/pages.yml`：main 推播／手動觸發 → Node/Python → 全部測試及分析 → 瀏覽器檢查與截圖 artifact → build → Pages artifact → deploy。網站只發布 `dist/`。CI 已在提交 `406e947c766cf1363d1d4b336a25605a41dd89a8` 成功執行所有步驟；後續更新仍需以該次 Actions 結果確認。
 
 首次推播後，到自己 repository 的 **Settings → Pages → Source → GitHub Actions**。到 [自己的 Actions](https://github.com/benson103081/AIoT-DIC2-MultipleLR/actions) 確認最新 run 成功；若第一次因 Pages 尚未設定失敗，設定完成後按 Re-run all jobs。再開啟預計網址，確認有「分析問題」選單且能切換兩題，最後繳交自己的 repository 與網站網址。
 
@@ -172,4 +172,4 @@ reports/                     實際計算輸出及驗證證據
 
 ## 可直接用於繳交的簡短成果說明
 
-本作業以新創公司利潤預測為主要主題，完成 OLS baseline、Lasso、Forward Selection、RFE、Elastic Net 與 Exhaustive Search 的比較；另以 mtcars 完成燃油效率預測，實際執行可重現 workflow 並保存資料指紋、切分與模型結果。網頁可切換分析問題、讀取公開 CSV URL 或本機 CSV、調整目標及候選特徵，並呈現 CV 曲線、評估指標、方程式、係數、即時預測及殘差。所有結果由實際資料計算；選模使用訓練集 CV，保留測試集僅作最終評估，並以獨立高精度實作驗證核心迴歸計算。GitHub Pages 部署檔已備妥；正式繳交時請依實際 Actions 與公開網站驗證結果補記部署狀態。
+本作業以新創公司利潤預測為主要主題，完成 OLS baseline、Lasso、Forward Selection、RFE、Elastic Net 與 Exhaustive Search 的比較；另以 mtcars 完成燃油效率預測，實際執行可重現 workflow 並保存資料指紋、切分與模型結果。網頁可切換分析問題、讀取公開 CSV URL 或本機 CSV、調整目標及候選特徵，並呈現 CV 曲線、評估指標、方程式、係數、即時預測及殘差。所有結果由實際資料計算；選模使用訓練集 CV，保留測試集僅作最終評估，並以獨立高精度實作驗證核心迴歸計算。已部署至自己的 GitHub Pages，Actions 建置、測試及部署成功，並由使用者確認公開網站可正常開啟。

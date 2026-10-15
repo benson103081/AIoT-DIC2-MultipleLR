@@ -45,7 +45,7 @@
   "numerical_oracle": {
     "passed": true,
     "ols_models": 29,
-    "absolute_tolerance": 1e-06,
+    "absolute_tolerance": 0.000001,
     "evidence": "numeric-verification.json"
   },
   "workflow": {
@@ -70,10 +70,16 @@
     "evidence": "browser-verification.json: public GitHub CSV URL"
   },
   "deployment": {
-    "new_version_deployed": false,
+    "new_version_deployed": true,
     "expected_repository": "benson103081/AIoT-DIC2-MultipleLR",
-    "public_url_verified": false,
+    "public_url_verified": true,
     "reference_repository_only": "huanchen1107/AIoT-DIC2-MultipleLR",
-    "previous_attempt": "Local commit 6b3e4c2 exists in earlier checkout; teacher push rejected 403; new student publication excludes teacher history."
+    "previous_attempt": "Local commit 6b3e4c2 exists in earlier checkout; teacher push rejected 403; new student publication excludes teacher history.",
+    "deployed_application_commit": "406e947c766cf1363d1d4b336a25605a41dd89a8",
+    "actions_run": 38702207785,
+    "actions_conclusion": "success",
+    "public_url_verification_source": "User explicitly confirmed the live website works; agent web-fetch tool remains unable to access it",
+    "url": "https://benson103081.github.io/AIoT-DIC2-MultipleLR/",
+    "ci_browser_tests": "passed"
   }
 }
